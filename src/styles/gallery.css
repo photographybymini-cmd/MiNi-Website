@@ -63,18 +63,11 @@
   padding: var(--space-8) var(--space-6);
   background: linear-gradient(
     to top,
-    rgba(30, 24, 23, 0.82) 0%,
-    rgba(30, 24, 23, 0.3) 40%,
+    rgba(30, 24, 23, 0.75) 0%,
+    rgba(30, 24, 23, 0.2) 40%,
     transparent 70%
   );
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-}
-
-.angebote__card-image:hover .angebote__card-overlay {
-  opacity: 1;
-  transform: translateY(0);
+  transition: background 0.45s ease;
 }
 
 .angebote__card-label {
@@ -158,10 +151,6 @@
     max-width: 100%;
   }
 
-  .angebote__card-overlay {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

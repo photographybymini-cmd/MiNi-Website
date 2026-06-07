@@ -95,7 +95,7 @@ const reasons = [
             </div>
             <h2 class="au-person__name">Miette</h2>
             <div class="au-person__body">
-              <p>Ich bin Miette, 24 Jahre alt, und komme ursprünglich aus der Nähe von Leipzig – für die Liebe bin ich 2019 nach Hessen gezogen.</p>
+              <p>Ich bin Miette, 25 Jahre alt, und komme ursprünglich aus der Nähe von Leipzig – für die Liebe bin ich 2019 nach Hessen gezogen.</p>
               <p>Mit etwa 14 Jahren habe ich meine Leidenschaft für die Fotografie entdeckt, als ich angefangen habe mit meiner besten Freundin kleine Fotoshootings zu machen. Zuerst nur mit meinem Handy und dann mit meiner ersten Spiegelreflexkamera.</p>
               <p>In meiner Freizeit entdecke ich am liebsten neue Orte mit Nicolai und unserem Hund Tommy. Außerdem verbringe ich gerne Zeit mit meinen Freunden.</p>
               <p>Ich liebe es, zwischenmenschliche Beziehungen durch meine Linse festzuhalten und mit anderen zu teilen.</p>
@@ -110,11 +110,12 @@ const reasons = [
                 width="800"
                 height="1000"
                 loading="lazy"
+                style="object-position: center 40%;"
               />
             </div>
             <h2 class="au-person__name">Nicolai</h2>
             <div class="au-person__body">
-              <p>Ich heiße Nicolai und bin 26 Jahre alt. Einen Großteil meines Lebens habe ich in Seligenstadt verbracht, wo ich meine Leidenschaft für die Fotografie und die digitale Bearbeitung entdeckt habe.</p>
+              <p>Ich heiße Nicolai und bin 27 Jahre alt. Einen Großteil meines Lebens habe ich in Seligenstadt verbracht, wo ich meine Leidenschaft für die Fotografie und die digitale Bearbeitung entdeckt habe.</p>
               <p>Ich liebe es, hinter der Kamera zu stehen und auch mal kreative Blickwinkel auszuprobieren. Außerdem trage ich die Hauptverantwortung für unser Equipment und unsere Website.</p>
               <p>Dank meines Bruders, der mich schon in jungen Jahren für Videospiele begeistert hat, bin ich seit meinem 10. Lebensjahr leidenschaftlicher Gamer. Bis heute spiele ich gerne sowohl am Computer als auch auf meiner Xbox.</p>
             </div>
@@ -140,6 +141,7 @@ const reasons = [
         <div class="au-tommy__body">
           <p>Unser treuer Begleiter heißt Tommy, und stammt ursprünglich aus Bulgarien.</p>
           <p>Seit er etwa ein halbes Jahr alt ist, lebt er bei uns. Tommy ist ein 5-jähriger Wirbelwind voller Energie. Er liebt es, sich beim Spielen auszutoben.</p>
+          <p>Leider kann unser kleiner Wirbelwind nicht mit zu den Shootings kommen, da er immer etwas Zeit braucht, sich an neue Leute zu gewöhnen.</p>
         </div>
       </div>
     </section>
@@ -354,7 +356,7 @@ const reasons = [
   color: var(--color-bark);
   line-height: 1.85;
   max-width: 100%;
-  text-wrap: balance;
+  text-align: justify;
 }
 
 /* ─── Team Portraits ────────────────────────────────────────── */
@@ -423,6 +425,7 @@ const reasons = [
   font-weight: 400;
   color: var(--color-bark);
   line-height: 1.8;
+  text-align: justify;
 }
 
 @media (max-width: 720px) {
@@ -463,7 +466,7 @@ const reasons = [
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   display: block;
   filter: sepia(0.06) contrast(1.02);
 }

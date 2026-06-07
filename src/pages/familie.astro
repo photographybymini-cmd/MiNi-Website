@@ -99,6 +99,52 @@ const faqs = [
       </div>
     </section>
 
+    <!-- ─── Leistungen ─────────────────────────────────────── -->
+    <section class="fa-services">
+      <div class="fa-services__inner">
+        <div class="fa-services__header">
+          <span class="fa-services__label">Unsere Leistungen</span>
+          <h2 class="fa-services__heading">Was wir für euch <em>festhalten</em></h2>
+          <div class="fa-services__divider"></div>
+        </div>
+        <div class="fa-services__grid">
+          <div class="fa-services__card">
+            <div class="fa-services__card-inner">
+              <img src="/images/familienguide/babybauch.jpg" alt="Babybauch Shooting" class="fa-services__img" />
+              <div class="fa-services__num">01</div>
+              <div class="fa-services__content">
+                <div class="fa-services__title">Babybauch</div>
+                <div class="fa-services__subtitle">Schwangerschaft · Vorfreude</div>
+                <div class="fa-services__desc">Die Schwangerschaft ist eine der schönsten Phasen im Leben – voller Vorfreude und tiefer Verbundenheit. Wir halten diese besondere Zeit in stimmungsvollen, natürlichen Bildern fest.</div>
+              </div>
+            </div>
+          </div>
+          <div class="fa-services__card">
+            <div class="fa-services__card-inner">
+              <img src="/images/familienguide/newborn.jpg" alt="Newborn Shooting" class="fa-services__img fa-services__img--top" />
+              <div class="fa-services__num">02</div>
+              <div class="fa-services__content">
+                <div class="fa-services__title">Newborn</div>
+                <div class="fa-services__subtitle">Neugeborene · Erste Momente</div>
+                <div class="fa-services__desc">Die ersten Wochen mit eurem Baby – so zart, so wunderbar. Wir gehen behutsam vor, nehmen uns Zeit und schaffen eine ruhige Atmosphäre, in der sich alle wohlfühlen.</div>
+              </div>
+            </div>
+          </div>
+          <div class="fa-services__card">
+            <div class="fa-services__card-inner">
+              <img src="/images/familienguide/familie.jpg" alt="Familien Shooting" class="fa-services__img fa-services__img--top" />
+              <div class="fa-services__num">03</div>
+              <div class="fa-services__content">
+                <div class="fa-services__title">Familie</div>
+                <div class="fa-services__subtitle">Familien · Geschwister · Haustiere</div>
+                <div class="fa-services__desc">Das Lachen, die Umarmungen, die kleinen Details – wir holen das Beste aus euch heraus. Keine steifen Posen, sondern lebendige Aufnahmen die eure Familie wirklich zeigen.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── 3 Gründe ──────────────────────────────────────── -->
     <section class="fa-reasons">
       <div class="fa-reasons__inner">
@@ -343,6 +389,156 @@ const faqs = [
   font-style: italic;
   font-weight: 300;
   color: var(--color-clay);
+}
+
+/* ─── Services ─────────────────────────────────────────────── */
+.fa-services {
+  background: var(--color-parchment);
+  padding: clamp(4rem, 8vw, 8rem) var(--container-gutter);
+}
+
+.fa-services__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+.fa-services__header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.fa-services__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  margin-bottom: var(--space-4);
+}
+
+.fa-services__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  color: var(--color-bark);
+  line-height: 1.2;
+  margin: 0 0 var(--space-6);
+}
+
+.fa-services__heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-clay);
+}
+
+.fa-services__divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-clay);
+  margin: 0 auto;
+}
+
+.fa-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.fa-services__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.fa-services__card-inner {
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fa-services__card:hover .fa-services__card-inner {
+  transform: scale(1.02);
+}
+
+.fa-services__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.fa-services__img--top {
+  object-position: center top;
+}
+
+.fa-services__num {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--color-clay);
+  opacity: 0.25;
+  line-height: 1;
+}
+
+.fa-services__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(to top, rgba(30,22,20,0.97) 0%, rgba(30,22,20,0.6) 50%, rgba(30,22,20,0.15) 100%);
+  color: white;
+}
+
+.fa-services__title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.fa-services__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #d4975a;
+  margin-bottom: 1rem;
+}
+
+.fa-services__desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  font-weight: 300;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.fa-services__card:hover .fa-services__desc {
+  opacity: 1;
+  max-height: 200px;
+}
+
+@media (max-width: 720px) {
+  .fa-services__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .fa-services__desc {
+    opacity: 1;
+    max-height: 200px;
+  }
 }
 
 /* ─── Reasons ──────────────────────────────────────────────── */

@@ -189,6 +189,43 @@ const faqs = [
       </div>
     </section>
 
+    <!-- ─── Tipps ───────────────────────────────────────────── -->
+    <section class="fa-tips">
+      <div class="fa-tips__inner">
+        <div class="fa-tips__header">
+          <span class="fa-tips__label">Vorbereitung</span>
+          <h2 class="fa-tips__heading">Unsere <em>Tipps</em> für euch</h2>
+          <div class="fa-tips__divider"></div>
+        </div>
+        <div class="fa-tips__grid">
+          <div class="fa-tips__card">
+            <span class="fa-tips__icon">👗</span>
+            <div class="fa-tips__title">Outfit &amp; Farben</div>
+            <p class="fa-tips__text">Wählt aufeinander abgestimmte, gedeckte Farbtöne – Beige, Weiß, Erdtöne oder sanfte Blautöne wirken besonders harmonisch. Vermeidet große auffällige Muster oder Logo-Prints, die vom Wesentlichen ablenken.</p>
+            <div class="fa-tips__highlight">→ Tipp: Mehrere Layers (z.B. Jacke/Cardigan) geben euch mehr Abwechslung</div>
+          </div>
+          <div class="fa-tips__card">
+            <span class="fa-tips__icon">🌅</span>
+            <div class="fa-tips__title">Das Licht macht den Unterschied</div>
+            <p class="fa-tips__text">Die schönsten Bilder entstehen in der „Goldenen Stunde" – ca. 1 Stunde vor Sonnenuntergang. Das warme, weiche Licht schmeichelt und schafft eine magische Atmosphäre. Wir helfen euch gerne bei der Zeitplanung!</p>
+            <div class="fa-tips__highlight">→ Für Newborn: Natürliches Tageslicht am Vormittag ist ideal</div>
+          </div>
+          <div class="fa-tips__card">
+            <span class="fa-tips__icon">📍</span>
+            <div class="fa-tips__title">Die richtige Location</div>
+            <p class="fa-tips__text">Orte mit persönlicher Bedeutung machen Bilder besonders. Parks, Wälder, Felder oder eure eigene Wohnung – alles ist möglich. In Frankfurt und Umgebung gibt es viele wunderschöne Spots. Wir kennen einige Geheimtipps!</p>
+            <div class="fa-tips__highlight">→ Gerne beraten wir euch persönlich zu Locations</div>
+          </div>
+          <div class="fa-tips__card">
+            <span class="fa-tips__icon">😊</span>
+            <div class="fa-tips__title">Entspannt bleiben</div>
+            <p class="fa-tips__text">Das Wichtigste: Entspannt euch und habt Spaß! Kinder dürfen Kinder sein, Babys dürfen quengeln – wir nehmen uns die Zeit die wir brauchen. Die echten Momente entstehen wenn niemand ans Fotografiert-werden denkt.</p>
+            <div class="fa-tips__highlight">→ Bringt eure Lieblingssnacks mit – gute Stimmung garantiert!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── FAQ ──────────────────────────────────────────── -->
     <section class="fa-faq">
       <div class="fa-faq__inner">
@@ -789,6 +826,108 @@ const faqs = [
 
 .fa-portfolio__img-wrap:hover img {
   transform: scale(1.03);
+}
+
+/* ─── Tipps ────────────────────────────────────────────────── */
+.fa-tips {
+  background: var(--color-parchment);
+  padding: clamp(4rem, 8vw, 8rem) var(--container-gutter);
+}
+
+.fa-tips__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+.fa-tips__header {
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.fa-tips__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  margin-bottom: var(--space-4);
+}
+
+.fa-tips__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  color: var(--color-bark);
+  line-height: 1.2;
+  margin: 0 0 var(--space-6);
+}
+
+.fa-tips__heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-clay);
+}
+
+.fa-tips__divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-clay);
+}
+
+.fa-tips__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.fa-tips__card {
+  background: var(--color-cream);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.fa-tips__card:hover {
+  border-color: var(--color-clay);
+}
+
+.fa-tips__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.fa-tips__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-bark);
+  margin-bottom: var(--space-3);
+}
+
+.fa-tips__text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-bark);
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.75;
+}
+
+.fa-tips__highlight {
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-clay);
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .fa-tips__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ─── FAQ ──────────────────────────────────────────────────── */

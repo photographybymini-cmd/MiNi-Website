@@ -171,9 +171,6 @@ const reasons = [
     <section class="au-cta">
       <div class="au-cta__inner">
         <span class="au-cta__eyebrow">Schreibt uns!</span>
-        <div class="au-cta__image">
-          <img src="/images/website/cta/uns-bei-der-arbeit.jpg" alt="Miette und Nicolai bei der Arbeit" loading="lazy" />
-        </div>
         <h2 class="au-cta__heading">Wir freuen uns darauf,<br/><em>euch kennenzulernen.</em></h2>
         <a href="/#kontakt" class="au-cta__btn">
           Kontakt
@@ -573,8 +570,11 @@ const reasons = [
     grid-template-columns: 1fr;
   }
   .au-why__visual {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 4;
     max-width: 100%;
+  }
+  .au-why__visual img {
+    object-position: center center;
   }
 }
 
@@ -611,23 +611,6 @@ const reasons = [
   text-transform: uppercase;
   color: var(--color-ink);
   margin-bottom: var(--space-6);
-}
-
-.au-cta__image {
-  display: block;
-  width: clamp(100px, 15vw, 160px);
-  aspect-ratio: 1 / 1;
-  margin-inline: auto;
-  margin-bottom: var(--space-6);
-  overflow: hidden;
-}
-
-.au-cta__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
 }
 
 .au-cta__heading {

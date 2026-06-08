@@ -59,7 +59,9 @@
       "Bash(xargs jpegoptim --max=82 --strip-all)",
       "Bash(grep -v \"^.*paare-[0-9]*\\\\.jpg$\")",
       "Bash(grep -v -E \"/\\(paare-[0-9]+|babybauch-[0-9]+|newborn-[0-9]+|familie-[0-9]+|cover|erinnerungen|gemeinsam|wachstum|abenteuer|dekoration|erinnerungen-schaffen\\)\\\\.jpg$\")",
-      "Bash(python3)"
+      "Bash(python3)",
+      "Bash(xargs ls -lh)",
+      "Bash(awk '{print $5, $9}')"
     ]
   }
 }

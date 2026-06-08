@@ -4,20 +4,40 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import '../../styles/portfolio.css';
 
-const photos = [
-  { src: '/images/gallery/01.jpg', alt: 'Hochzeit – Moment der Freude',        tall: true  },
-  { src: '/images/gallery/02.jpg', alt: 'Hochzeit – Blick des Paares'                      },
-  { src: '/images/gallery/03.jpg', alt: 'Hochzeit – Details & Atmosphäre'                  },
-  { src: '/images/gallery/04.jpg', alt: 'Hochzeit – Emotionaler Augenblick',    wide: true  },
-  { src: '/images/gallery/05.jpg', alt: 'Hochzeit – Brautpaar'                             },
-  { src: '/images/gallery/06.jpg', alt: 'Hochzeit – Feier & Tanz',             tall: true  },
-  { src: '/images/gallery/07.jpg', alt: 'Hochzeit – Lachen & Leichtigkeit'                 },
-  { src: '/images/gallery/08.jpg', alt: 'Hochzeit – Stimmungsvolles Licht'                 },
-  { src: '/images/gallery/09.jpg', alt: 'Hochzeit – Liebe im Detail',          wide: true  },
-  { src: '/images/gallery/10.jpg', alt: 'Hochzeit – Unvergesslicher Tag'                   },
-  { src: '/images/gallery/11.jpg', alt: 'Hochzeit – Natürliche Momente'                    },
-  { src: '/images/gallery/12.jpg', alt: 'Hochzeit – Erinnerungen für immer'                },
+const weddings = [
+  {
+    type: 'Kirchliche Trauung',
+    names: 'Laura & Daniel',
+    date: '05.08.2023',
+    cover: '/images/hochzeiten/laura-daniel/laura_daniel_cover.jpg',
+    href: '/hochzeiten/laura-daniel',
+  },
+  {
+    type: 'Standesamtliche Trauung',
+    names: 'Merve & Okan',
+    date: '26.06.2024',
+    cover: '/images/hochzeiten/merve-okan/merve_okan_cover.jpg',
+    href: '/hochzeiten/merve-okan',
+  },
+  {
+    type: 'Freie Trauung',
+    names: 'Tabea & Sascha',
+    date: '20.07.2024',
+    cover: '/images/hochzeiten/tabea-sascha/tabea_sascha_cover.jpg',
+    href: '/hochzeiten/tabea-sascha',
+  },
 ];
+
+const mainPhotos = Array.from({ length: 150 }, (_, i) => {
+  const tall = i % 5 === 0;
+  const wide = !tall && i % 7 === 3;
+  return {
+    src: `/images/hochzeiten/portfolio/${String(i + 1).padStart(3, '0')}.jpg`,
+    alt: `Hochzeit – Impression ${i + 1}`,
+    tall,
+    wide,
+  };
+});
 ---
 
 <BaseLayout
@@ -28,7 +48,8 @@ const photos = [
   <main id="main">
 
     <!-- Hero -->
-    <section class="pf-hero" aria-label="Portfolio Hochzeiten">
+    <section class="pf-hero pf-hero--has-img" aria-label="Portfolio Hochzeiten">
+      <img class="pf-hero__bg" src="/images/hochzeiten/hochzeiten_portfolio_cover.jpg" alt="" aria-hidden="true" fetchpriority="high" />
       <div class="pf-hero__inner">
         <a href="/hochzeiten" class="pf-hero__back">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -38,7 +59,7 @@ const photos = [
         </a>
         <span class="pf-hero__label">Portfolio</span>
         <h1 class="pf-hero__title">Hoch<em>zeiten.</em></h1>
-        <p class="pf-hero__count">{photos.length} Aufnahmen</p>
+        <p class="pf-hero__count">Einblicke in unsere Hochzeitsreportagen.</p>
       </div>
     </section>
 
@@ -58,11 +79,53 @@ const photos = [
       </div>
     </div>
 
-    <!-- Grid -->
-    <section class="pf-grid-section">
+    <!-- Wedding Gallery Tiles -->
+    <section class="w-galleries" aria-label="Unsere Hochzeiten">
+      <div class="w-galleries__inner">
+        <div class="w-galleries__header">
+          <span class="w-galleries__label">Unsere Hochzeiten</span>
+          <h2 class="w-galleries__title">Drei <em>besondere Tage.</em></h2>
+        </div>
+        <div class="w-galleries__grid">
+          {weddings.map((w) => (
+            <a href={w.href} class="w-tile" aria-label={`Galerie ansehen: ${w.names}`}>
+              <img src={w.cover} alt={`${w.names} – ${w.type}`} loading="lazy" />
+              <div class="w-tile__gradient"></div>
+              <div class="w-tile__top">
+                <div class="w-tile__view">
+                  <span class="w-tile__view-text">Galerie ansehen</span>
+                  <span class="w-tile__view-icon" aria-hidden="true">
+                    <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <div class="w-tile__info">
+                <span class="w-tile__type">{w.type}</span>
+                <span class="w-tile__names">{w.names}</span>
+                <span class="w-tile__date">{w.date}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Mixed Grid Intro -->
+    <div class="pf-mixed-intro">
+      <div class="pf-mixed-intro__inner">
+        <div>
+          <h2 class="pf-mixed-intro__heading">Weitere Eindrücke aus unserer <em>Hochzeitsfotografie.</em></h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mixed Photo Grid -->
+    <section class="pf-grid-section" aria-label="Hochzeitsimpressionen">
       <div class="pf-grid-section__inner">
         <div class="pf-grid">
-          {photos.map((p) => (
+          {mainPhotos.map((p) => (
             <div class={`pf-item${p.tall ? ' pf-item--tall' : ''}${p.wide ? ' pf-item--wide' : ''}`}>
               <img src={p.src} alt={p.alt} loading="lazy" />
               <div class="pf-item__overlay"></div>
@@ -91,4 +154,11 @@ const photos = [
 
   </main>
   <Footer />
+
+  <script>
+    /* Hide broken placeholder images gracefully */
+    document.querySelectorAll<HTMLImageElement>('.pf-item img, .w-tile img').forEach(img => {
+      img.addEventListener('error', () => { img.style.visibility = 'hidden'; });
+    });
+  </script>
 </BaseLayout>

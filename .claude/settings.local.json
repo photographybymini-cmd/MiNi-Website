@@ -29,7 +29,14 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(npm run *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/portfolio)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/merve-okan)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/laura-daniel)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/tabea-sascha)"
     ]
   }
 }

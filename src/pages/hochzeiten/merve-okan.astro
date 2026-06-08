@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/portfolio.css';
+---
+
+<BaseLayout
+  title="Merve & Okan – MiNi Photography"
+  description="Standesamtliche Trauung von Merve & Okan am 26.06.2024 – Galerie folgt in Kürze."
+>
+  <Nav />
+  <main id="main">
+    <div class="cs-page">
+      <div class="cs-inner">
+        <span class="cs-label">Demnächst</span>
+        <h1 class="cs-names">Merve &amp; Okan</h1>
+        <span class="cs-meta">Standesamtliche Trauung · 26.06.2024</span>
+        <div class="cs-divider"></div>
+        <p class="cs-coming-soon" aria-hidden="true">Coming Soon</p>
+        <p class="cs-text">Eindrücke dieser Hochzeit werden in Kürze hier verfügbar sein.</p>
+        <a href="/hochzeiten/portfolio" class="cs-back">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+          </svg>
+          Zurück zum Portfolio
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

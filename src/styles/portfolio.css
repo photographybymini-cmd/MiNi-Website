@@ -8,6 +8,17 @@
   overflow: hidden;
 }
 
+.pf-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
 .pf-hero::before {
   content: '';
   position: absolute;
@@ -317,4 +328,355 @@
   .pf-item img {
     transition: none;
   }
+}
+
+/* ─── Wedding Gallery Tiles ────────────────────────────── */
+
+.w-galleries {
+  background: var(--color-cream);
+  padding: clamp(3rem, 6vw, 5rem) var(--container-gutter) clamp(2rem, 4vw, 4rem);
+}
+
+.w-galleries__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+.w-galleries__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid rgba(196, 181, 172, 0.3);
+}
+
+.w-galleries__label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+}
+
+.w-galleries__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 300;
+  color: var(--color-bark);
+  line-height: 1.1;
+}
+
+.w-galleries__title em {
+  font-style: italic;
+  color: var(--color-clay);
+}
+
+.w-galleries__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+.w-tile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  background: var(--color-parchment);
+  display: block;
+  cursor: pointer;
+}
+
+.w-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.w-tile:hover img {
+  transform: scale(1.05);
+}
+
+.w-tile__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 20, 16, 0.90) 0%,
+    rgba(30, 20, 16, 0.30) 42%,
+    rgba(30, 20, 16, 0.0) 68%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.w-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 14, 12, 0);
+  transition: background 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.w-tile:hover::after {
+  background: rgba(20, 14, 12, 0.40);
+}
+
+.w-tile__top {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.5rem);
+  right: clamp(1rem, 2vw, 1.5rem);
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.w-tile:hover .w-tile__top {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.w-tile__view {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255, 252, 250, 0.75);
+}
+
+.w-tile__view-text {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.w-tile__view-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 252, 250, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.w-tile__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  z-index: 3;
+}
+
+.w-tile__type {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-sand);
+  margin-bottom: var(--space-2);
+}
+
+.w-tile__names {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: #fffcfa;
+  line-height: 1.0;
+  margin-bottom: var(--space-2);
+}
+
+.w-tile__date {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 252, 250, 0.4);
+}
+
+/* ─── Mixed Grid Divider ───────────────────────────────── */
+
+.pf-mixed-intro {
+  background: var(--color-cream);
+  padding: clamp(3rem, 6vw, 5rem) var(--container-gutter) 0;
+}
+
+.pf-mixed-intro__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(196, 181, 172, 0.3);
+}
+
+.pf-mixed-intro__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 300;
+  color: var(--color-bark);
+  line-height: 1.2;
+}
+
+.pf-mixed-intro__heading em {
+  font-style: italic;
+  color: var(--color-clay);
+}
+
+.pf-mixed-intro__count {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: rgba(92, 72, 67, 0.4);
+  margin-top: var(--space-2);
+}
+
+/* ─── Responsive Tiles ─────────────────────────────────── */
+
+@media (max-width: 760px) {
+  .w-galleries__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .w-tile {
+    aspect-ratio: 3 / 4;
+  }
+
+  .pf-mixed-intro__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .w-tile {
+    aspect-ratio: 2 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .w-tile img {
+    transition: none;
+  }
+}
+
+/* ─── Coming Soon ──────────────────────────────────────── */
+
+.cs-page {
+  min-height: 100dvh;
+  background: var(--color-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(6rem, 12vw, 10rem) var(--container-gutter);
+  text-align: center;
+  position: relative;
+}
+
+.cs-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.cs-coming-soon {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 14rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-sand);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  user-select: none;
+  pointer-events: none;
+}
+
+.cs-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.cs-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+}
+
+.cs-names {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-bark);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.cs-meta {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+}
+
+.cs-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-sand);
+}
+
+.cs-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  line-height: 1.75;
+  max-width: 36ch;
+}
+
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  border-bottom: 1px solid rgba(145, 124, 113, 0.35);
+  padding-bottom: 2px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.cs-back:hover {
+  color: var(--color-bark);
+  border-color: var(--color-clay);
 }

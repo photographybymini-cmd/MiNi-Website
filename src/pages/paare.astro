@@ -108,12 +108,14 @@ const faqs = [
         <div class="pa-reasons__list">
           {reasons.map((r) => (
             <article class="pa-reasons__row">
-              <h3 class="pa-reasons__title">{r.title}</h3>
               <div class="pa-reasons__image">
                 <img src={r.image} alt={r.title} loading="lazy" />
               </div>
-              <div class="pa-reasons__body">
-                {r.paragraphs.map((p) => <p class="pa-reasons__text">{p}</p>)}
+              <div class="pa-reasons__content">
+                <h3 class="pa-reasons__title">{r.title}</h3>
+                <div class="pa-reasons__body">
+                  {r.paragraphs.map((p) => <p class="pa-reasons__text">{p}</p>)}
+                </div>
               </div>
             </article>
           ))}
@@ -402,18 +404,18 @@ const faqs = [
 .pa-reasons__row {
   display: grid;
   grid-template-columns: 6fr 8fr;
-  grid-template-areas:
-    "image title"
-    "image body";
-  grid-template-rows: auto 1fr;
   column-gap: clamp(2rem, 5vw, 5rem);
-  row-gap: var(--space-4);
-  align-items: start;
+  align-items: center;
+}
+
+.pa-reasons__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-content: center;
 }
 
 .pa-reasons__image {
-  grid-area: image;
-  align-self: center;
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -429,7 +431,6 @@ const faqs = [
 }
 
 .pa-reasons__title {
-  grid-area: title;
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.2vw, 1.9rem);
   font-weight: 500;
@@ -439,7 +440,6 @@ const faqs = [
 }
 
 .pa-reasons__body {
-  grid-area: body;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
@@ -458,12 +458,15 @@ const faqs = [
 @media (max-width: 720px) {
   .pa-reasons__row {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "body"
-      "image";
-    grid-template-rows: auto;
     row-gap: var(--space-4);
+  }
+  .pa-reasons__image {
+    order: 1;
+  }
+  .pa-reasons__content {
+    order: 0;
+    text-align: center;
+    align-items: center;
   }
   .pa-reasons__title,
   .pa-reasons__body {

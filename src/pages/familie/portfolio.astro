@@ -5,121 +5,96 @@ import Footer from '../../components/Footer.astro';
 import '../../styles/portfolio.css';
 
 
-// Reihenfolge einmalig generiert – jede Kategorie unabhängig gemischt.
-// familie-15..18, 20..27 + erinnerungen.jpg sind Duplikate von newborn → nur im Familie-Tab sichtbar.
+// Reihenfolge einmalig generiert – gleichmäßig über alle Kategorien verteilt (max. 2 Babybauch in Folge).
+// familie_newborn = erscheint sowohl im Familie- als auch im Newborn-Tab.
 const allePhotos = [
-  { src: '/images/portfolio/familie/babybauch/babybauch-30.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-15.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-11.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-22.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-26.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-19.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-20.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-9.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-13.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-15.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-2.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/wachstum.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-28.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-4.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-7.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-25.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-13.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-6.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-2.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-23.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/gemeinsam.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-19.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-19.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-3.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-3.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-8.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-9.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-7.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-12.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-10.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-11.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-20.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-4.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-24.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-31.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-14.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-21.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-28.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-2.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-16.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-6.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-5.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-5.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-7.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-1.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-29.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-1.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-12.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-13.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-11.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-8.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-8.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-25.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-28.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-1.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-27.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/familie/familie-29.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-4.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-5.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-9.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-21.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-18.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-32.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-23.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-16.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-6.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-18.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-27.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-29.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-12.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-14.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-10.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-10.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-26.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-3.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-14.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-22.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-17.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-24.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-34.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-30.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-37.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-38.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-38.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-37.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-35.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-36.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-39.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-34.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-33.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-35.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-36.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/newborn/newborn-33.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-31.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-  { src: '/images/portfolio/familie/babybauch/babybauch-32.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
-];
-
-// Duplikate von newborn-Bildern – nur im "Familie"-Tab sichtbar, nicht in "Alle"
-const familieOnlyPhotos = [
-  { src: '/images/portfolio/familie/familie/familie-18.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-24.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-27.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-23.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-17.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-22.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-15.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/erinnerungen.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-20.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-26.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-25.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-16.jpg', alt: 'Familie – Foto', category: 'familie' as const },
-  { src: '/images/portfolio/familie/familie/familie-21.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/18_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/74_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/47_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/53_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/25_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/71_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/32_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/80_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/45_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/4_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/72_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/56_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/13_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/20_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/65_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/50_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/26_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/87_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/5_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/61_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/57_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/44_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/22_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/82_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/30_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/24_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/86_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/46_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/10_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/81_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/52_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/19_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/62_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/14_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/41_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/78_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/33_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/23_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/79_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/40_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/37_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/12_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/76_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/8_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/73_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/35_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/51_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/60_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/55_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/11_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/34_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/64_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/43_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/17_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/83_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/2_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/77_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/59_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/6_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/38_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/75_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/21_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/9_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/69_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/29_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/42_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/63_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/36_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/16_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/84_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/27_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/39_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/67_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/15_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/7_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/66_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/54_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/1_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/48_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/70_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/31_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/68_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/28_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/3_babybauch.jpg', alt: 'Babybauch – Foto', category: 'babybauch' as const },
+  { src: '/images/portfolio/familie/Galerie/85_newborn.jpg', alt: 'Newborn – Foto', category: 'newborn' as const },
+  { src: '/images/portfolio/familie/Galerie/49_familie.jpg', alt: 'Familie – Foto', category: 'familie' as const },
+  { src: '/images/portfolio/familie/Galerie/58_familie_newborn.jpg', alt: 'Familie & Newborn – Foto', category: 'familie_newborn' as const },
 ];
 ---
 
@@ -182,12 +157,6 @@ const familieOnlyPhotos = [
               <div class="pf-item__overlay"></div>
             </div>
           ))}
-          {familieOnlyPhotos.map((p) => (
-            <div class="pf-item" data-category={p.category} data-alle-exclude="true">
-              <img src={p.src} alt={p.alt} loading="lazy" />
-              <div class="pf-item__overlay"></div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -224,18 +193,13 @@ const familieOnlyPhotos = [
         btn.classList.add('is-active');
 
         items.forEach(item => {
-          const isAlleExclude = item.dataset.alleExclude === 'true';
+          const cat = item.dataset.category!;
           const match = filter === 'alle'
-            ? !isAlleExclude
-            : item.dataset.category === filter;
+            ? true
+            : cat === filter || (cat === 'familie_newborn' && (filter === 'familie' || filter === 'newborn'));
           item.classList.toggle('is-hidden', !match);
         });
       });
-    });
-
-    /* Initial state: hide alle-exclude items (Alle tab is default) */
-    document.querySelectorAll<HTMLElement>('[data-alle-exclude="true"]').forEach(item => {
-      item.classList.add('is-hidden');
     });
 
     /* Hide broken placeholder images gracefully */

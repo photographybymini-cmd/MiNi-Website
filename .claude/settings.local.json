@@ -48,7 +48,15 @@
       "WebFetch(domain:nb-autofokus.de)",
       "Bash(curl -sI https://nb-autofokus.de/)",
       "Bash(curl -s https://nb-autofokus.de/)",
-      "Bash(curl -s https://nb-autofokus.de/kontakt)"
+      "Bash(curl -s https://nb-autofokus.de/kontakt)",
+      "Bash(xargs du -sh)",
+      "Bash(brew install *)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/portfolio/familie/familie/familie-6.jpg /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/portfolio/paare/galerie/paare-7.jpg)",
+      "Bash(jpegoptim --version)",
+      "Bash(jpegoptim --max=82 --strip-all --stdout /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/portfolio/familie/familie/familie-6.jpg)",
+      "Bash(jpegoptim --max=82 --strip-all --dest=/tmp /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/portfolio/familie/familie/familie-6.jpg)",
+      "Read(//tmp/**)",
+      "Bash(xargs jpegoptim --max=82 --strip-all)"
     ]
   }
 }

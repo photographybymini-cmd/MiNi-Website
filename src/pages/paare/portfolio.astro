@@ -4,19 +4,10 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import '../../styles/portfolio.css';
 
-const photos = [
-  { src: '/images/paare/abenteuer-freude.jpg',    alt: 'Paarshooting – Abenteuer & Freude',    tall: true },
-  { src: '/images/paare/dekoration-zuhause.jpg',  alt: 'Paarshooting – Zuhause & Nähe'                   },
-  { src: '/images/paare/erinnerungen-schaffen.jpg', alt: 'Paarshooting – Erinnerungen'                    },
-  { src: '/images/gallery/01.jpg',                alt: 'Paarshooting – Stimmungsvolles Licht', wide: true },
-  { src: '/images/gallery/03.jpg',                alt: 'Paarshooting – Natürlicher Moment'                },
-  { src: '/images/gallery/05.jpg',                alt: 'Paarshooting – Echte Gefühle',         tall: true },
-  { src: '/images/gallery/07.jpg',                alt: 'Paarshooting – Leichtigkeit'                      },
-  { src: '/images/gallery/09.jpg',                alt: 'Paarshooting – Gemeinsam'                         },
-  { src: '/images/gallery/11.jpg',                alt: 'Paarshooting – Vertrautheit',          wide: true },
-  { src: '/images/gallery/02.jpg',                alt: 'Paarshooting – Blick & Lächeln'                   },
-  { src: '/images/gallery/04.jpg',                alt: 'Paarshooting – Besonderer Augenblick'             },
-];
+const photos = Array.from({ length: 81 }, (_, i) => ({
+  src: `/images/portfolio/paare/galerie/paare-${i + 1}.jpg`,
+  alt: `Paarshooting – Foto ${i + 1}`,
+}));
 ---
 
 <BaseLayout
@@ -27,7 +18,8 @@ const photos = [
   <main id="main">
 
     <!-- Hero -->
-    <section class="pf-hero" aria-label="Portfolio Paare">
+    <section class="pf-hero pf-hero--has-img" aria-label="Portfolio Paare">
+      <img class="pf-hero__bg" src="/images/portfolio/paare/cover.jpg" alt="" aria-hidden="true" fetchpriority="high" />
       <div class="pf-hero__inner">
         <a href="/paare" class="pf-hero__back">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -62,7 +54,7 @@ const photos = [
       <div class="pf-grid-section__inner">
         <div class="pf-grid">
           {photos.map((p) => (
-            <div class={`pf-item${p.tall ? ' pf-item--tall' : ''}${p.wide ? ' pf-item--wide' : ''}`}>
+            <div class="pf-item">
               <img src={p.src} alt={p.alt} loading="lazy" />
               <div class="pf-item__overlay"></div>
             </div>
@@ -90,4 +82,12 @@ const photos = [
 
   </main>
   <Footer />
+
+  <script>
+    document.querySelectorAll<HTMLImageElement>('.pf-item img').forEach(img => {
+      img.addEventListener('error', () => {
+        (img.closest('.pf-item') as HTMLElement).style.display = 'none';
+      });
+    });
+  </script>
 </BaseLayout>

@@ -36,7 +36,19 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/portfolio)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/merve-okan)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/laura-daniel)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/tabea-sascha)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/hochzeiten/tabea-sascha)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/familie/portfolio)",
+      "Bash(sed -i '' 's|/images/portfolio/familie/babybauch/|/images/portfolio/familie/portfolio/babybauch/|g' src/pages/familie/portfolio.astro)",
+      "Bash(sed -i '' 's|/images/portfolio/familie/newborn/|/images/portfolio/familie/portfolio/newborn/|g' src/pages/familie/portfolio.astro)",
+      "Bash(sed -i '' 's|/images/portfolio/familie/familie/|/images/portfolio/familie/portfolio/familie/|g' src/pages/familie/portfolio.astro)",
+      "Bash(sed -i '' 's|/images/portfolio/familie/portfolio/familie/erinnerungen.jpg|/images/portfolio/familie/erinnerungen.jpg|g' src/pages/familie/portfolio.astro)",
+      "Bash(sed -i '' 's|/images/portfolio/familie/portfolio/familie/gemeinsam.jpg|/images/portfolio/familie/gemeinsam.jpg|g' src/pages/familie/portfolio.astro)",
+      "Bash(sed -i '' 's|/images/portfolio/hochzeiten/portfolio-cover.jpg|/images/portfolio/hochzeiten/cover.jpg|g; *)",
+      "Bash(sed -i '' 's|/images/portfolio/paare/portfolio-cover.jpg|/images/portfolio/paare/cover.jpg|g' /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/src/pages/paare/portfolio.astro)",
+      "WebFetch(domain:nb-autofokus.de)",
+      "Bash(curl -sI https://nb-autofokus.de/)",
+      "Bash(curl -s https://nb-autofokus.de/)",
+      "Bash(curl -s https://nb-autofokus.de/kontakt)"
     ]
   }
 }

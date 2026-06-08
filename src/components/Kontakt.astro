@@ -18,17 +18,14 @@ import '../styles/kontakt.css';
       <div class="reveal reveal--delay-1">
         <form
           class="kontakt__form"
-          name="kontakt"
+          action="https://api.staticforms.xyz/submit"
           method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
           id="kontakt-form"
           novalidate
         >
-          <input type="hidden" name="form-name" value="kontakt" />
-          <p style="display:none" aria-hidden="true">
-            <label>Nicht ausfüllen: <input name="bot-field" /></label>
-          </p>
+          <input type="hidden" name="accessKey" value="sf_923920d331a675ed981e15b8" />
+          <input type="hidden" name="replyTo" value="@" />
+          <input type="hidden" name="redirectTo" value="" id="sf-redirect" />
 
           <div class="form-field">
             <label for="name">Dein Name</label>
@@ -91,7 +88,7 @@ import '../styles/kontakt.css';
         </form>
 
         <p class="kontakt__success" id="kontakt-success" role="status">
-          Danke für deine Nachricht. Wir melden uns schnellstmöglich bald bei dir.
+          Danke für deine Nachricht. Wir melden uns schnellstmöglich bei dir.
         </p>
       </div>
 
@@ -143,15 +140,29 @@ import '../styles/kontakt.css';
   const success = document.getElementById('kontakt-success');
 
   form?.addEventListener('submit', async (e) => {
-    // Only intercept if NOT deployed on Netlify
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-      btn.disabled = true;
-      btn.textContent = 'Wird gesendet…';
-      await new Promise((r) => setTimeout(r, 800));
-      form.style.display = 'none';
-      if (success) success.classList.add('visible');
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet…';
+
+    try {
+      const res = await fetch('https://api.staticforms.xyz/submit', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.style.display = 'none';
+        if (success) success.classList.add('visible');
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Nachricht senden';
+        alert('Es ist ein Fehler aufgetreten. Bitte versuche es erneut.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Nachricht senden';
+      alert('Es ist ein Fehler aufgetreten. Bitte versuche es erneut.');
     }
   });
 </script>

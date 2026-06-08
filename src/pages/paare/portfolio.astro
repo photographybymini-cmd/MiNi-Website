@@ -4,9 +4,9 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import '../../styles/portfolio.css';
 
-const photos = Array.from({ length: 81 }, (_, i) => ({
-  src: `/images/portfolio/paare/galerie/paare-${i + 1}.jpg`,
-  alt: `Paarshooting – Foto ${i + 1}`,
+const photos = [34,48,9,31,47,37,50,16,41,40,30,61,66,71,53,8,64,26,63,19,69,20,21,56,51,78,62,70,43,52,24,3,17,54,23,65,25,6,7,44,75,10,49,22,68,72,11,1,76,38,77,67,27,35,45,42,46,13,79,2,39,33,81,28,73,80,5,55,12,74,14,18,29,32,36,4,15].map((n) => ({
+  src: `/images/portfolio/paare/galerie/paare-${n}.jpg`,
+  alt: `Paarshooting – Foto ${n}`,
 }));
 ---
 

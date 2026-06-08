@@ -56,7 +56,10 @@
       "Bash(jpegoptim --max=82 --strip-all --stdout /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/portfolio/familie/familie/familie-6.jpg)",
       "Bash(jpegoptim --max=82 --strip-all --dest=/tmp /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/portfolio/familie/familie/familie-6.jpg)",
       "Read(//tmp/**)",
-      "Bash(xargs jpegoptim --max=82 --strip-all)"
+      "Bash(xargs jpegoptim --max=82 --strip-all)",
+      "Bash(grep -v \"^.*paare-[0-9]*\\\\.jpg$\")",
+      "Bash(grep -v -E \"/\\(paare-[0-9]+|babybauch-[0-9]+|newborn-[0-9]+|familie-[0-9]+|cover|erinnerungen|gemeinsam|wachstum|abenteuer|dekoration|erinnerungen-schaffen\\)\\\\.jpg$\")",
+      "Bash(python3)"
     ]
   }
 }

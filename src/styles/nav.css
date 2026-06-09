@@ -160,6 +160,7 @@
   color: var(--color-clay);
   transition: color var(--transition-base), background-color var(--transition-base);
   white-space: nowrap;
+  text-align: center;
 }
 
 .nav__submenu-link:hover {
@@ -329,6 +330,7 @@
   color: var(--color-clay);
   letter-spacing: 0.05em;
   transition: color var(--transition-base);
+  text-align: center;
 }
 
 .nav__overlay-sublink:hover {

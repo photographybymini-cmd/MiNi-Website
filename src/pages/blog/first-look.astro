@@ -16,6 +16,7 @@ const opts = [
     ],
     note: 'Wer den Überraschungsmoment beim Einzug liebt, könnte den First Look als „Spoiler" empfinden.',
     for: ['Paare, die den ersten Blick ganz für sich genießen möchten', 'Alle mit Wert auf entspannte Tagesplanung'],
+    image: '/images/portfolio/hochzeiten/galerie/first-look-1.jpg',
   },
   {
     id: 'fl-2',
@@ -29,6 +30,7 @@ const opts = [
     ],
     note: null,
     for: ['Paare, die den großen Moment mit Familie und Freunden erleben möchten'],
+    image: '/images/portfolio/hochzeiten/galerie/am-altar-1.jpg',
   },
   {
     id: 'fl-3',
@@ -42,6 +44,7 @@ const opts = [
     ],
     note: 'Wer sich auf einen bestimmten „ersten Moment" freut, könnte diese Variante als zu unspektakulär empfinden.',
     for: ['Paare ohne Bedarf an Traditionen', 'Alle, die sich bei Inszenierungen unwohl fühlen'],
+    image: '/images/portfolio/hochzeiten/galerie/gemeinsamer-einzug-1.jpg',
   },
   {
     id: 'fl-4',
@@ -55,6 +58,7 @@ const opts = [
     ],
     note: null,
     for: ['Paare, die Überraschung und emotionale Verbindung vereinen wollen', 'Alle, die vorher Nervosität abbauen möchten'],
+    image: '/images/portfolio/hochzeiten/galerie/first-touch-1.jpg',
   },
 ];
 ---
@@ -129,6 +133,9 @@ const opts = [
               <span class="fl-opt__num">{opt.num}</span>
               <h2 class="fl-opt__title">{opt.title}</h2>
               <p class="fl-opt__sub">{opt.sub}</p>
+              {opt.image && (
+                <img class="fl-photo" src={opt.image} alt="Hochzeitsfotografie MiNi Photography" loading="lazy" width="800" height="533" />
+              )}
             </header>
 
             <div class="fl-opt__body">
@@ -177,6 +184,15 @@ const opts = [
         </a>
       </div>
     </section>
+
+    <div class="blog-back">
+      <a href="/blog" class="blog-back__link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+        </svg>
+        Alle Beiträge
+      </a>
+    </div>
 
   </main>
   <Footer />
@@ -372,17 +388,17 @@ const opts = [
 }
 .fl-opt__ghost {
   position: absolute;
-  right: -0.06em;
-  bottom: -0.12em;
+  top: -0.15em;
+  left: -0.05em;
   font-family: var(--font-display);
   font-size: clamp(14rem, 26vw, 22rem);
   font-weight: 700;
-  font-style: italic;
-  color: rgba(92,72,67,0.055);
   line-height: 1;
+  color: var(--color-bark);
+  opacity: 0.11;
   pointer-events: none;
   user-select: none;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.06em;
   z-index: 0;
 }
 .fl-opt__inner {
@@ -553,12 +569,12 @@ const opts = [
 .fl-fazit__title em {
   font-style: italic;
   font-weight: 300;
-  color: var(--color-sand);
+  color: rgba(255,252,250,0.6);
 }
 .fl-fazit__body {
   font-family: var(--font-body);
   font-size: 0.92rem;
-  color: rgba(196,181,172,0.62);
+  color: rgba(255,252,250,0.82);
   line-height: 1.9;
   margin: 0;
 }
@@ -584,6 +600,38 @@ const opts = [
   gap: 1.1rem;
 }
 .fl-fazit__cta:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+
+/* ── Back Button ─────────────────────────────────────── */
+.blog-back {
+  background: var(--color-parchment);
+  border-top: 1px solid rgba(196,181,172,0.2);
+  padding: clamp(2rem, 4vw, 3rem) var(--container-gutter);
+  display: flex;
+  justify-content: center;
+}
+.blog-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.blog-back__link:hover {
+  color: var(--color-bark);
+  gap: 1.1rem;
+}
+
+/* ── Photo (linke Spalte, unter Titel) ──────────────── */
+.fl-photo {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  display: block;
+}
 
 /* ── Reveal ─────────────────────────────────────────── */
 .fl-reveal {

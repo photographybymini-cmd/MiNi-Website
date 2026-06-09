@@ -1,0 +1,777 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const chapters = [
+  { id: 'gf-1', num: '01', label: 'Warum' },
+  { id: 'gf-2', num: '02', label: '7 Tipps' },
+  { id: 'gf-3', num: '03', label: 'Alternative' },
+];
+---
+
+<BaseLayout
+  title="Gruppenfotos auf der Hochzeit – stressfrei und schön | MiNi Photography"
+  description="Gruppenfotos gelten als stressig – dabei müssen sie das gar nicht sein. Unsere 7 Tipps aus der Praxis helfen euch, schöne Erinnerungen ohne Chaos zu schaffen."
+>
+  <Nav />
+  <main id="main">
+
+    <!-- ══ Hero ══════════════════════════════════════════ -->
+    <section class="gf-hero">
+      <div class="gf-hero__media">
+        <img
+          src="/images/blog/gruppenfotos-hero.jpg"
+          alt="Gruppenfotos auf der Hochzeit, fotografiert von MiNi Photography"
+          loading="eager"
+          fetchpriority="high"
+          class="gf-hero__img"
+        />
+        <div class="gf-hero__grain" aria-hidden="true"></div>
+        <div class="gf-hero__vignette" aria-hidden="true"></div>
+      </div>
+      <div class="gf-hero__ui">
+        <a href="/blog" class="gf-hero__back">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+          </svg>
+          Blog
+        </a>
+        <div class="gf-hero__copy">
+          <span class="gf-eyebrow">Hochzeiten</span>
+          <h1 class="gf-hero__title">
+            Gruppenfotos<br/>leicht gemacht –<br/>
+            <em>stressfrei und schön.</em>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Chapter Nav ════════════════════════════════════ -->
+    <nav class="gf-chapnav" aria-label="Kapitelnavigation">
+      <div class="gf-chapnav__inner">
+        {chapters.map((c) => (
+          <a href={`#${c.id}`} class="gf-chapnav__item" data-id={c.id}>
+            <span class="gf-chapnav__num">{c.num}</span>
+            <span class="gf-chapnav__label">{c.label}</span>
+            <span class="gf-chapnav__bar" aria-hidden="true"></span>
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <!-- ══ Intro ══════════════════════════════════════════ -->
+    <div class="gf-intro">
+      <div class="gf-intro__inner">
+        <p class="gf-intro__lead gf-reveal">
+          Gruppenfotos gehören für viele Paare einfach zur Hochzeit dazu. Schließlich sind an diesem Tag oft Menschen zusammen, die man sonst nur selten oder sogar nie gleichzeitig an einem Ort trifft. Trotzdem haben sie nicht den besten Ruf. Mit etwas Vorbereitung lassen sie sich schnell, entspannt und wunderschön umsetzen – und gehören oft zu den Bildern, die Jahre später am meisten angeschaut werden.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ Sections ═══════════════════════════════════════ -->
+    <div class="gf-sects">
+
+      <!-- 01 Warum -->
+      <section class="gf-sect" id="gf-1">
+        <span class="gf-sect__ghost" aria-hidden="true">01</span>
+        <div class="gf-sect__inner">
+          <header class="gf-sect__head gf-reveal">
+            <span class="gf-sect__num">01</span>
+            <h2 class="gf-sect__title">Warum Gruppenfotos<br/><em>so wertvoll sind.</em></h2>
+            <p class="gf-sect__sub">Mehr als nur ein Pflichtprogramm.</p>
+          </header>
+          <div class="gf-sect__body">
+            <p class="gf-sect__intro gf-reveal" style="--delay:0.08s">
+              Auch wenn heute viele Paare großen Wert auf natürliche Reportagebilder legen, haben Gruppenfotos nach wie vor ihren festen Platz. Sie zeigen die Menschen, die euch an eurem Hochzeitstag begleitet haben: Eltern, Großeltern, Geschwister, Trauzeugen, Freunde und Wegbegleiter.
+            </p>
+            <p class="gf-reveal" style="--delay:0.12s">
+              Oft sind es sogar genau diese Bilder, die Jahre später besonders häufig angeschaut werden. Besonders Eltern und Großeltern freuen sich sehr über klassische Gruppenfotos – sie gehören häufig zu den Fotos, die ausgedruckt, eingerahmt oder verschenkt werden.
+            </p>
+            <div class="gf-reveal" style="--delay:0.18s">
+              <p class="gf-sub-heading">Die häufigsten Probleme</p>
+              <ul class="gf-list">
+                <li>Gäste sind gerade an der Bar, auf der Toilette oder im Gespräch.</li>
+                <li>Niemand weiß, welche Gruppe als Nächstes fotografiert wird.</li>
+                <li>Es werden spontan immer mehr Kombinationen gewünscht.</li>
+                <li>Die eingeplante Zeit reicht nicht aus.</li>
+                <li>Alle fotografieren gleichzeitig.</li>
+              </ul>
+            </div>
+            <div class="gf-note gf-reveal" style="--delay:0.24s">
+              <span class="gf-note__label">Wenn mehrere Kameras im Spiel sind</span>
+              <p>Wenn Gäste während der Gruppenfotos zum Handy oder zur eigenen Kamera greifen, schauen manche in verschiedene Richtungen. Deshalb lassen wir Gästen in solchen Situationen kurz den Vortritt – danach fotografieren wir die Gruppe noch einmal in Ruhe, sodass wirklich alle in dieselbe Kamera schauen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 7 Tipps -->
+      <section class="gf-sect" id="gf-2">
+        <span class="gf-sect__ghost" aria-hidden="true">02</span>
+        <div class="gf-sect__inner">
+          <header class="gf-sect__head gf-reveal">
+            <span class="gf-sect__num">02</span>
+            <h2 class="gf-sect__title">7 Tipps für<br/><em>entspannte Gruppenfotos.</em></h2>
+            <p class="gf-sect__sub">Aus der Praxis, für euch.</p>
+          </header>
+          <div class="gf-sect__body">
+            <p class="gf-sect__intro gf-reveal" style="--delay:0.08s">
+              Als Hochzeitsfotografen begleiten wir jedes Jahr zahlreiche Hochzeiten im Raum Rodgau, Frankfurt, Hanau und Offenbach. Dabei haben wir gelernt, worauf es bei Gruppenfotos wirklich ankommt.
+            </p>
+            <ul class="gf-tips gf-reveal" style="--delay:0.14s">
+
+              <li class="gf-tip">
+                <span class="gf-tip__num">01</span>
+                <div class="gf-tip__body">
+                  <strong class="gf-tip__title">Erstellt eine Gruppenfoto-Liste</strong>
+                  <p>Unser wichtigster Tipp: Erstellt vorab eine Liste mit den Gruppen, die euch wichtig sind – zum Beispiel Brautpaar mit Eltern, Geschwistern, Großeltern, Trauzeugen, Freundeskreis und allen Gästen. Schickt uns diese Liste gerne bereits vor der Hochzeit. So können wir uns vorbereiten und den Ablauf besser planen.</p>
+                  <p class="gf-tip__note">Als grobe Orientierung: 5 Gruppen ca. 10 Min. &middot; 10 Gruppen ca. 15–20 Min. &middot; 15 oder mehr oft ca. 30 Min.+</p>
+                </div>
+              </li>
+
+              <li class="gf-tip">
+                <span class="gf-tip__num">02</span>
+                <div class="gf-tip__body">
+                  <strong class="gf-tip__title">Erst das Pflichtprogramm, dann spontane Wünsche</strong>
+                  <p>Wir empfehlen immer, zuerst die Gruppenfotos von eurer vorbereiteten Liste umzusetzen. Danach bleibt häufig noch Zeit für spontane Wünsche von euch oder euren Gästen. So sind die wichtigsten Erinnerungen bereits sicher festgehalten – und trotzdem bleibt Raum für ungeplante Ideen.</p>
+                </div>
+              </li>
+
+              <li class="gf-tip">
+                <span class="gf-tip__num">03</span>
+                <div class="gf-tip__body">
+                  <strong class="gf-tip__title">Die wichtigsten Gruppen zuerst fotografieren</strong>
+                  <p>Auf fast jeder Hochzeit gibt es mindestens eine Person, die genau dann kurz verschwindet, wenn sie gebraucht wird. Deshalb empfehlen wir, mit den Gruppen zu starten, die euch besonders wichtig sind. Großeltern fotografieren wir dabei besonders gerne früh, damit sie anschließend wieder entspannt zur Feier zurückkehren können und nicht so lange stehen müssen.</p>
+                </div>
+              </li>
+
+              <li class="gf-tip">
+                <span class="gf-tip__num">04</span>
+                <div class="gf-tip__body">
+                  <strong class="gf-tip__title">Informiert eure Gäste</strong>
+                  <p>Eine kurze Ankündigung durch die Trauzeugen, den DJ oder euch selbst kann Wunder wirken. Wenn eure Gäste wissen, dass Gruppenfotos geplant sind, verschwinden deutlich weniger Menschen zur Bar oder auf die Toilette. Bei größeren Hochzeiten haben wir übrigens oft ein kleines Megafon dabei – wer einmal versucht hat, 100 Gäste gleichzeitig zusammenzutrommeln, versteht ziemlich schnell warum.</p>
+                </div>
+              </li>
+
+              <li class="gf-tip">
+                <span class="gf-tip__num">05</span>
+                <div class="gf-tip__body">
+                  <strong class="gf-tip__title">Das große Gruppenfoto zuerst</strong>
+                  <p>Unsere Empfehlung: Startet mit dem Gruppenfoto aller Gäste. Zu diesem Zeitpunkt sind meist noch alle anwesend. Außerdem eignet sich dieser Moment perfekt, um kurz den Ablauf der weiteren Gruppenfotos anzukündigen – so wissen alle direkt, welche Gruppen noch fotografiert werden und wann sie gegebenenfalls gebraucht werden.</p>
+                </div>
+              </li>
+
+              <li class="gf-tip">
+                <span class="gf-tip__num">06</span>
+                <div class="gf-tip__body">
+                  <strong class="gf-tip__title">Den richtigen Ort wählen</strong>
+                  <p>Viele Paare wünschen sich ihre Gruppenfotos in strahlender Sonne. Tatsächlich entstehen die schönsten Gruppenbilder häufig im Schatten. Das Licht ist weicher, die Gäste müssen weniger blinzeln und gerade an warmen Sommertagen ist es deutlich angenehmer – außerdem vermeiden wir harte Schatten im Gesicht.</p>
+                  <p class="gf-tip__note">Sonnenbrillen kurz absetzen – die Augen spielen auf Fotos eine wichtige Rolle, und die Bilder wirken meist harmonischer, wenn alle ohne Sonnenbrille zu sehen sind.</p>
+                </div>
+              </li>
+
+              <li class="gf-tip">
+                <span class="gf-tip__num">07</span>
+                <div class="gf-tip__body">
+                  <strong class="gf-tip__title">Gruppenfotos dürfen auch locker sein</strong>
+                  <p>Bei Gruppenfotos denken viele sofort an Reihen von Menschen, die ordentlich nebeneinander stehen und in die Kamera lächeln. Natürlich können solche Bilder wunderschön sein – gleichzeitig dürfen Gruppenfotos aber auch locker und natürlich wirken. Beim Anstoßen, Lachen oder in Bewegung entstehen oft besonders lebendige Aufnahmen. Auch humorvolle Spaßbilder sind möglich.</p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Alternative -->
+      <section class="gf-sect" id="gf-3">
+        <span class="gf-sect__ghost" aria-hidden="true">03</span>
+        <div class="gf-sect__inner">
+          <header class="gf-sect__head gf-reveal">
+            <span class="gf-sect__num">03</span>
+            <h2 class="gf-sect__title">Speed-Shooting<br/><em>als Alternative.</em></h2>
+            <p class="gf-sect__sub">Dynamisch und zeitsparend.</p>
+          </header>
+          <div class="gf-sect__body">
+            <p class="gf-sect__intro gf-reveal" style="--delay:0.08s">
+              Nicht jedes Gruppenfoto muss klassisch ablaufen. Eine Alternative, die wir bereits auf Hochzeiten umgesetzt haben, ist das Speed-Shooting.
+            </p>
+            <p class="gf-reveal" style="--delay:0.12s">
+              Dabei bleibt das Brautpaar an einem festen Ort stehen, während die Gäste nacheinander oder gruppenweise dazukommen. So entstehen innerhalb kurzer Zeit viele verschiedene Bilder, ohne dass ständig neu organisiert werden muss. Das sorgt für eine lockere Stimmung, bringt etwas Dynamik hinein und spart häufig Zeit.
+            </p>
+            <div class="gf-note gf-reveal" style="--delay:0.18s">
+              <span class="gf-note__label">Wichtig zu wissen</span>
+              <p>Für Gäste, die nicht so mobil sind oder etwas mehr Zeit benötigen – beispielsweise ältere Großeltern – ist die klassische Variante oft angenehmer.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ══ Fazit ══════════════════════════════════════════ -->
+    <section class="gf-fazit">
+      <div class="gf-fazit__inner">
+        <span class="gf-eyebrow gf-reveal" style="color:rgba(196,181,172,0.4)">Fazit</span>
+        <h2 class="gf-fazit__title gf-reveal" style="--delay:0.1s">
+          Gruppenfotos dürfen<br/><em>einfach sein.</em>
+        </h2>
+        <p class="gf-fazit__body gf-reveal" style="--delay:0.2s">
+          Mit einer guten Vorbereitung, einer klaren Gruppenfoto-Liste und etwas Unterstützung vor Ort lassen sich die wichtigsten Erinnerungen oft in kurzer Zeit festhalten. Ob klassische Gruppenbilder, ein großes Foto mit allen Gästen oder ein lockeres Speed-Shooting – wichtig ist vor allem, dass die Bilder zu euch und eurem Hochzeitstag passen. Und das Beste daran: Jahre später gehören genau diese Fotos häufig zu den Aufnahmen, die am meisten angeschaut werden.
+        </p>
+        <a href="/#kontakt" class="gf-fazit__cta gf-reveal" style="--delay:0.3s">
+          Jetzt anfragen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="blog-back">
+      <a href="/blog" class="blog-back__link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+        </svg>
+        Alle Beiträge
+      </a>
+    </div>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+/* ── Shared ─────────────────────────────────────────── */
+.gf-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.7;
+}
+
+/* ── Hero ───────────────────────────────────────────── */
+.gf-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.gf-hero__media {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bark);
+}
+.gf-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% 50%;
+  display: block;
+}
+.gf-hero__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.gf-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 110%, rgba(18,14,13,0.95) 0%, rgba(18,14,13,0.45) 45%, transparent 75%),
+    linear-gradient(to right, rgba(18,14,13,0.6) 0%, transparent 55%);
+}
+.gf-hero__ui {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  width: 100%;
+  padding: clamp(6rem, 12vw, 9rem) var(--container-gutter) clamp(3rem, 6vw, 5rem);
+}
+.gf-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(196,181,172,0.45);
+  transition: color 0.25s ease;
+  align-self: flex-start;
+}
+.gf-hero__back:hover { color: rgba(196,181,172,1); }
+.gf-hero__back:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+.gf-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+}
+.gf-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.gf-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-sand);
+}
+
+/* ── Chapter Nav ────────────────────────────────────── */
+.gf-chapnav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--color-cream);
+  border-bottom: 1px solid rgba(196,181,172,0.18);
+}
+.gf-chapnav__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 0 var(--container-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gf-chapnav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 0;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+}
+.gf-chapnav__item:hover { opacity: 0.7; }
+.gf-chapnav__item:focus-visible { outline: 1px solid var(--color-clay); outline-offset: -2px; }
+.gf-chapnav__item.is-active { opacity: 1; }
+.gf-chapnav__num {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--color-clay);
+  flex-shrink: 0;
+}
+.gf-chapnav__label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--color-bark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gf-chapnav__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gf-chapnav__item.is-active .gf-chapnav__bar { transform: scaleX(1); }
+
+/* ── Intro ──────────────────────────────────────────── */
+.gf-intro {
+  background: var(--color-cream);
+  padding: clamp(4rem, 8vw, 6.5rem) var(--container-gutter) clamp(2rem, 4vw, 3rem);
+}
+.gf-intro__inner {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+.gf-intro__lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Sections wrapper ───────────────────────────────── */
+.gf-sects {
+  background: var(--color-cream);
+}
+
+/* ── Section ────────────────────────────────────────── */
+.gf-sect {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream);
+  border-top: 1px solid rgba(196,181,172,0.14);
+  padding: clamp(4.5rem, 9vw, 7.5rem) var(--container-gutter);
+}
+.gf-sect:nth-child(even) {
+  background: var(--color-parchment);
+}
+.gf-sect__ghost {
+  position: absolute;
+  top: -0.15em;
+  left: -0.05em;
+  font-family: var(--font-display);
+  font-size: clamp(14rem, 26vw, 22rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-bark);
+  opacity: 0.11;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.06em;
+  z-index: 0;
+}
+.gf-sect__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 0 clamp(3rem, 6vw, 7rem);
+  align-items: start;
+}
+.gf-sect__head {
+  position: sticky;
+  top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.gf-sect__num {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.38em;
+  color: var(--color-sand);
+  text-transform: uppercase;
+}
+.gf-sect__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-bark);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.gf-sect__title em {
+  font-style: italic;
+  color: var(--color-clay);
+}
+.gf-sect__sub {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.62;
+  margin: 0;
+}
+.gf-sect__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: 0.35rem;
+}
+.gf-sect__intro {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+.gf-sect__body > p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Sub-heading ────────────────────────────────────── */
+.gf-sub-heading {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  margin: 0 0 0.85rem;
+}
+
+/* ── Problem list ───────────────────────────────────── */
+.gf-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.gf-list li {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--color-bark);
+  line-height: 1.65;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.gf-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-sand);
+}
+
+/* ── Note callout ───────────────────────────────────── */
+.gf-note {
+  padding: 1rem 1.25rem;
+  background: rgba(196,181,172,0.1);
+  border-left: 2px solid rgba(196,181,172,0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.gf-note__label {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+}
+.gf-note p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: rgba(145,124,113,0.82);
+  line-height: 1.72;
+  margin: 0;
+}
+
+/* ── 7 Tips list ────────────────────────────────────── */
+.gf-tips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.gf-tip {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(196,181,172,0.2);
+  align-items: start;
+}
+.gf-tip:last-child {
+  border-bottom: 1px solid rgba(196,181,172,0.2);
+}
+.gf-tip__num {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--color-clay);
+  padding-top: 0.2em;
+}
+.gf-tip__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.gf-tip__title {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-bark);
+  display: block;
+}
+.gf-tip__body p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-clay);
+  line-height: 1.78;
+  margin: 0;
+}
+.gf-tip__note {
+  font-style: italic !important;
+  color: rgba(145,124,113,0.72) !important;
+  font-size: 0.83rem !important;
+  padding: 0.75rem 1rem;
+  background: rgba(196,181,172,0.1);
+  border-left: 2px solid rgba(196,181,172,0.3);
+}
+
+/* ── Fazit ──────────────────────────────────────────── */
+.gf-fazit {
+  background: var(--color-bark);
+  padding: clamp(5rem, 10vw, 9rem) var(--container-gutter);
+}
+.gf-fazit__inner {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.gf-fazit__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.gf-fazit__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,252,250,0.6);
+}
+.gf-fazit__body {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: rgba(255,252,250,0.82);
+  line-height: 1.9;
+  margin: 0;
+}
+.gf-fazit__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  border: 1px solid rgba(196,181,172,0.25);
+  padding: 1rem 2.25rem;
+  transition: background 0.25s ease, border-color 0.25s ease, gap 0.2s ease;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+.gf-fazit__cta:hover {
+  background: rgba(196,181,172,0.1);
+  border-color: rgba(196,181,172,0.5);
+  gap: 1.1rem;
+}
+.gf-fazit__cta:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+
+/* ── Back Button ─────────────────────────────────────── */
+.blog-back {
+  background: var(--color-parchment);
+  border-top: 1px solid rgba(196,181,172,0.2);
+  padding: clamp(2rem, 4vw, 3rem) var(--container-gutter);
+  display: flex;
+  justify-content: center;
+}
+.blog-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.blog-back__link:hover {
+  color: var(--color-bark);
+  gap: 1.1rem;
+}
+
+/* ── Reveal ─────────────────────────────────────────── */
+.gf-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.72s ease var(--delay, 0s), transform 0.72s ease var(--delay, 0s);
+}
+.gf-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced Motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .gf-reveal { opacity: 1; transform: none; transition: none; }
+  .gf-chapnav__bar { transition: none; }
+  .gf-fazit__cta { transition: none; }
+}
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .gf-sect__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .gf-sect__head { position: static; }
+}
+
+@media (max-width: 640px) {
+  .gf-chapnav__label { display: none; }
+  .gf-chapnav__item { justify-content: center; padding: 0.75rem 0; }
+  .gf-chapnav__num { letter-spacing: 0.2em; font-size: 0.6rem; }
+  .gf-sect__ghost { font-size: clamp(9rem, 38vw, 13rem); }
+  .gf-tip { grid-template-columns: 1.75rem 1fr; gap: 0.75rem; }
+}
+</style>
+
+<script>
+  // ── Scroll reveals ────────────────────────────────────
+  const reveals = document.querySelectorAll('.gf-reveal');
+  const revealObs = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); }
+    }),
+    { threshold: 0.12 }
+  );
+  reveals.forEach(el => revealObs.observe(el));
+
+  // ── Chapter nav active state ──────────────────────────
+  const chapItems = document.querySelectorAll<HTMLElement>('.gf-chapnav__item');
+  const sectSections = document.querySelectorAll('.gf-sect');
+
+  const chapObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          chapItems.forEach(item =>
+            item.classList.toggle('is-active', item.dataset.id === e.target.id)
+          );
+        }
+      });
+    },
+    { rootMargin: '-25% 0px -65% 0px' }
+  );
+  sectSections.forEach(s => chapObs.observe(s));
+</script>

@@ -57,8 +57,11 @@ import Footer from '../../components/Footer.astro';
         <span class="bz-story__ghost" aria-hidden="true">01</span>
         <div class="bz-story__inner">
           <header class="bz-story__head bz-reveal">
-            <span class="bz-story__num">01</span>
-            <h2 class="bz-story__name">Corinna<br/>&amp; Simon</h2>
+            <div class="bz-story__head-text">
+              <span class="bz-story__num">01</span>
+              <h2 class="bz-story__name">Corinna<br/>&amp; Simon</h2>
+            </div>
+            <img class="bz-story__head-img" src="/images/portfolio/hochzeiten/galerie/corinna-simon-1.jpg" alt="Corinna &amp; Simon" loading="lazy" width="800" height="533" />
           </header>
           <div class="bz-story__body">
             <p class="bz-story__intro bz-reveal" style="--delay:0.08s">
@@ -79,8 +82,11 @@ import Footer from '../../components/Footer.astro';
         <span class="bz-story__ghost" aria-hidden="true">02</span>
         <div class="bz-story__inner">
           <header class="bz-story__head bz-reveal">
-            <span class="bz-story__num">02</span>
-            <h2 class="bz-story__name">Nissrin<br/>&amp; Ömer</h2>
+            <div class="bz-story__head-text">
+              <span class="bz-story__num">02</span>
+              <h2 class="bz-story__name">Nissrin<br/>&amp; Ömer</h2>
+            </div>
+            <img class="bz-story__head-img" src="/images/portfolio/hochzeiten/galerie/nissrin-oemer-1.jpg" alt="Nissrin &amp; Ömer" loading="lazy" width="800" height="533" />
           </header>
           <div class="bz-story__body">
             <p class="bz-story__intro bz-reveal" style="--delay:0.08s">
@@ -115,6 +121,15 @@ import Footer from '../../components/Footer.astro';
         </a>
       </div>
     </section>
+
+    <div class="blog-back">
+      <a href="/blog" class="blog-back__link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+        </svg>
+        Alle Beiträge
+      </a>
+    </div>
 
   </main>
   <Footer />
@@ -251,17 +266,17 @@ import Footer from '../../components/Footer.astro';
 }
 .bz-story__ghost {
   position: absolute;
-  right: -0.06em;
-  bottom: -0.12em;
+  top: -0.15em;
+  left: -0.05em;
   font-family: var(--font-display);
   font-size: clamp(14rem, 26vw, 22rem);
   font-weight: 700;
-  font-style: italic;
-  color: rgba(92,72,67,0.055);
   line-height: 1;
+  color: var(--color-bark);
+  opacity: 0.11;
   pointer-events: none;
   user-select: none;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.06em;
   z-index: 0;
 }
 .bz-story__inner {
@@ -279,7 +294,18 @@ import Footer from '../../components/Footer.astro';
   top: 4.5rem;
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+}
+.bz-story__head-text {
+  display: flex;
+  flex-direction: column;
   gap: 0.85rem;
+}
+.bz-story__head-img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  display: block;
 }
 .bz-story__num {
   font-family: var(--font-body);
@@ -356,12 +382,12 @@ import Footer from '../../components/Footer.astro';
 .bz-fazit__title em {
   font-style: italic;
   font-weight: 300;
-  color: var(--color-sand);
+  color: rgba(255,252,250,0.6);
 }
 .bz-fazit__body {
   font-family: var(--font-body);
   font-size: 0.92rem;
-  color: rgba(196,181,172,0.62);
+  color: rgba(255,252,250,0.82);
   line-height: 1.9;
   margin: 0;
 }
@@ -387,6 +413,47 @@ import Footer from '../../components/Footer.astro';
 }
 .bz-fazit__cta:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
 
+/* ── Back Button ─────────────────────────────────────── */
+.blog-back {
+  background: var(--color-parchment);
+  border-top: 1px solid rgba(196,181,172,0.2);
+  padding: clamp(2rem, 4vw, 3rem) var(--container-gutter);
+  display: flex;
+  justify-content: center;
+}
+.blog-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.blog-back__link:hover {
+  color: var(--color-bark);
+  gap: 1.1rem;
+}
+
+/* ── Photos ─────────────────────────────────────────── */
+.bz-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.bz-photos img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 480px) {
+  .bz-photos { grid-template-columns: 1fr; }
+  .bz-photos img { aspect-ratio: 3/2; }
+}
+
 /* ── Reveal ─────────────────────────────────────────── */
 .bz-reveal {
   opacity: 0;
@@ -410,7 +477,22 @@ import Footer from '../../components/Footer.astro';
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .bz-story__head { position: static; }
+  .bz-story__head {
+    position: static;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .bz-story__head-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .bz-story__head-img {
+    width: clamp(160px, 42vw, 240px);
+    aspect-ratio: 3/2;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
 }
 
 @media (max-width: 640px) {

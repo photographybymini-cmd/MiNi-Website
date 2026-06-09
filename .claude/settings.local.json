@@ -68,7 +68,13 @@
       "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"wedding photography portfolio editorial minimal luxury\" --design-system -p \"MiNi Photography\")",
       "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"editorial luxury magazine scroll animation\" --domain ux -n 5)",
       "Bash(python3 .claire/skills/ui-ux-pro-max/scripts/search.py \"animation accessibility\" --domain ux -n 3)",
-      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"luxury elegant serif editorial\" --domain typography -n 3)"
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"luxury elegant serif editorial\" --domain typography -n 3)",
+      "Bash(find /tmp -name \"*.jpg\" -o -name \"*.jpeg\" -o -name \"*.png\" -o -name \"*.webp\" 2>/dev/null | head -20 && ls -lt ~/Downloads/*.jpg ~/Downloads/*.jpeg 2>/dev/null | head -5)",
+      "Read(//Users/NicolaiPrivat/Downloads/**)",
+      "Bash(cp \"/Users/NicolaiPrivat/Downloads/Corinna&Simon-1.jpg\" \"/Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/portfolio/hochzeiten/galerie/corinna-simon-1.jpg\")"
+    ],
+    "additionalDirectories": [
+      "/Users/NicolaiPrivat/Downloads"
     ]
   }
 }

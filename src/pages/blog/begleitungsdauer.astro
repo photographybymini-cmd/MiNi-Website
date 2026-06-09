@@ -80,6 +80,7 @@ const chapters = [
             <span class="bd-sect__num">01</span>
             <h2 class="bd-sect__title">Was soll auf jeden Fall fotografiert werden?</h2>
             <p class="bd-sect__sub">Die wichtigsten Momente zuerst.</p>
+            <img class="bd-photo" src="/images/portfolio/hochzeiten/galerie/begleitungsdauer-blog-1.jpg" alt="Hochzeitsfotografie MiNi Photography" loading="lazy" width="800" height="533" />
           </header>
           <div class="bd-sect__body">
             <p class="bd-sect__intro bd-reveal" style="--delay:0.08s">
@@ -133,7 +134,7 @@ const chapters = [
                 <p class="bd-pkg__note">Falls ihr dennoch ein ausgiebiges Brautpaarshooting möchtet, könnte eine stundenweise Verlängerung helfen. Auch ein After-Wedding-Shooting ist eine schöne Möglichkeit, dies ohne Zeitdruck nachzuholen.</p>
               </article>
 
-              <article class="bd-pkg bd-pkg--featured">
+              <article class="bd-pkg">
                 <div class="bd-pkg__head">
                   <span class="bd-pkg__name">Silber</span>
                   <span class="bd-pkg__dur">5 Stunden</span>
@@ -180,6 +181,7 @@ const chapters = [
             <span class="bd-sect__num">03</span>
             <h2 class="bd-sect__title">Noch unsicher?</h2>
             <p class="bd-sect__sub">Diese Fragen helfen euch.</p>
+            <img class="bd-photo" src="/images/portfolio/hochzeiten/galerie/begleitungsdauer-blog-2.jpg" alt="Hochzeitsfotografie MiNi Photography" loading="lazy" width="800" height="533" />
           </header>
           <div class="bd-sect__body">
             <p class="bd-sect__intro bd-reveal" style="--delay:0.08s">
@@ -219,6 +221,15 @@ const chapters = [
         </a>
       </div>
     </section>
+
+    <div class="blog-back">
+      <a href="/blog" class="blog-back__link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+        </svg>
+        Alle Beiträge
+      </a>
+    </div>
 
   </main>
   <Footer />
@@ -412,17 +423,17 @@ const chapters = [
 }
 .bd-sect__ghost {
   position: absolute;
-  right: -0.06em;
-  bottom: -0.12em;
+  top: -0.15em;
+  left: -0.05em;
   font-family: var(--font-display);
   font-size: clamp(14rem, 26vw, 22rem);
   font-weight: 700;
-  font-style: italic;
-  color: rgba(92,72,67,0.055);
   line-height: 1;
+  color: var(--color-bark);
+  opacity: 0.11;
   pointer-events: none;
   user-select: none;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.06em;
   z-index: 0;
 }
 .bd-sect__inner {
@@ -531,22 +542,22 @@ const chapters = [
 .bd-packages {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.75rem;
 }
 .bd-pkg {
-  padding: 1.5rem 0;
-  border-top: 1px solid rgba(196,181,172,0.2);
+  padding: 1.5rem 1.25rem;
+  border: 1px solid rgba(196,181,172,0.3);
+  border-radius: 2px;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
 }
-.bd-pkg:first-child { border-top: none; }
 .bd-pkg--featured {
   padding: 1.5rem 1.25rem;
-  background: rgba(196,181,172,0.12);
-  border-top: none;
-  border-left: 2px solid var(--color-clay);
-  margin: 0.75rem 0;
+  background: rgba(196,181,172,0.1);
+  border: 1px solid var(--color-clay);
+  border-left: 3px solid var(--color-clay);
+  border-radius: 2px;
 }
 .bd-pkg__head {
   display: flex;
@@ -668,12 +679,12 @@ const chapters = [
 .bd-fazit__title em {
   font-style: italic;
   font-weight: 300;
-  color: var(--color-sand);
+  color: rgba(255,252,250,0.6);
 }
 .bd-fazit__body {
   font-family: var(--font-body);
   font-size: 0.92rem;
-  color: rgba(196,181,172,0.62);
+  color: rgba(255,252,250,0.82);
   line-height: 1.9;
   margin: 0;
 }
@@ -698,6 +709,38 @@ const chapters = [
   gap: 1.1rem;
 }
 .bd-fazit__cta:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+
+/* ── Back Button ─────────────────────────────────────── */
+.blog-back {
+  background: var(--color-parchment);
+  border-top: 1px solid rgba(196,181,172,0.2);
+  padding: clamp(2rem, 4vw, 3rem) var(--container-gutter);
+  display: flex;
+  justify-content: center;
+}
+.blog-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.blog-back__link:hover {
+  color: var(--color-bark);
+  gap: 1.1rem;
+}
+
+/* ── Photo (linke Spalte, unter Titel) ──────────────── */
+.bd-photo {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  display: block;
+}
 
 /* ── Reveal ─────────────────────────────────────────── */
 .bd-reveal {

@@ -1,5 +1,13 @@
 ---
 import '../styles/global.css';
+import '@fontsource/cormorant-garamond/300.css';
+import '@fontsource/cormorant-garamond/300-italic.css';
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/500-italic.css';
+import '@fontsource/cormorant-garamond/700.css';
+import '@fontsource/lato/300.css';
+import '@fontsource/lato/400.css';
+import '@fontsource/lato/700.css';
 
 interface Props {
   title?: string;
@@ -8,7 +16,7 @@ interface Props {
 }
 
 const {
-  title = 'MiNi Photography | Miette & Nicolai — Authentische Fotografie',
+  title = 'Hochzeitsfotograf Rodgau – Paare & Familien | MiNi Photography',
   description = 'Ungestellte Fotografie für Hochzeiten, Paare und Familien aus Rodgau.',
   image = '/og-image.jpg',
 } = Astro.props;
@@ -44,13 +52,39 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Lato:wght@300;400;700&display=swap"
-    />
+    <!-- JSON-LD LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://www.mini-foto.de",
+      "name": "MiNi Photography by Biehl GbR",
+      "description": "Ungestellte Hochzeits-, Paar- und Familienfotografie aus Rodgau",
+      "url": "https://www.mini-foto.de",
+      "telephone": "+4917675871418",
+      "email": "info@mini-foto.de",
+      "image": "https://www.mini-foto.de/og-image.jpg",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sudetenstraße 25A",
+        "addressLocality": "Rodgau",
+        "postalCode": "63110",
+        "addressCountry": "DE"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Rodgau" },
+        { "@type": "City", "name": "Frankfurt am Main" },
+        { "@type": "City", "name": "Darmstadt" },
+        { "@type": "City", "name": "Offenbach" }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/photography.by.mini/",
+        "https://www.facebook.com/p/MiNi-Photography-100090189815334/"
+      ]
+    }
+    </script>
+
   </head>
   <body>
     <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>

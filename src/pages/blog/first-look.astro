@@ -1,0 +1,651 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const opts = [
+  {
+    id: 'fl-1',
+    num: '01',
+    title: 'First Look',
+    sub: 'Ein Moment nur für euch',
+    intro: 'Ihr seht euch das erste Mal vor der Zeremonie – in einem privaten Rahmen, ganz ohne neugierige Blicke der Gäste.',
+    pros: [
+      { label: 'Emotionale Zweisamkeit', text: 'Ein ungestörter Moment ganz für euch, bevor der Tag offiziell beginnt.' },
+      { label: 'Mehr Zeit für Fotos', text: 'Paarbilder entstehen entspannt vor der Trauung – danach gehört eure Zeit den Gästen.' },
+    ],
+    note: 'Wer den Überraschungsmoment beim Einzug liebt, könnte den First Look als „Spoiler" empfinden.',
+    for: ['Paare, die den ersten Blick ganz für sich genießen möchten', 'Alle mit Wert auf entspannte Tagesplanung'],
+  },
+  {
+    id: 'fl-2',
+    num: '02',
+    title: 'Beim Einzug',
+    sub: 'Der klassische Wow-Moment',
+    intro: 'Ein Partner wartet vorne, während der andere hereinkommt – alle Augen sind auf euch gerichtet, die Spannung ist greifbar.',
+    pros: [
+      { label: 'Gänsehaut pur', text: 'Das erste Sehen inmitten aller Gäste – für viele der emotionalste Augenblick des gesamten Tages.' },
+      { label: 'Symbolische Tiefe', text: 'Tief in der Hochzeitstradition verankert – eine unvergessliche Überraschung vor allen Liebsten.' },
+    ],
+    note: null,
+    for: ['Paare, die den großen Moment mit Familie und Freunden erleben möchten'],
+  },
+  {
+    id: 'fl-3',
+    num: '03',
+    title: 'Gemeinsam',
+    sub: 'Ohne Inszenierung in den Tag',
+    intro: 'Kein geplanter „erster Blick" – ihr verbringt den Morgen zusammen und lasst alles natürlich entstehen, so wie es sich ergibt.',
+    pros: [
+      { label: 'Vollständig stressfrei', text: 'Gemeinsam frühstücken, füreinander da sein, ohne Nervosität in die Zeremonie gehen.' },
+      { label: 'Kein Druck', text: 'Der Fokus liegt auf dem gesamten Tag – nicht auf einem einzigen großen Augenblick.' },
+    ],
+    note: 'Wer sich auf einen bestimmten „ersten Moment" freut, könnte diese Variante als zu unspektakulär empfinden.',
+    for: ['Paare ohne Bedarf an Traditionen', 'Alle, die sich bei Inszenierungen unwohl fühlen'],
+  },
+  {
+    id: 'fl-4',
+    num: '04',
+    title: 'First Touch',
+    sub: 'Verbunden, ohne sich zu sehen',
+    intro: 'Ihr haltet euch an den Händen oder lehnt Rücken an Rücken – ohne euch zu sehen. Tiefe Verbindung, Überraschung bleibt.',
+    pros: [
+      { label: 'Stille Verbindung', text: 'Manche Paare lesen sich Briefe vor oder halten einfach inne – ein intimer, uninszenierter Moment.' },
+      { label: 'Überraschung bleibt', text: 'Ihr verbindet euch emotional, ohne den Überraschungseffekt beim Einzug zu verlieren.' },
+    ],
+    note: null,
+    for: ['Paare, die Überraschung und emotionale Verbindung vereinen wollen', 'Alle, die vorher Nervosität abbauen möchten'],
+  },
+];
+---
+
+<BaseLayout
+  title="First Look: ja, nein oder etwas dazwischen? – MiNi Photography"
+  description="Wann seht ihr euch das erste Mal in eurem Hochzeitsoutfit? Wir zeigen alle Möglichkeiten – First Look, Einzug, First Touch und mehr."
+>
+  <Nav />
+  <main id="main">
+
+    <!-- ══ Hero ══════════════════════════════════════════ -->
+    <section class="fl-hero">
+      <div class="fl-hero__media">
+        <img
+          src="/images/blog/first-look-hero.jpg"
+          alt="Brautpaar bei ihrer Hochzeit, fotografiert von MiNi Photography"
+          loading="eager"
+          fetchpriority="high"
+          class="fl-hero__img"
+        />
+        <div class="fl-hero__grain" aria-hidden="true"></div>
+        <div class="fl-hero__vignette" aria-hidden="true"></div>
+      </div>
+      <div class="fl-hero__ui">
+        <a href="/blog" class="fl-hero__back">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+          </svg>
+          Blog
+        </a>
+        <div class="fl-hero__copy">
+          <span class="fl-eyebrow">Hochzeiten</span>
+          <h1 class="fl-hero__title">
+            First Look: ja, nein<br/>
+            <em>oder etwas dazwischen?</em>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Chapter Nav ════════════════════════════════════ -->
+    <nav class="fl-chapnav" aria-label="Kapitelnavigation">
+      <div class="fl-chapnav__inner">
+        {opts.map((o) => (
+          <a href={`#${o.id}`} class="fl-chapnav__item" data-id={o.id}>
+            <span class="fl-chapnav__num">{o.num}</span>
+            <span class="fl-chapnav__label">{o.title}</span>
+            <span class="fl-chapnav__bar" aria-hidden="true"></span>
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <!-- ══ Intro ══════════════════════════════════════════ -->
+    <div class="fl-intro">
+      <div class="fl-intro__inner">
+        <p class="fl-intro__lead fl-reveal">
+          Euer Hochzeitstag beginnt mit einer ganz besonderen Spannung: Wann und wie seht ihr euch das erste Mal in eurem Hochzeitsoutfit? Wir zeigen euch alle vier Varianten – mit ihren emotionalen und praktischen Vor- und Nachteilen.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ Options ════════════════════════════════════════ -->
+    <div class="fl-opts">
+      {opts.map((opt, i) => (
+        <section class="fl-opt" id={opt.id} data-opt={i}>
+          <span class="fl-opt__ghost" aria-hidden="true">{opt.num}</span>
+
+          <div class="fl-opt__inner">
+            <header class="fl-opt__head fl-reveal">
+              <span class="fl-opt__num">{opt.num}</span>
+              <h2 class="fl-opt__title">{opt.title}</h2>
+              <p class="fl-opt__sub">{opt.sub}</p>
+            </header>
+
+            <div class="fl-opt__body">
+              <p class="fl-opt__intro fl-reveal" style="--delay:0.08s">{opt.intro}</p>
+
+              <dl class="fl-pros fl-reveal" style="--delay:0.16s">
+                {opt.pros.map((p) => (
+                  <Fragment>
+                    <dt class="fl-pros__dt">{p.label}</dt>
+                    <dd class="fl-pros__dd">{p.text}</dd>
+                  </Fragment>
+                ))}
+              </dl>
+
+              {opt.note && (
+                <p class="fl-note fl-reveal" style="--delay:0.22s">{opt.note}</p>
+              )}
+
+              <div class="fl-for fl-reveal" style="--delay:0.28s">
+                <span class="fl-for__label">Perfekt für</span>
+                <ul class="fl-for__list">
+                  {opt.for.map((f) => <li>{f}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- ══ Fazit ══════════════════════════════════════════ -->
+    <section class="fl-fazit">
+      <div class="fl-fazit__inner">
+        <span class="fl-eyebrow fl-reveal" style="color:rgba(196,181,172,0.4)">Fazit</span>
+        <h2 class="fl-fazit__title fl-reveal" style="--delay:0.1s">
+          Welche Variante<br/><em>passt zu euch?</em>
+        </h2>
+        <p class="fl-fazit__body fl-reveal" style="--delay:0.2s">
+          Jede Variante hat ihren eigenen Zauber – es gibt kein „richtig" oder „falsch". Die wichtigste Frage ist: Was fühlt sich für euch richtig an? Egal, wofür ihr euch entscheidet – wir halten diesen Moment für euch fest. Wenn ihr noch unsicher seid, beraten wir euch gerne persönlich.
+        </p>
+        <a href="/#kontakt" class="fl-fazit__cta fl-reveal" style="--delay:0.3s">
+          Jetzt anfragen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+/* ── Shared ─────────────────────────────────────────── */
+.fl-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.7;
+}
+
+/* ── Hero ───────────────────────────────────────────── */
+.fl-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.fl-hero__media {
+  position: absolute;
+  inset: 0;
+}
+.fl-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+.fl-hero__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.fl-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 110%, rgba(18,14,13,0.95) 0%, rgba(18,14,13,0.45) 45%, transparent 75%),
+    linear-gradient(to right, rgba(18,14,13,0.6) 0%, transparent 55%);
+}
+.fl-hero__ui {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  width: 100%;
+  padding: clamp(6rem, 12vw, 9rem) var(--container-gutter) clamp(3rem, 6vw, 5rem);
+}
+.fl-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(196,181,172,0.45);
+  transition: color 0.25s ease;
+  cursor: pointer;
+  align-self: flex-start;
+}
+.fl-hero__back:hover { color: rgba(196,181,172,1); }
+.fl-hero__back:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+.fl-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+}
+.fl-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.fl-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-sand);
+}
+
+/* ── Chapter Nav ────────────────────────────────────── */
+.fl-chapnav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--color-cream);
+  border-bottom: 1px solid rgba(196,181,172,0.18);
+}
+.fl-chapnav__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 0 var(--container-gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.fl-chapnav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 0;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+}
+.fl-chapnav__item:hover { opacity: 0.7; }
+.fl-chapnav__item:focus-visible { outline: 1px solid var(--color-clay); outline-offset: -2px; }
+.fl-chapnav__item.is-active { opacity: 1; }
+.fl-chapnav__num {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--color-clay);
+  flex-shrink: 0;
+}
+.fl-chapnav__label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--color-bark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fl-chapnav__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fl-chapnav__item.is-active .fl-chapnav__bar { transform: scaleX(1); }
+
+/* ── Intro ──────────────────────────────────────────── */
+.fl-intro {
+  background: var(--color-cream);
+  padding: clamp(4rem, 8vw, 6.5rem) var(--container-gutter) clamp(2rem, 4vw, 3rem);
+}
+.fl-intro__inner {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+.fl-intro__lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Options wrapper ────────────────────────────────── */
+.fl-opts {
+  background: var(--color-cream);
+}
+
+/* ── Option Section ─────────────────────────────────── */
+.fl-opt {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream);
+  border-top: 1px solid rgba(196,181,172,0.14);
+  padding: clamp(4.5rem, 9vw, 7.5rem) var(--container-gutter);
+}
+.fl-opt:nth-child(even) {
+  background: var(--color-parchment);
+}
+.fl-opt__ghost {
+  position: absolute;
+  right: -0.06em;
+  bottom: -0.12em;
+  font-family: var(--font-display);
+  font-size: clamp(14rem, 26vw, 22rem);
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(92,72,67,0.055);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+  z-index: 0;
+}
+.fl-opt__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 0 clamp(3rem, 6vw, 7rem);
+  align-items: start;
+}
+.fl-opt__head {
+  position: sticky;
+  top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.fl-opt__num {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.38em;
+  color: var(--color-sand);
+  text-transform: uppercase;
+}
+.fl-opt__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-bark);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.fl-opt__sub {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.62;
+  margin: 0;
+}
+
+/* Right column */
+.fl-opt__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: 0.35rem;
+}
+.fl-opt__intro {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* Pros — semantic definition list */
+.fl-pros {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.fl-pros__dt {
+  font-family: var(--font-body);
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--color-bark);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(196,181,172,0.2);
+  margin: 0;
+}
+.fl-pros__dt:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+.fl-pros__dd {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-clay);
+  line-height: 1.78;
+  margin: 0.3rem 0 0.95rem;
+}
+.fl-pros__dd:last-child { margin-bottom: 0; }
+
+/* Note */
+.fl-note {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  color: rgba(145,124,113,0.72);
+  line-height: 1.72;
+  margin: 0;
+  font-style: italic;
+  padding: 0.9rem 1.2rem;
+  background: rgba(196,181,172,0.1);
+  border-left: 2px solid rgba(196,181,172,0.35);
+}
+
+/* Perfekt für */
+.fl-for {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.fl-for__label {
+  font-family: var(--font-body);
+  font-size: 0.57rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-sand);
+}
+.fl-for__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.fl-for__list li {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  color: var(--color-bark);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+.fl-for__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.58em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-sand);
+}
+
+/* ── Fazit ──────────────────────────────────────────── */
+.fl-fazit {
+  background: var(--color-bark);
+  padding: clamp(5rem, 10vw, 9rem) var(--container-gutter);
+}
+.fl-fazit__inner {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.fl-fazit__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.fl-fazit__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-sand);
+}
+.fl-fazit__body {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: rgba(196,181,172,0.62);
+  line-height: 1.9;
+  margin: 0;
+}
+.fl-fazit__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  border: 1px solid rgba(196,181,172,0.25);
+  padding: 1rem 2.25rem;
+  transition: background 0.25s ease, border-color 0.25s ease, gap 0.2s ease;
+  align-self: flex-start;
+  cursor: pointer;
+  margin-top: 0.25rem;
+}
+.fl-fazit__cta:hover {
+  background: rgba(196,181,172,0.1);
+  border-color: rgba(196,181,172,0.5);
+  gap: 1.1rem;
+}
+.fl-fazit__cta:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+
+/* ── Reveal ─────────────────────────────────────────── */
+.fl-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.72s ease var(--delay, 0s), transform 0.72s ease var(--delay, 0s);
+}
+.fl-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced Motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .fl-reveal { opacity: 1; transform: none; transition: none; }
+  .fl-chapnav__bar { transition: none; }
+  .fl-fazit__cta { transition: none; }
+}
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .fl-opt__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .fl-opt__head { position: static; }
+}
+
+@media (max-width: 640px) {
+  .fl-chapnav__label { display: none; }
+  .fl-chapnav__item { justify-content: center; padding: 0.75rem 0; }
+  .fl-chapnav__num { letter-spacing: 0.2em; font-size: 0.6rem; }
+  .fl-opt__ghost { font-size: clamp(9rem, 38vw, 13rem); }
+}
+</style>
+
+<script>
+  // ── Scroll reveals ────────────────────────────────────
+  const reveals = document.querySelectorAll('.fl-reveal');
+  const revealObs = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); }
+    }),
+    { threshold: 0.12 }
+  );
+  reveals.forEach(el => revealObs.observe(el));
+
+  // ── Chapter nav active state ──────────────────────────
+  const chapItems = document.querySelectorAll<HTMLElement>('.fl-chapnav__item');
+  const optSections = document.querySelectorAll('.fl-opt');
+
+  const chapObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          chapItems.forEach(item =>
+            item.classList.toggle('is-active', item.dataset.id === e.target.id)
+          );
+        }
+      });
+    },
+    { rootMargin: '-25% 0px -65% 0px' }
+  );
+  optSections.forEach(s => chapObs.observe(s));
+</script>

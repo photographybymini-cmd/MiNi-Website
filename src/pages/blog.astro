@@ -2,40 +2,86 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const posts = [
+  {
+    href: '/blog/brautpaare-erzaehlen',
+    category: 'Hochzeiten',
+    title: 'Brautpaare erzählen: Warum sie sich für uns entschieden haben',
+    teaser: 'Corinna & Simon und Nissrin & Ömer erzählen in eigenen Worten, warum sie sich für MiNi Photography entschieden haben.',
+    cover: '/images/blog/brautpaare-erzaehlen-hero.jpg',
+  },
+  {
+    href: '/blog/first-look',
+    category: 'Hochzeiten',
+    title: 'First Look: ja, nein oder etwas dazwischen?',
+    teaser: 'Wann und wie seht ihr euch das erste Mal in eurem Hochzeitsoutfit? Wir zeigen alle Möglichkeiten mit ihren emotionalen und praktischen Vor- und Nachteilen.',
+    cover: '/images/blog/first-look-hero.jpg',
+  },
+  {
+    href: '/blog/begleitungsdauer',
+    category: 'Hochzeiten',
+    title: 'Nicht zu kurz, nicht zu lang – Die ideale Begleitungsdauer für eure Hochzeit',
+    teaser: 'Wie lange soll euer Fotograf euch begleiten? Wir helfen euch, die perfekte Balance zu finden – mit konkreten Tipps und einer Übersicht unserer Pakete.',
+    cover: '/images/blog/begleitungsdauer-hero.jpg',
+  },
+];
 ---
 
 <BaseLayout
   title="Blog – MiNi Photography"
-  description="Tipps, Geschichten und Einblicke hinter die Kamera von MiNi Photography. Bald verfügbar."
+  description="Tipps, Geschichten und Einblicke hinter die Kamera von MiNi Photography."
 >
   <Nav />
   <main id="main">
 
-    <section class="cs-hero">
-      <div class="cs-inner">
-        <a href="/" class="cs-back">
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
-          </svg>
-          Startseite
-        </a>
+    <section class="bl-hero">
+      <div class="bl-hero__media">
+        <img
+          src="/images/blog/blog-hero.jpg"
+          alt="Hochzeitsfotografie MiNi Photography"
+          loading="eager"
+          fetchpriority="high"
+          class="bl-hero__img"
+        />
+        <div class="bl-hero__grain" aria-hidden="true"></div>
+        <div class="bl-hero__vignette" aria-hidden="true"></div>
+      </div>
+      <div class="bl-hero__inner">
+        <span class="bl-hero__eyebrow">Geschichten &amp; Einblicke</span>
+        <h1 class="bl-hero__title"><span class="bl-hero__title-pre">Unser Blog</span><br/><em>für euch.</em></h1>
+      </div>
+    </section>
 
-        <div class="cs-content">
-          <span class="cs-eyebrow">Blog</span>
-          <h1 class="cs-title">Bald findet ihr hier<br/><em>spannende Infos</em><br/>rund um das Thema<br/>Fotografie.</h1>
-          <p class="cs-sub">Wir arbeiten daran – schaut bald wieder vorbei.</p>
-          <div class="cs-divider"></div>
-        </div>
+    <div class="bl-filter" role="tablist" aria-label="Beiträge filtern">
+      <button class="bl-filter__btn is-active" data-filter="alle">Alle</button>
+      <button class="bl-filter__btn" data-filter="Hochzeiten">Hochzeiten</button>
+      <button class="bl-filter__btn" data-filter="Paare">Paare</button>
+      <button class="bl-filter__btn" data-filter="Familie">Familie</button>
+    </div>
 
-        <div class="cs-topics">
-          <span class="cs-topics__label">Was euch erwartet</span>
-          <ul class="cs-topics__list">
-            <li>Shooting-Tipps &amp; Outfit-Inspiration</li>
-            <li>Hinter den Kulissen</li>
-            <li>Standort-Empfehlungen rund um Frankfurt</li>
-            <li>Geschichten unserer Kunden</li>
-          </ul>
-        </div>
+    <section class="bl-grid">
+      <p class="bl-empty" aria-live="polite">Coming Soon.</p>
+      <div class="bl-grid__inner">
+        {posts.map((post) => (
+          <a href={post.href} class="bl-card" data-category={post.category}>
+            <div class="bl-card__inner">
+              <img src={post.cover} alt={post.title} loading="lazy" width="800" height="1000" class="bl-card__img" />
+              <div class="bl-card__overlay"></div>
+              <span class="bl-card__category">{post.category}</span>
+              <div class="bl-card__body">
+                <h2 class="bl-card__title">{post.title}</h2>
+                <p class="bl-card__teaser">{post.teaser}</p>
+                <span class="bl-card__link">
+                  Weiterlesen
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
 
@@ -44,70 +90,70 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
-.cs-hero {
-  min-height: 100dvh;
-  background: var(--color-bark);
-  display: flex;
-  align-items: stretch;
+/* ─── Hero ─────────────────────────────────────────────── */
+.bl-hero {
   position: relative;
+  height: 70dvh;
+  min-height: 500px;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
 }
 
-.cs-hero::before {
-  content: '';
+.bl-hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.bl-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.bl-hero__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.bl-hero__vignette {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(196,181,172,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 80% at 20% 80%, rgba(145,124,113,0.08) 0%, transparent 50%);
-  pointer-events: none;
+    radial-gradient(ellipse at 50% 110%, rgba(18,14,13,0.97) 0%, rgba(18,14,13,0.5) 50%, transparent 80%),
+    linear-gradient(to top, rgba(18,14,13,0.4) 0%, transparent 60%);
 }
 
-.cs-inner {
+.bl-hero__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
-  padding: clamp(7rem, 12vw, 10rem) var(--container-gutter) clamp(4rem, 8vw, 7rem);
+  padding: var(--space-16) var(--container-gutter) clamp(3rem, 5vw, 5rem);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(3rem, 6vw, 5rem);
+  gap: var(--space-4);
 }
 
-.cs-back {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
+.bl-hero__eyebrow {
   font-family: var(--font-body);
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: rgba(196,181,172,0.5);
-  transition: color 0.3s ease;
-  align-self: flex-start;
-}
-.cs-back:hover { color: rgba(196,181,172,0.9); }
-
-.cs-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
+  color: rgba(196,181,172,0.9);
 }
 
-.cs-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--color-sand);
-  opacity: 0.7;
-}
-
-.cs-title {
+.bl-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 700;
   color: var(--color-cream);
   line-height: 0.95;
@@ -115,86 +161,215 @@ import Footer from '../components/Footer.astro';
   margin: 0;
 }
 
-.cs-title em {
-  font-style: italic;
+.bl-hero__title-pre {
   font-weight: 300;
+  letter-spacing: 0.04em;
   color: var(--color-sand);
 }
 
-.cs-sub {
-  font-family: var(--font-body);
-  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
-  color: rgba(196,181,172,0.65);
-  line-height: 1.75;
-  max-width: 48ch;
-  margin: 0;
+.bl-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(196,181,172,0.5);
 }
 
-.cs-divider {
-  width: 48px;
-  height: 1px;
-  background: rgba(196,181,172,0.25);
-}
-
-.cs-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-3);
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-cream);
-  border: 1px solid rgba(196,181,172,0.3);
-  padding: var(--space-4) var(--space-8);
-  transition: background 0.3s ease, border-color 0.3s ease;
-  align-self: flex-start;
-}
-.cs-cta:hover {
-  background: rgba(196,181,172,0.08);
-  border-color: rgba(196,181,172,0.6);
-}
-
-.cs-topics {
-  border-top: 1px solid rgba(196,181,172,0.12);
-  padding-top: clamp(2rem, 4vw, 3rem);
+/* ─── Filter ────────────────────────────────────────────── */
+.bl-filter {
+  background: var(--color-parchment);
+  border-bottom: 1px solid rgba(196,181,172,0.2);
   display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
+  gap: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0 var(--container-gutter);
 }
 
-.cs-topics__label {
+.bl-filter__btn {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-bark);
+  background: none;
+  border: none;
+  padding: 1.1rem 1.5rem;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.bl-filter__btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.bl-filter__btn:hover { opacity: 0.65; }
+.bl-filter__btn.is-active { opacity: 1; }
+.bl-filter__btn.is-active::after { transform: scaleX(1); }
+
+.bl-card { transition: opacity 0.3s ease, transform 0.3s ease; }
+.bl-card.is-hidden { display: none; }
+
+.bl-empty {
+  display: none;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-sand);
+  text-align: center;
+  padding: clamp(5rem, 10vw, 8rem) var(--container-gutter);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.bl-empty.is-visible { display: block; }
+
+/* ─── Grid ──────────────────────────────────────────────── */
+.bl-grid {
+  background: var(--color-parchment);
+  padding: clamp(4rem, 8vw, 7rem) var(--container-gutter);
+}
+
+.bl-grid__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2px;
+}
+
+/* ─── Card ──────────────────────────────────────────────── */
+.bl-card {
+  display: block;
+  overflow: hidden;
+}
+
+.bl-card__inner {
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.bl-card:hover .bl-card__inner {
+  transform: scale(1.02);
+}
+
+.bl-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.bl-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30,22,20,0.97) 0%, rgba(30,22,20,0.5) 45%, rgba(30,22,20,0.1) 100%);
+}
+
+.bl-card__category {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
   font-family: var(--font-body);
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(196,181,172,0.4);
+  color: rgba(196,181,172,1);
 }
 
-.cs-topics__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.bl-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 2rem;
+  color: white;
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3) var(--space-8);
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
-.cs-topics__list li {
+.bl-card__title {
   font-family: var(--font-display);
-  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
   font-style: italic;
   font-weight: 300;
-  color: rgba(196,181,172,0.5);
-  position: relative;
-  padding-left: var(--space-4);
+  color: white;
+  line-height: 1.25;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
-.cs-topics__list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: rgba(196,181,172,0.25);
-  font-style: normal;
+.bl-card__teaser {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 300;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.bl-card:hover .bl-card__teaser {
+  opacity: 1;
+  max-height: 120px;
+}
+
+.bl-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(196,181,172,0.8);
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.bl-card:hover .bl-card__link {
+  gap: var(--space-3);
+  color: rgba(196,181,172,1);
 }
 </style>
+
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('.bl-filter__btn');
+  const cards = document.querySelectorAll<HTMLElement>('.bl-card');
+  const empty = document.querySelector<HTMLElement>('.bl-empty');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const match = filter === 'alle' || card.dataset.category === filter;
+        card.classList.toggle('is-hidden', !match);
+        if (match) visible++;
+      });
+
+      empty?.classList.toggle('is-visible', visible === 0);
+    });
+  });
+</script>

@@ -1,0 +1,765 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const chapters = [
+  { id: 'bd-1', num: '01', label: 'Momente' },
+  { id: 'bd-2', num: '02', label: 'Pakete' },
+  { id: 'bd-3', num: '03', label: 'Unsicher?' },
+];
+---
+
+<BaseLayout
+  title="Nicht zu kurz, nicht zu lang – Die ideale Begleitungsdauer für eure Hochzeit – MiNi Photography"
+  description="Wie lange soll euer Fotograf euch begleiten? Wir helfen euch, die perfekte Balance zu finden – mit einer Entscheidungshilfe nach euren Wünschen."
+>
+  <Nav />
+  <main id="main">
+
+    <!-- ══ Hero ══════════════════════════════════════════ -->
+    <section class="bd-hero">
+      <div class="bd-hero__media">
+        <img
+          src="/images/blog/begleitungsdauer-hero.jpg"
+          alt="Hochzeitslocation mit Lichterketten, fotografiert von MiNi Photography"
+          loading="eager"
+          fetchpriority="high"
+          class="bd-hero__img"
+        />
+        <div class="bd-hero__grain" aria-hidden="true"></div>
+        <div class="bd-hero__vignette" aria-hidden="true"></div>
+      </div>
+      <div class="bd-hero__ui">
+        <a href="/blog" class="bd-hero__back">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+          </svg>
+          Blog
+        </a>
+        <div class="bd-hero__copy">
+          <span class="bd-eyebrow">Hochzeiten</span>
+          <h1 class="bd-hero__title">
+            Nicht zu kurz,<br/>nicht zu lang –<br/>
+            <em>Die ideale<br/>Begleitungsdauer.</em>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Chapter Nav ════════════════════════════════════ -->
+    <nav class="bd-chapnav" aria-label="Kapitelnavigation">
+      <div class="bd-chapnav__inner">
+        {chapters.map((c) => (
+          <a href={`#${c.id}`} class="bd-chapnav__item" data-id={c.id}>
+            <span class="bd-chapnav__num">{c.num}</span>
+            <span class="bd-chapnav__label">{c.label}</span>
+            <span class="bd-chapnav__bar" aria-hidden="true"></span>
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <!-- ══ Intro ══════════════════════════════════════════ -->
+    <div class="bd-intro">
+      <div class="bd-intro__inner">
+        <p class="bd-intro__lead bd-reveal">
+          Ihr plant eure Hochzeit und fragt euch: Wie lange soll euer Fotograf euch begleiten? Ist die Begleitung zu kurz, fehlen später wertvolle Erinnerungen. Ist sie zu lang, zahlt ihr vielleicht für Stunden, die gar nicht benötigt werden. Wir helfen euch, die perfekte Balance zu finden.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ Sections ═══════════════════════════════════════ -->
+    <div class="bd-sects">
+
+      <!-- 01 Was soll fotografiert werden -->
+      <section class="bd-sect" id="bd-1">
+        <span class="bd-sect__ghost" aria-hidden="true">01</span>
+        <div class="bd-sect__inner">
+          <header class="bd-sect__head bd-reveal">
+            <span class="bd-sect__num">01</span>
+            <h2 class="bd-sect__title">Was soll auf jeden Fall fotografiert werden?</h2>
+            <p class="bd-sect__sub">Die wichtigsten Momente zuerst.</p>
+          </header>
+          <div class="bd-sect__body">
+            <p class="bd-sect__intro bd-reveal" style="--delay:0.08s">
+              Bevor ihr euch für eine Begleitungsdauer entscheidet, überlegt euch, welche Momente euch besonders wichtig sind.
+            </p>
+            <dl class="bd-list bd-reveal" style="--delay:0.14s">
+              <dt>Getting Ready</dt>
+              <dd>Die Vorfreude, das Anziehen, die letzten ruhigen Minuten vor der Trauung. Falls ihr euch getrennt fertig macht, könnt ihr im Nachhinein auch sehen, wie sich euer Partner oder eure Partnerin fertig gemacht hat.</dd>
+              <dt>Zeremonie &amp; Ringtausch</dt>
+              <dd>Der emotionale Höhepunkt eurer Hochzeit – unverzichtbar.</dd>
+              <dt>Gruppen- &amp; Familienfotos</dt>
+              <dd>Klassische Gruppenbilder oder lieber spontane Momente mit euren Liebsten?</dd>
+              <dt>Brautpaarshooting</dt>
+              <dd>Soll es entspannt stattfinden oder lieber zwischendurch? Falls ihr wenig Zeit habt, könnte auch ein After-Wedding-Shooting eine tolle Ergänzung sein.</dd>
+              <dt>Feier &amp; Party</dt>
+              <dd>Möchtet ihr den ersten Tanz, Reden oder die ausgelassene Stimmung auf der Tanzfläche festhalten?</dd>
+            </dl>
+            <p class="bd-note bd-reveal" style="--delay:0.22s">
+              Für den Partyteil empfehlen wir 1–2 Stunden Begleitung, wenn kein weiteres Programm mehr geplant ist – da sich die Motive sonst oft wiederholen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 Pakete -->
+      <section class="bd-sect" id="bd-2">
+        <span class="bd-sect__ghost" aria-hidden="true">02</span>
+        <div class="bd-sect__inner">
+          <header class="bd-sect__head bd-reveal">
+            <span class="bd-sect__num">02</span>
+            <h2 class="bd-sect__title">Welche Begleitungsdauer passt zu eurer Hochzeit?</h2>
+            <p class="bd-sect__sub">Unsere Pakete als Orientierung.</p>
+          </header>
+          <div class="bd-sect__body">
+            <p class="bd-sect__intro bd-reveal" style="--delay:0.08s">
+              Jede Hochzeit ist anders – deshalb bieten wir verschiedene Pakete an, die sich an eure Tagesplanung anpassen lassen. Die Begleitungsdauer lässt sich dabei auch flexibel stundenweise anpassen.
+            </p>
+            <div class="bd-packages bd-reveal" style="--delay:0.16s">
+
+              <article class="bd-pkg">
+                <div class="bd-pkg__head">
+                  <span class="bd-pkg__name">Bronze</span>
+                  <span class="bd-pkg__dur">2 Stunden</span>
+                </div>
+                <p class="bd-pkg__tagline">Perfekt für das Wesentliche</p>
+                <p class="bd-pkg__desc">Ideal für standesamtliche Hochzeiten, Elopements oder intime Trauungen, bei denen nur die wichtigsten Momente festgehalten werden sollen.</p>
+                <ul class="bd-pkg__list">
+                  <li>Hochzeiten mit einem klaren, kompakten Ablauf ohne lange Pausen</li>
+                  <li>Paare, die hauptsächlich Erinnerungen an die Trauung und ein kurzes Shooting möchten</li>
+                </ul>
+                <p class="bd-pkg__note">Falls ihr dennoch ein ausgiebiges Brautpaarshooting möchtet, könnte eine stundenweise Verlängerung helfen. Auch ein After-Wedding-Shooting ist eine schöne Möglichkeit, dies ohne Zeitdruck nachzuholen.</p>
+              </article>
+
+              <article class="bd-pkg bd-pkg--featured">
+                <div class="bd-pkg__head">
+                  <span class="bd-pkg__name">Silber</span>
+                  <span class="bd-pkg__dur">5 Stunden</span>
+                </div>
+                <p class="bd-pkg__tagline">Der gute Mittelweg</p>
+                <p class="bd-pkg__desc">Für Paare, die mehr als nur die Trauung festhalten möchten – aber keine ganztägige Begleitung brauchen.</p>
+                <ul class="bd-pkg__list">
+                  <li>Hochzeiten, bei denen nach der Zeremonie noch ein Empfang oder kleine Programmpunkte folgen</li>
+                  <li>Wenn ihr sicherstellen möchtet, dass die ersten emotionalen Momente der Feier noch eingefangen werden</li>
+                </ul>
+                <p class="bd-pkg__extra">Drohnenaufnahmen inklusive</p>
+              </article>
+
+              <article class="bd-pkg">
+                <div class="bd-pkg__head">
+                  <span class="bd-pkg__name">Gold</span>
+                  <span class="bd-pkg__dur">10 Stunden</span>
+                </div>
+                <p class="bd-pkg__tagline">Für eine lückenlose Reportage</p>
+                <p class="bd-pkg__desc">Das Rundumsorglos-Paket für alle, die keinen Moment verpassen möchten.</p>
+                <ul class="bd-pkg__list">
+                  <li>Hochzeiten mit einem längeren Tagesablauf – Getting Ready, Zeremonie, Empfang und Abendprogramm</li>
+                  <li>Paare, die sich eine durchgehende Reportage wünschen, ohne an der Zeit sparen zu müssen</li>
+                </ul>
+                <p class="bd-pkg__extra">Drohnenaufnahmen + Kennenlernshooting inklusive</p>
+              </article>
+
+            </div>
+            <a href="/preise" class="bd-link bd-reveal" style="--delay:0.24s">
+              Alle Pakete ansehen
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Noch unsicher -->
+      <section class="bd-sect" id="bd-3">
+        <span class="bd-sect__ghost" aria-hidden="true">03</span>
+        <div class="bd-sect__inner">
+          <header class="bd-sect__head bd-reveal">
+            <span class="bd-sect__num">03</span>
+            <h2 class="bd-sect__title">Noch unsicher?</h2>
+            <p class="bd-sect__sub">Diese Fragen helfen euch.</p>
+          </header>
+          <div class="bd-sect__body">
+            <p class="bd-sect__intro bd-reveal" style="--delay:0.08s">
+              Manchmal hilft es, den eigenen Tag gedanklich durchzugehen. Diese Fragen geben euch Orientierung.
+            </p>
+            <dl class="bd-list bd-reveal" style="--delay:0.14s">
+              <dt>Wann startet eure Hochzeit offiziell?</dt>
+              <dd>Beginnt der Tag mit dem Getting Ready, einem First Look oder direkt mit der Trauung?</dd>
+              <dt>Wie realistisch ist euer Zeitplan?</dt>
+              <dd>Erfahrungsgemäß läuft am Hochzeitstag nicht immer alles nach Plan. Plant lieber mit etwas Puffer, damit ihr jeden Moment genießen könnt – ganz ohne Stress.</dd>
+              <dt>Wollt ihr Partybilder?</dt>
+              <dd>Wenn euch Tanz- und Feiermomente wichtig sind, solltet ihr den Fotografen bis in den Abend buchen.</dd>
+              <dt>Möchtet ihr individuelle Zusatzleistungen?</dt>
+              <dd>Drohnenaufnahmen, Kennenlernshootings, After-Wedding-Shootings oder ein Highlightvideo können eine schöne Ergänzung sein.</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ══ Fazit ══════════════════════════════════════════ -->
+    <section class="bd-fazit">
+      <div class="bd-fazit__inner">
+        <span class="bd-eyebrow bd-reveal" style="color:rgba(196,181,172,0.4)">Fazit</span>
+        <h2 class="bd-fazit__title bd-reveal" style="--delay:0.1s">
+          Die perfekte Dauer<br/><em>ist individuell.</em>
+        </h2>
+        <p class="bd-fazit__body bd-reveal" style="--delay:0.2s">
+          Jede Hochzeit ist anders – genau deshalb gibt es keine pauschale Empfehlung. Bronze für die wichtigsten Momente, Silber als guter Mittelweg, Gold für einen lückenlosen Tag. Wenn ihr noch unsicher seid: Schreibt uns einfach, erzählt uns von euren Plänen – gemeinsam finden wir die beste Lösung für euren besonderen Tag.
+        </p>
+        <a href="/#kontakt" class="bd-fazit__cta bd-reveal" style="--delay:0.3s">
+          Jetzt anfragen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+/* ── Shared ─────────────────────────────────────────── */
+.bd-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.7;
+}
+
+/* ── Hero ───────────────────────────────────────────── */
+.bd-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.bd-hero__media {
+  position: absolute;
+  inset: 0;
+}
+.bd-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.bd-hero__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.bd-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 110%, rgba(18,14,13,0.95) 0%, rgba(18,14,13,0.45) 45%, transparent 75%),
+    linear-gradient(to right, rgba(18,14,13,0.6) 0%, transparent 55%);
+}
+.bd-hero__ui {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  width: 100%;
+  padding: clamp(6rem, 12vw, 9rem) var(--container-gutter) clamp(3rem, 6vw, 5rem);
+}
+.bd-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(196,181,172,0.45);
+  transition: color 0.25s ease;
+  align-self: flex-start;
+}
+.bd-hero__back:hover { color: rgba(196,181,172,1); }
+.bd-hero__back:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+.bd-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+}
+.bd-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.bd-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-sand);
+}
+
+/* ── Chapter Nav ────────────────────────────────────── */
+.bd-chapnav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--color-cream);
+  border-bottom: 1px solid rgba(196,181,172,0.18);
+}
+.bd-chapnav__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 0 var(--container-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.bd-chapnav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 0;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+}
+.bd-chapnav__item:hover { opacity: 0.7; }
+.bd-chapnav__item:focus-visible { outline: 1px solid var(--color-clay); outline-offset: -2px; }
+.bd-chapnav__item.is-active { opacity: 1; }
+.bd-chapnav__num {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--color-clay);
+  flex-shrink: 0;
+}
+.bd-chapnav__label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--color-bark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bd-chapnav__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.bd-chapnav__item.is-active .bd-chapnav__bar { transform: scaleX(1); }
+
+/* ── Intro ──────────────────────────────────────────── */
+.bd-intro {
+  background: var(--color-cream);
+  padding: clamp(4rem, 8vw, 6.5rem) var(--container-gutter) clamp(2rem, 4vw, 3rem);
+}
+.bd-intro__inner {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+.bd-intro__lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Sections wrapper ───────────────────────────────── */
+.bd-sects {
+  background: var(--color-cream);
+}
+
+/* ── Section ────────────────────────────────────────── */
+.bd-sect {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream);
+  border-top: 1px solid rgba(196,181,172,0.14);
+  padding: clamp(4.5rem, 9vw, 7.5rem) var(--container-gutter);
+}
+.bd-sect:nth-child(even) {
+  background: var(--color-parchment);
+}
+.bd-sect__ghost {
+  position: absolute;
+  right: -0.06em;
+  bottom: -0.12em;
+  font-family: var(--font-display);
+  font-size: clamp(14rem, 26vw, 22rem);
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(92,72,67,0.055);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+  z-index: 0;
+}
+.bd-sect__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 0 clamp(3rem, 6vw, 7rem);
+  align-items: start;
+}
+.bd-sect__head {
+  position: sticky;
+  top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.bd-sect__num {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.38em;
+  color: var(--color-sand);
+  text-transform: uppercase;
+}
+.bd-sect__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-bark);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.bd-sect__sub {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.62;
+  margin: 0;
+}
+.bd-sect__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: 0.35rem;
+}
+.bd-sect__intro {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Definition list ────────────────────────────────── */
+.bd-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.bd-list dt {
+  font-family: var(--font-body);
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--color-bark);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(196,181,172,0.2);
+  margin: 0;
+}
+.bd-list dt:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+.bd-list dd {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-clay);
+  line-height: 1.78;
+  margin: 0.3rem 0 0.95rem;
+}
+.bd-list dd:last-child { margin-bottom: 0; }
+
+/* ── Note ───────────────────────────────────────────── */
+.bd-note {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  color: rgba(145,124,113,0.72);
+  line-height: 1.72;
+  margin: 0;
+  font-style: italic;
+  padding: 0.9rem 1.2rem;
+  background: rgba(196,181,172,0.1);
+  border-left: 2px solid rgba(196,181,172,0.35);
+}
+
+/* ── Packages ───────────────────────────────────────── */
+.bd-packages {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.bd-pkg {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(196,181,172,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.bd-pkg:first-child { border-top: none; }
+.bd-pkg--featured {
+  padding: 1.5rem 1.25rem;
+  background: rgba(196,181,172,0.12);
+  border-top: none;
+  border-left: 2px solid var(--color-clay);
+  margin: 0.75rem 0;
+}
+.bd-pkg__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.bd-pkg__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-bark);
+  letter-spacing: -0.02em;
+}
+.bd-pkg__dur {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+}
+.bd-pkg__tagline {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--color-clay);
+  margin: 0;
+}
+.bd-pkg__desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--color-bark);
+  line-height: 1.72;
+  margin: 0;
+}
+.bd-pkg__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.bd-pkg__list li {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  color: var(--color-bark);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+.bd-pkg__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.58em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-sand);
+}
+.bd-pkg__note {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(145,124,113,0.65);
+  line-height: 1.65;
+  font-style: italic;
+  margin: 0;
+}
+.bd-pkg__extra {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--color-clay);
+  margin: 0;
+}
+
+/* ── Inline link ────────────────────────────────────── */
+.bd-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-bark);
+  border-bottom: 1px solid rgba(92,72,67,0.25);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, gap 0.2s ease;
+  align-self: flex-start;
+}
+.bd-link:hover {
+  border-color: var(--color-bark);
+  gap: 0.8rem;
+}
+
+/* ── Fazit ──────────────────────────────────────────── */
+.bd-fazit {
+  background: var(--color-bark);
+  padding: clamp(5rem, 10vw, 9rem) var(--container-gutter);
+}
+.bd-fazit__inner {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.bd-fazit__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.bd-fazit__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-sand);
+}
+.bd-fazit__body {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: rgba(196,181,172,0.62);
+  line-height: 1.9;
+  margin: 0;
+}
+.bd-fazit__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  border: 1px solid rgba(196,181,172,0.25);
+  padding: 1rem 2.25rem;
+  transition: background 0.25s ease, border-color 0.25s ease, gap 0.2s ease;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+.bd-fazit__cta:hover {
+  background: rgba(196,181,172,0.1);
+  border-color: rgba(196,181,172,0.5);
+  gap: 1.1rem;
+}
+.bd-fazit__cta:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+
+/* ── Reveal ─────────────────────────────────────────── */
+.bd-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.72s ease var(--delay, 0s), transform 0.72s ease var(--delay, 0s);
+}
+.bd-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced Motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .bd-reveal { opacity: 1; transform: none; transition: none; }
+  .bd-chapnav__bar { transition: none; }
+  .bd-fazit__cta { transition: none; }
+}
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .bd-sect__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bd-sect__head { position: static; }
+}
+
+@media (max-width: 640px) {
+  .bd-chapnav__label { display: none; }
+  .bd-chapnav__item { justify-content: center; padding: 0.75rem 0; }
+  .bd-chapnav__num { letter-spacing: 0.2em; font-size: 0.6rem; }
+  .bd-sect__ghost { font-size: clamp(9rem, 38vw, 13rem); }
+}
+</style>
+
+<script>
+  // ── Scroll reveals ────────────────────────────────────
+  const reveals = document.querySelectorAll('.bd-reveal');
+  const revealObs = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); }
+    }),
+    { threshold: 0.12 }
+  );
+  reveals.forEach(el => revealObs.observe(el));
+
+  // ── Chapter nav active state ──────────────────────────
+  const chapItems = document.querySelectorAll<HTMLElement>('.bd-chapnav__item');
+  const sectSections = document.querySelectorAll('.bd-sect');
+
+  const chapObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          chapItems.forEach(item =>
+            item.classList.toggle('is-active', item.dataset.id === e.target.id)
+          );
+        }
+      });
+    },
+    { rootMargin: '-25% 0px -65% 0px' }
+  );
+  sectSections.forEach(s => chapObs.observe(s));
+</script>

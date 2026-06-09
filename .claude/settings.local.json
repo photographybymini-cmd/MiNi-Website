@@ -63,7 +63,12 @@
       "Bash(xargs ls -lh)",
       "Bash(awk '{print $5, $9}')",
       "Bash(convert --version)",
-      "Bash(python3 -c \"from PIL import Image; print\\('ok'\\)\")"
+      "Bash(python3 -c \"from PIL import Image; print\\('ok'\\)\")",
+      "WebFetch(domain:website.pixieset.com)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"wedding photography portfolio editorial minimal luxury\" --design-system -p \"MiNi Photography\")",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"editorial luxury magazine scroll animation\" --domain ux -n 5)",
+      "Bash(python3 .claire/skills/ui-ux-pro-max/scripts/search.py \"animation accessibility\" --domain ux -n 3)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"luxury elegant serif editorial\" --domain typography -n 3)"
     ]
   }
 }

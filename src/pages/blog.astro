@@ -10,6 +10,7 @@ const posts = [
     title: 'Gruppenfotos auf der Hochzeit – stressfrei und schön',
     teaser: 'Gruppenfotos gelten als stressig – dabei müssen sie das gar nicht sein. Unsere 7 Tipps aus der Praxis helfen euch, schöne Erinnerungen ganz ohne Chaos zu schaffen.',
     cover: '/images/blog/gruppenfotos-hero.jpg',
+    position: '75% 50%',
   },
   {
     href: '/blog/familie-mitwachsen',
@@ -80,7 +81,7 @@ const posts = [
         {posts.map((post) => (
           <a href={post.href} class="bl-card" data-category={post.category}>
             <div class="bl-card__inner">
-              <img src={post.cover} alt={post.title} loading="lazy" width="800" height="1000" class="bl-card__img" />
+              <img src={post.cover} alt={post.title} loading="lazy" class="bl-card__img" style={`object-position: ${post.position ?? '50% 50%'}`} />
               <div class="bl-card__overlay"></div>
               <span class="bl-card__category">{post.category}</span>
               <div class="bl-card__body">
@@ -272,6 +273,9 @@ const posts = [
   aspect-ratio: 4 / 5;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -285,7 +289,7 @@ const posts = [
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 50% 50%;
   display: block;
 }
 

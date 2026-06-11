@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
+import Comments from '../../components/Comments.astro';
 
 const chapters = [
   { id: 'bd-1', num: '01', label: 'Momente' },
@@ -232,6 +233,7 @@ const chapters = [
     </div>
 
   </main>
+  <Comments slug="begleitungsdauer" />
   <Footer />
 </BaseLayout>
 

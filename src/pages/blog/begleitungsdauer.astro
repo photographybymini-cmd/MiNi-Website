@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Comments from '../../components/Comments.astro';
+import Like from '../../components/Like.astro';
 
 const chapters = [
   { id: 'bd-1', num: '01', label: 'Momente' },
@@ -233,6 +234,7 @@ const chapters = [
     </div>
 
   </main>
+  <Like slug="begleitungsdauer" />
   <Comments slug="begleitungsdauer" />
   <Footer />
 </BaseLayout>

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Comments from '../../components/Comments.astro';
+import Like from '../../components/Like.astro';
 
 const opts = [
   {
@@ -196,6 +197,7 @@ const opts = [
     </div>
 
   </main>
+  <Like slug="first-look" />
   <Comments slug="first-look" />
   <Footer />
 </BaseLayout>

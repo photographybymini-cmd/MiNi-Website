@@ -52,9 +52,7 @@ const { slug } = Astro.props;
   const SUPABASE_URL = import.meta.env.PUBLIC_SUPABASE_URL as string | undefined;
   const SUPABASE_KEY = import.meta.env.PUBLIC_SUPABASE_ANON_KEY as string | undefined;
 
-  console.log('[Comments] Script geladen. URL gesetzt:', !!SUPABASE_URL, '| Key gesetzt:', !!SUPABASE_KEY);
-
-  function esc(str: string) {
+function esc(str: string) {
     return str
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')

@@ -47,8 +47,8 @@ const { slug } = Astro.props;
 </section>
 
 <script>
+  import { createClient } from '@supabase/supabase-js';
   try {
-    const { createClient } = await import('@supabase/supabase-js');
 
     const supabase = createClient(
       import.meta.env.PUBLIC_SUPABASE_URL,

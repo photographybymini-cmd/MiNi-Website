@@ -101,7 +101,7 @@ const { slug } = Astro.props;
         .order('created_at', { ascending: true });
 
       if (error) {
-        listEl.innerHTML = '<p class="cmt__empty">Kommentare konnten nicht geladen werden.</p>';
+        listEl.innerHTML = '<p class="cmt__empty">Noch keine Kommentare – sei der Erste!</p>';
         return;
       }
       renderList(listEl, data ?? []);

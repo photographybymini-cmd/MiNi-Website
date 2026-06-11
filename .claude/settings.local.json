@@ -73,7 +73,13 @@
       "Read(//Users/NicolaiPrivat/Downloads/**)",
       "Bash(cp \"/Users/NicolaiPrivat/Downloads/Corinna&Simon-1.jpg\" \"/Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/portfolio/hochzeiten/galerie/corinna-simon-1.jpg\")",
       "Bash(identify /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/blog/gruppenfotos-hero.jpg)",
-      "Bash(sips -g pixelWidth -g pixelHeight /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/blog/gruppenfotos-hero.jpg)"
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main/public/images/blog/gruppenfotos-hero.jpg)",
+      "Bash(git -C /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main status)",
+      "Bash(git -C /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main log --oneline -3)",
+      "Bash(git -C /Users/NicolaiPrivat/Desktop/Privat/MiNi/Website-MiNi-Photography-main show --stat HEAD)",
+      "Bash(curl -s \"https://www.mini-foto.de\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://www.mini-foto.de/sitemap-index.xml\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://www.mini-foto.de/sitemap.xml\")"
     ],
     "additionalDirectories": [
       "/Users/NicolaiPrivat/Downloads"

@@ -13,12 +13,14 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const {
-  title = 'Hochzeitsfotograf Rodgau – Paare & Familien | MiNi Photography',
-  description = 'Ungestellte Fotografie für Hochzeiten, Paare und Familien aus Rodgau.',
+  title = 'Hochzeitsfotografen Rodgau | Paare & Familie – MiNi Photography',
+  description = 'Miette & Nicolai – euer Fotografen-Duo aus Rodgau. Wir begleiten Hochzeiten, Paare und Familien mit Herz und Kamera. Ungestellt, emotional und zeitlos.',
   image = '/og-image.jpg',
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -32,6 +34,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->

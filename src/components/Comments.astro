@@ -70,7 +70,7 @@ const { slug } = Astro.props;
 
   function renderList(listEl: HTMLElement, comments: any[]) {
     if (!comments.length) {
-      listEl.innerHTML = '<p class="cmt__empty">Noch keine Kommentare – sei der Erste!</p>';
+      listEl.innerHTML = '<p class="cmt__empty">Noch keine Kommentare – sei der/die Erste*!</p>';
       return;
     }
     listEl.innerHTML = comments.map((c, i) => `
@@ -101,7 +101,7 @@ const { slug } = Astro.props;
         .order('created_at', { ascending: true });
 
       if (error) {
-        listEl.innerHTML = '<p class="cmt__empty">Noch keine Kommentare – sei der Erste!</p>';
+        listEl.innerHTML = '<p class="cmt__empty">Noch keine Kommentare – sei der/die Erste*!</p>';
         return;
       }
       renderList(listEl, data ?? []);

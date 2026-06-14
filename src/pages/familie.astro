@@ -226,6 +226,19 @@ const faqs = [
       </div>
     </section>
 
+    <!-- ─── Blog ─────────────────────────────────────────── -->
+    <section class="fa-blog">
+      <div class="fa-blog__inner">
+        <span class="fa-blog__eyebrow">Aus unserem Blog</span>
+        <div class="fa-blog__links">
+          <a href="/blog/familie-mitwachsen" class="fa-blog__link">
+            Bilder, die mitwachsen
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── CTA ──────────────────────────────────────────── -->
     <section class="fa-cta">
       <div class="fa-cta__inner">
@@ -885,6 +898,49 @@ details[open] .fa-faq__chevron {
   color: var(--color-bark);
   line-height: 1.75;
   max-width: 60ch;
+}
+
+/* ─── Blog Banner ───────────────────────────────────────────── */
+.fa-blog {
+  background: var(--color-cream);
+  border-top: 1px solid rgba(196,181,172,0.18);
+  padding: clamp(2.5rem, 5vw, 4rem) var(--container-gutter);
+}
+.fa-blog__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  flex-wrap: wrap;
+}
+.fa-blog__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.65;
+  white-space: nowrap;
+}
+.fa-blog__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+}
+.fa-blog__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--color-bark);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.fa-blog__link:hover {
+  color: var(--color-clay);
+  gap: 0.75rem;
 }
 
 /* ─── CTA ──────────────────────────────────────────────────── */

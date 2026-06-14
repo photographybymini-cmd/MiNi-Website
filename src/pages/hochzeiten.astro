@@ -227,6 +227,27 @@ const faqs = [
       </div>
     </section>
 
+    <!-- ─── Blog ─────────────────────────────────────────── -->
+    <section class="hz-blog">
+      <div class="hz-blog__inner">
+        <span class="hz-blog__eyebrow">Aus unserem Blog</span>
+        <div class="hz-blog__links">
+          <a href="/blog/gruppenfotos" class="hz-blog__link">
+            Gruppenfotos leicht gemacht
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </a>
+          <a href="/blog/lieben-wir-hochzeiten" class="hz-blog__link">
+            Deshalb lieben wir Hochzeiten
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </a>
+          <a href="/blog/first-look" class="hz-blog__link">
+            First Look: ja, nein oder dazwischen?
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── CTA ──────────────────────────────────────────── -->
     <section class="hz-cta">
       <div class="hz-cta__inner">
@@ -915,6 +936,49 @@ details[open] .hz-faq__chevron {
   color: var(--color-bark);
   line-height: 1.75;
   max-width: 60ch;
+}
+
+/* ─── Blog Banner ───────────────────────────────────────────── */
+.hz-blog {
+  background: var(--color-cream);
+  border-top: 1px solid rgba(196,181,172,0.18);
+  padding: clamp(2.5rem, 5vw, 4rem) var(--container-gutter);
+}
+.hz-blog__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  flex-wrap: wrap;
+}
+.hz-blog__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.65;
+  white-space: nowrap;
+}
+.hz-blog__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+}
+.hz-blog__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--color-bark);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.hz-blog__link:hover {
+  color: var(--color-clay);
+  gap: 0.75rem;
 }
 
 /* ─── CTA ──────────────────────────────────────────────────── */

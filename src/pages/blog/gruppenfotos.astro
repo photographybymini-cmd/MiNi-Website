@@ -128,7 +128,10 @@ const chapters = [
                 <div class="gf-tip__body">
                   <strong class="gf-tip__title">Erstellt eine Gruppenfoto-Liste</strong>
                   <p>Unser wichtigster Tipp: Erstellt vorab eine Liste mit den Gruppen, die euch wichtig sind – zum Beispiel Brautpaar mit Eltern, Geschwistern, Großeltern, Trauzeugen, Freundeskreis und allen Gästen. Schickt uns diese Liste gerne bereits vor der Hochzeit. So können wir uns vorbereiten und den Ablauf besser planen.</p>
-                  <p class="gf-tip__note">Als grobe Orientierung: 5 Gruppen ca. 10 Min. &middot; 10 Gruppen ca. 15–20 Min. &middot; 15 oder mehr oft ca. 30 Min.+</p>
+                  <div class="gf-tip__note">
+                    <span class="gf-tip__sub">Wie viel Zeit sollten wir für die Gruppenfotos auf unserer Hochzeit einplanen?</span>
+                    <p>Als grobe Orientierung: 5 Gruppen ca. 10 Min. &middot; 10 Gruppen ca. 15–20 Min. &middot; 15 oder mehr oft ca. 30 Min.+</p>
+                  </div>
                 </div>
               </li>
 
@@ -627,12 +630,28 @@ const chapters = [
   margin: 0;
 }
 .gf-tip__note {
-  font-style: italic !important;
-  color: rgba(145,124,113,0.72) !important;
-  font-size: 0.83rem !important;
   padding: 0.75rem 1rem;
   background: rgba(196,181,172,0.1);
   border-left: 2px solid rgba(196,181,172,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.gf-tip__sub {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-clay);
+  display: block;
+}
+
+.gf-tip__note p {
+  font-style: italic;
+  color: var(--color-bark);
+  font-size: 0.83rem;
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* ── Fazit ──────────────────────────────────────────── */

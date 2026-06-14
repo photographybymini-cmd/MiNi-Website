@@ -1,0 +1,872 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Comments from '../../components/Comments.astro';
+import Like from '../../components/Like.astro';
+
+const chapters = [
+  { id: 'lh-1', num: '01', label: 'Wenn nichts klappt' },
+  { id: 'lh-2', num: '02', label: 'Besonderes' },
+  { id: 'lh-3', num: '03', label: 'Zum Lachen' },
+];
+---
+
+<BaseLayout
+  title="Deshalb lieben wir Hochzeiten – 15 unvergessliche Erlebnisse | MiNi Photography"
+  description="Fahrstuhlpannen, Ringhunde und Waldwege ohne Ende – hier sind 15 Erlebnisse aus unserem Fotografenalltag, die uns bis heute begleiten."
+>
+  <Nav />
+  <main id="main">
+
+    <!-- ══ Hero ══════════════════════════════════════════ -->
+    <section class="lh-hero">
+      <div class="lh-hero__media">
+        <img
+          src="/images/blog/lieben-wir-hochzeiten-hero.jpg"
+          alt="Hochzeitsfotografie von MiNi Photography"
+          loading="eager"
+          fetchpriority="high"
+          class="lh-hero__img"
+        />
+        <div class="lh-hero__grain" aria-hidden="true"></div>
+        <div class="lh-hero__vignette" aria-hidden="true"></div>
+      </div>
+      <div class="lh-hero__ui">
+        <a href="/blog" class="lh-hero__back">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+          </svg>
+          Blog
+        </a>
+        <div class="lh-hero__copy">
+          <span class="lh-eyebrow">Hochzeiten</span>
+          <h1 class="lh-hero__title">
+            Deshalb lieben<br/>wir Hochzeiten –<br/>
+            <em>15 unvergessliche Momente.</em>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Chapter Nav ════════════════════════════════════ -->
+    <nav class="lh-chapnav" aria-label="Kapitelnavigation">
+      <div class="lh-chapnav__inner">
+        {chapters.map((c) => (
+          <a href={`#${c.id}`} class="lh-chapnav__item" data-id={c.id}>
+            <span class="lh-chapnav__num">{c.num}</span>
+            <span class="lh-chapnav__label">{c.label}</span>
+            <span class="lh-chapnav__bar" aria-hidden="true"></span>
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <!-- ══ Intro ══════════════════════════════════════════ -->
+    <div class="lh-intro">
+      <div class="lh-intro__inner">
+        <p class="lh-intro__lead lh-reveal">
+          In den letzten Jahren durften wir viele Hochzeiten begleiten. Manche waren emotional, manche wunderschön, manche völlig verrückt. Keine Sorge: Niemand wurde verletzt, keine Hochzeit wurde abgesagt und alle Paare haben am Ende glücklich geheiratet. Aber ein paar Geschichten haben wir gesammelt, die uns bis heute im Gedächtnis geblieben sind.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ Sections ═══════════════════════════════════════ -->
+    <div class="lh-sects">
+
+      <!-- 01 Wenn nichts klappt -->
+      <section class="lh-sect" id="lh-1">
+        <span class="lh-sect__ghost" aria-hidden="true">01</span>
+        <div class="lh-sect__inner">
+          <header class="lh-sect__head lh-reveal">
+            <span class="lh-sect__num">01</span>
+            <h2 class="lh-sect__title">Wenn nichts<br/><em>nach Plan läuft.</em></h2>
+            <p class="lh-sect__sub">Chaos mit Humor.</p>
+          </header>
+          <div class="lh-sect__body">
+            <ul class="lh-stories lh-reveal" style="--delay:0.08s">
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">01</span>
+                    <strong class="lh-story__title">Der Fahrstuhl, der andere Pläne hatte</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Eigentlich war der Plan simpel: Nicolai nimmt die Treppe, ich nehme den Fahrstuhl. Wenige Minuten später saß ich gemeinsam mit einem älteren Herrn und einem Kind im Fahrstuhl fest – für etwa 30 bis 45 Minuten. Zum Glück funktionierte die Kommunikation nach draußen und alle blieben erstaunlich ruhig. Trotzdem wurde es langsam ziemlich warm. Dank unserer Begleitung zu zweit konnte Nicolai die Hochzeit währenddessen ganz normal weiter begleiten. Seitdem schaue ich alte Fahrstühle zumindest etwas kritischer an.</p>
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">02</span>
+                    <strong class="lh-story__title">Wenn plötzlich alle englischen Vokabeln verschwinden</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Wir begleiten regelmäßig deutsch-englische Hochzeiten – eigentlich kein Problem. Bis beim großen Gruppenfoto plötzlich sämtliche englischen Vokabeln verschwunden waren. Eigentlich sollten sich alle Gäste auf einer Treppe aufstellen. Was Nicolai stattdessen sagte: „Please take a seat." Zum Glück sorgte die Situation eher für Lacher als für Verwirrung.</p>
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">03</span>
+                    <strong class="lh-story__title">Die vergessenen Ringe</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Kurz vor der Trauung fiel auf: Die Ringe für die Zeremonie waren nicht dabei. Zum Glück trugen die Eltern des Brautpaares ihre eigenen Eheringe noch am Finger – also wurden diese kurzerhand als Ersatz genutzt. Improvisation gehört manchmal eben auch zu einer Hochzeit dazu.</p>
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">04</span>
+                    <strong class="lh-story__title">Plötzlich Wedding Planner für einen Tag</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Eigentlich waren wir zum Fotografieren da. Dann wurde weniger als 24 Stunden vor der Hochzeit der gesamte Tagesablauf umgestellt. Beim First Look sollten nicht nur Braut und Bräutigam dabei sein, sondern auch alle Gäste. Also koordinierten wir spontan den Ablauf, die Musik, den Einlauf und die Positionierung der Gäste. Am Ende funktionierte alles wunderbar – und für einen kurzen Moment hatten wir einen zusätzlichen Beruf.</p>
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">05</span>
+                    <strong class="lh-story__title">Der Waldweg, der keiner war</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Irgendwann kommt bei jeder Hochzeit der Moment, an dem man sich fragt: „Das ist wirklich der richtige Weg?" Enge Waldwege. Äste am Auto. Immer weniger Hinweise auf Zivilisation. Zwischendurch folgten uns sogar einige Gäste, weil sie dachten, wir würden zur Location fahren. Irgendwann wurde ihnen die Strecke offenbar zu verdächtig. Sie drehten um. Wir nicht. Spoiler: Wir kamen tatsächlich an. Es war definitiv nicht der offizielle Weg.</p>
+                  </div>
+                </details>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 Besonderes -->
+      <section class="lh-sect" id="lh-2">
+        <span class="lh-sect__ghost" aria-hidden="true">02</span>
+        <div class="lh-sect__inner">
+          <header class="lh-sect__head lh-reveal">
+            <span class="lh-sect__num">02</span>
+            <h2 class="lh-sect__title">Die besonderen<br/><em>Überraschungen.</em></h2>
+            <p class="lh-sect__sub">Momente, die man nicht plant.</p>
+          </header>
+          <div class="lh-sect__body">
+            <ul class="lh-stories lh-reveal" style="--delay:0.08s">
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">06</span>
+                    <strong class="lh-story__title">Eine Trauung in der Nerobergbahn</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Von allen Trauorten, die wir bisher erlebt haben, gehört dieser definitiv zu den außergewöhnlichsten. Die Gäste stiegen gemeinsam in die historische Nerobergbahn in Wiesbaden und fuhren den Berg hinauf. Mitten auf der Strecke hielt die Bahn an und die Trauung begann. Anschließend ging die Fahrt weiter bis auf den Neroberg, wo der Sektempfang stattfand. Eine Hochzeit in einer historischen Bergbahn erlebt man nicht alle Tage.</p>
+                    <img src="/images/blog/lieben-wir-hochzeiten/nerobergbahn.jpg" alt="Trauung in der Nerobergbahn" class="lh-story__img" loading="lazy" />
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">07</span>
+                    <strong class="lh-story__title">Mit dem Golfkart durchs Paarshooting</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Zum Paarshooting ging es diesmal nicht nur zu Fuß. Nachdem wir die Location mit dem Auto erreicht hatten, warteten dort bereits zwei Golfkarts auf uns – eins für das Brautpaar, eins für uns. Und plötzlich wurde aus einem ganz normalen Paarshooting eine kleine Golfplatz-Safari. Natürlich durften dabei auch ein paar Fotos mit den Golfkarts selbst nicht fehlen.</p>
+                    <img src="/images/blog/lieben-wir-hochzeiten/golfkart.jpg" alt="Paarshooting mit Golfkart" class="lh-story__img" loading="lazy" />
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">08</span>
+                    <strong class="lh-story__title">Paparazzi am Oldtimer</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Gruppenfotos müssen nicht immer klassisch sein. Das Brautpaar saß entspannt im Oldtimer, während sich die Hochzeitsgesellschaft in eine Horde Paparazzi verwandelte – mit Kameras, Smartphones und jeder Menge schauspielerischem Talent. Die Bilder erinnerten eher an einen Promi-Auftritt als an ein klassisches Gruppenfoto.</p>
+                    <div class="lh-story__img-pair">
+                      <img src="/images/blog/lieben-wir-hochzeiten/paparazzi-1.jpg" alt="Paparazzi-Moment am Oldtimer" class="lh-story__img" loading="lazy" />
+                      <img src="/images/blog/lieben-wir-hochzeiten/paparazzi-2.jpg" alt="Paparazzi-Moment am Oldtimer" class="lh-story__img" loading="lazy" />
+                    </div>
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">09</span>
+                    <strong class="lh-story__title">Der Hund als Ringträger</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Kinder als Ringträger sind süß. Hunde als Ringträger auch. Bei einer Hochzeit durfte der Vierbeiner die Ringe überbringen. Und ganz ehrlich: Ein Hund, der stolz mit den Ringen auf das Brautpaar zuläuft, sorgt automatisch für gute Laune.</p>
+                    <img src="/images/blog/lieben-wir-hochzeiten/hund-mit-ring.jpg" alt="Hund als Ringträger auf der Hochzeit" class="lh-story__img" loading="lazy" />
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">10</span>
+                    <strong class="lh-story__title">Der Hochzeits-LKW</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Schon auf vielen Hochzeiten haben wir besondere Hochzeitsautos gesehen. Aber einen Hochzeits-LKW? Das war neu. Auf dem Führerhaus standen die Namen des Brautpaares und das Hochzeitsdatum – ein kreatives Geschenk der Gäste, das definitiv im Gedächtnis geblieben ist.</p>
+                    <img src="/images/blog/lieben-wir-hochzeiten/lkw.jpg" alt="Hochzeits-LKW mit Beschriftung" class="lh-story__img lh-story__img--portrait" loading="lazy" />
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">11</span>
+                    <strong class="lh-story__title">Eine Piñata nach der Trauung</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Nach der Trauung erwartet man vieles. Eine Piñata gehört eher selten dazu. Genau deshalb blieb uns diese Hochzeit besonders in Erinnerung. Die Kombination aus feierlicher Trauung und anschließendem Piñata-Zerschlagen hatte definitiv ihren ganz eigenen Charme.</p>
+                    <img src="/images/blog/lieben-wir-hochzeiten/pinata.jpg" alt="Piñata auf der Hochzeit" class="lh-story__img" loading="lazy" />
+                  </div>
+                </details>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Zum Lachen -->
+      <section class="lh-sect" id="lh-3">
+        <span class="lh-sect__ghost" aria-hidden="true">03</span>
+        <div class="lh-sect__inner">
+          <header class="lh-sect__head lh-reveal">
+            <span class="lh-sect__num">03</span>
+            <h2 class="lh-sect__title">Was uns<br/><em>zum Lachen bringt.</em></h2>
+            <p class="lh-sect__sub">Herzlichkeit pur.</p>
+          </header>
+          <div class="lh-sect__body">
+            <ul class="lh-stories lh-reveal" style="--delay:0.08s">
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">12</span>
+                    <strong class="lh-story__title">Die Einladung zum Weiterfeiern</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Manchmal endet unsere Begleitung mit dem letzten Programmpunkt. Manchmal kommt aber auch die Frage: „Bleibt ihr noch auf ein Getränk?" Wir freuen uns immer sehr über solche Einladungen – sie zeigen uns, dass wir an diesem Tag nicht nur Dienstleister waren, sondern Teil der Feier geworden sind.</p>
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">13</span>
+                    <strong class="lh-story__title">Die ungeplante Sektdusche</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Geplant war eigentlich nur ein schönes Foto mit einer geöffneten Sektflasche. Was nicht geplant war: die daraus entstehende Sektdusche. Zum Glück nahmen es alle Beteiligten mit Humor und niemand wurde allzu nass. Die Bilder waren dafür umso besser.</p>
+                    <img src="/images/blog/lieben-wir-hochzeiten/sektdusche.jpg" alt="Ungeplante Sektdusche auf der Hochzeit" class="lh-story__img lh-story__img--portrait" loading="lazy" />
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">14</span>
+                    <strong class="lh-story__title">Das schnellste Gruppenfoto der Welt</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Wer sagt, dass Gruppenfotos langweilig sein müssen? Bei dieser Hochzeit lief Musik, das Brautpaar blieb stehen und die Gäste liefen in allen möglichen Konstellationen ins Bild, posierten kurz und verschwanden wieder. Das Ergebnis: viele verschiedene Gruppenbilder in kurzer Zeit und jede Menge Spaß. Eine Idee, die wir gerne öfter sehen würden.</p>
+                  </div>
+                </details>
+              </li>
+
+              <li class="lh-story">
+                <details class="lh-story__details">
+                  <summary class="lh-story__summary">
+                    <span class="lh-story__num">15</span>
+                    <strong class="lh-story__title">Reise nach Jerusalem – Hochzeitsedition</strong>
+                    <svg class="lh-story__chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4,6 8,10 12,6"/></svg>
+                  </summary>
+                  <div class="lh-story__content">
+                    <p>Dieses Spiel hatte es wirklich in sich. Vor jeder Runde mussten die Gäste bestimmte Gegenstände organisieren, bevor sie sich wieder einen Stuhl sichern durften. Die Aufgaben wurden von Runde zu Runde kreativer – anfangs Uhren, später Klopapier und BHs. In einer Runde lautete die Aufgabe: „Besorgt einen Haargummi." Also habe ich kurzerhand meinen eigenen geopfert. Ob das komplett neutral war? Wahrscheinlich nicht. Aber zumindest konnte der Bräutigam noch einmal zurück ins Rennen gehen.</p>
+                    <img src="/images/blog/lieben-wir-hochzeiten/jerusalem.jpg" alt="Reise nach Jerusalem auf der Hochzeit" class="lh-story__img" loading="lazy" />
+                  </div>
+                </details>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ══ Fazit ══════════════════════════════════════════ -->
+    <section class="lh-fazit">
+      <div class="lh-fazit__inner">
+        <span class="lh-eyebrow lh-reveal" style="color:rgba(196,181,172,0.4)">Fazit</span>
+        <h2 class="lh-fazit__title lh-reveal" style="--delay:0.1s">
+          Jede Hochzeit ist<br/><em>einzigartig.</em>
+        </h2>
+        <p class="lh-fazit__body lh-reveal" style="--delay:0.2s">
+          Wenn uns jemand fragt, warum wir Hochzeiten so lieben, dann sind es genau diese Geschichten. Natürlich erinnern wir uns an wunderschöne Trauungen, emotionale Reden und beeindruckende Locations. Aber genauso erinnern wir uns an feststeckende Fahrstühle, spontane Planänderungen, Ringhunde, Golfkarts und Waldwege, die eigentlich keine Straßen waren. Genau diese unvorhersehbaren Momente machen jede Hochzeit einzigartig – und sorgen dafür, dass keine Begleitung der anderen gleicht.
+        </p>
+        <a href="/#kontakt" class="lh-fazit__cta lh-reveal" style="--delay:0.3s">
+          Jetzt anfragen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="blog-back">
+      <a href="/blog" class="blog-back__link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+        </svg>
+        Alle Beiträge
+      </a>
+    </div>
+
+  </main>
+  <Like slug="lieben-wir-hochzeiten" />
+  <Comments slug="lieben-wir-hochzeiten" />
+  <Footer />
+</BaseLayout>
+
+<style>
+/* ── Shared ─────────────────────────────────────────── */
+.lh-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.7;
+}
+
+/* ── Hero ───────────────────────────────────────────── */
+.lh-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.lh-hero__media {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bark);
+}
+.lh-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 50%;
+  display: block;
+}
+.lh-hero__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.lh-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 110%, rgba(18,14,13,0.95) 0%, rgba(18,14,13,0.45) 45%, transparent 75%),
+    linear-gradient(to right, rgba(18,14,13,0.6) 0%, transparent 55%);
+}
+.lh-hero__ui {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  width: 100%;
+  padding: clamp(6rem, 12vw, 9rem) var(--container-gutter) clamp(3rem, 6vw, 5rem);
+}
+.lh-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(196,181,172,0.45);
+  transition: color 0.25s ease;
+  align-self: flex-start;
+}
+.lh-hero__back:hover { color: rgba(196,181,172,1); }
+.lh-hero__back:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+.lh-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+}
+.lh-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.lh-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-sand);
+}
+
+/* ── Chapter Nav ────────────────────────────────────── */
+.lh-chapnav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--color-cream);
+  border-bottom: 1px solid rgba(196,181,172,0.18);
+}
+.lh-chapnav__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 0 var(--container-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.lh-chapnav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 0;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+}
+.lh-chapnav__item:hover { opacity: 0.7; }
+.lh-chapnav__item:focus-visible { outline: 1px solid var(--color-clay); outline-offset: -2px; }
+.lh-chapnav__item.is-active { opacity: 1; }
+.lh-chapnav__num {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--color-clay);
+  flex-shrink: 0;
+}
+.lh-chapnav__label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--color-bark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lh-chapnav__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.lh-chapnav__item.is-active .lh-chapnav__bar { transform: scaleX(1); }
+
+/* ── Intro ──────────────────────────────────────────── */
+.lh-intro {
+  background: var(--color-cream);
+  padding: clamp(4rem, 8vw, 6.5rem) var(--container-gutter) clamp(2rem, 4vw, 3rem);
+}
+.lh-intro__inner {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+.lh-intro__lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Sections wrapper ───────────────────────────────── */
+.lh-sects {
+  background: var(--color-cream);
+}
+
+/* ── Section ────────────────────────────────────────── */
+.lh-sect {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream);
+  border-top: 1px solid rgba(196,181,172,0.14);
+  padding: clamp(4.5rem, 9vw, 7.5rem) var(--container-gutter);
+}
+.lh-sect:nth-child(even) {
+  background: var(--color-parchment);
+}
+.lh-sect__ghost {
+  position: absolute;
+  top: -0.15em;
+  left: -0.05em;
+  font-family: var(--font-display);
+  font-size: clamp(14rem, 26vw, 22rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-bark);
+  opacity: 0.11;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.06em;
+  z-index: 0;
+}
+.lh-sect__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 0 clamp(3rem, 6vw, 7rem);
+  align-items: start;
+}
+.lh-sect__head {
+  position: sticky;
+  top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.lh-sect__num {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.38em;
+  color: var(--color-sand);
+  text-transform: uppercase;
+}
+.lh-sect__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-bark);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.lh-sect__title em {
+  font-style: italic;
+  color: var(--color-clay);
+}
+.lh-sect__sub {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.62;
+  margin: 0;
+}
+.lh-sect__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: 0.35rem;
+}
+
+/* ── Stories list ───────────────────────────────────── */
+.lh-stories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lh-story {
+  border-top: 1px solid rgba(196,181,172,0.2);
+}
+.lh-story:last-child {
+  border-bottom: 1px solid rgba(196,181,172,0.2);
+}
+
+/* ── Accordion ──────────────────────────────────────── */
+.lh-story__details {
+  width: 100%;
+}
+.lh-story__details summary {
+  list-style: none;
+}
+.lh-story__details summary::-webkit-details-marker {
+  display: none;
+}
+.lh-story__summary {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+.lh-story__summary:focus-visible {
+  outline: 1px solid var(--color-clay);
+  outline-offset: 2px;
+}
+.lh-story__num {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--color-clay);
+}
+.lh-story__title {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-bark);
+  display: block;
+  transition: color 0.2s ease;
+}
+.lh-story__details[open] .lh-story__title {
+  color: var(--color-clay);
+}
+.lh-story__chevron {
+  color: var(--color-clay);
+  opacity: 0.5;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+.lh-story__details[open] .lh-story__chevron {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+.lh-story__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 0 1.5rem 3.25rem;
+}
+.lh-story__content p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Story images ───────────────────────────────────── */
+.lh-story__img {
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  display: block;
+  border-radius: 1px;
+}
+.lh-story__img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+.lh-story__img-pair .lh-story__img {
+  max-height: 450px;
+}
+.lh-story__img--portrait {
+  max-height: 780px;
+}
+
+/* ── Fazit ──────────────────────────────────────────── */
+.lh-fazit {
+  background: var(--color-bark);
+  padding: clamp(5rem, 10vw, 9rem) var(--container-gutter);
+}
+.lh-fazit__inner {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.lh-fazit__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.lh-fazit__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,252,250,0.6);
+}
+.lh-fazit__body {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: rgba(255,252,250,0.82);
+  line-height: 1.9;
+  margin: 0;
+}
+.lh-fazit__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  border: 1px solid rgba(196,181,172,0.25);
+  padding: 1rem 2.25rem;
+  transition: background 0.25s ease, border-color 0.25s ease, gap 0.2s ease;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+.lh-fazit__cta:hover {
+  background: rgba(196,181,172,0.1);
+  border-color: rgba(196,181,172,0.5);
+  gap: 1.1rem;
+}
+.lh-fazit__cta:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+
+/* ── Back Button ─────────────────────────────────────── */
+.blog-back {
+  background: var(--color-parchment);
+  border-top: 1px solid rgba(196,181,172,0.2);
+  padding: clamp(2rem, 4vw, 3rem) var(--container-gutter);
+  display: flex;
+  justify-content: center;
+}
+.blog-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.blog-back__link:hover {
+  color: var(--color-bark);
+  gap: 1.1rem;
+}
+
+/* ── Reveal ─────────────────────────────────────────── */
+.lh-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.72s ease var(--delay, 0s), transform 0.72s ease var(--delay, 0s);
+}
+.lh-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced Motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .lh-reveal { opacity: 1; transform: none; transition: none; }
+  .lh-chapnav__bar { transition: none; }
+  .lh-fazit__cta { transition: none; }
+  .lh-story__chevron { transition: none; }
+}
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .lh-sect__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .lh-sect__head { position: static; }
+}
+
+@media (max-width: 640px) {
+  .lh-chapnav__label { display: none; }
+  .lh-chapnav__item { justify-content: center; padding: 0.75rem 0; }
+  .lh-chapnav__num { letter-spacing: 0.2em; font-size: 0.6rem; }
+  .lh-sect__ghost { font-size: clamp(9rem, 38vw, 13rem); }
+  .lh-story__summary { grid-template-columns: 1.75rem 1fr auto; gap: 0.75rem; }
+  .lh-story__content { padding-left: 2.5rem; }
+  .lh-hero__img { object-position: 25% 50%; }
+  .lh-story__img--portrait { max-height: 420px; }
+}
+</style>
+
+<script>
+  // ── Scroll reveals ────────────────────────────────────
+  const reveals = document.querySelectorAll('.lh-reveal');
+  const revealObs = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); }
+    }),
+    { threshold: 0.12 }
+  );
+  reveals.forEach(el => revealObs.observe(el));
+
+  // ── Chapter nav active state ──────────────────────────
+  const chapItems = document.querySelectorAll<HTMLElement>('.lh-chapnav__item');
+  const sectSections = document.querySelectorAll('.lh-sect');
+
+  const chapObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          chapItems.forEach(item =>
+            item.classList.toggle('is-active', item.dataset.id === e.target.id)
+          );
+        }
+      });
+    },
+    { rootMargin: '-25% 0px -65% 0px' }
+  );
+  sectSections.forEach(s => chapObs.observe(s));
+</script>

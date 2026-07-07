@@ -1,0 +1,655 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Comments from '../../components/Comments.astro';
+import Like from '../../components/Like.astro';
+
+const chapters = [
+  { id: 'nk-1', num: '01', label: 'Neuigkeit' },
+  { id: 'nk-2', num: '02', label: 'Eure Hochzeit' },
+  { id: 'nk-3', num: '03', label: 'Was bleibt' },
+];
+---
+
+<BaseLayout
+  title="Ein neues Kapitel für uns – und wie es bei MiNi weitergeht | MiNi Photography"
+  description="Miette & Nicolai erwarten ein Baby. Was das für bereits gebuchte Hochzeiten bedeutet, wie die Babypause aussieht und wie es 2027 bei MiNi weitergeht."
+>
+  <Nav />
+  <main id="main">
+
+    <!-- ══ Hero ══════════════════════════════════════════ -->
+    <section class="nk-hero">
+      <div class="nk-hero__media">
+        <img
+          src="/images/blog/ein-neues-kapitel-hero.jpg"
+          alt="Miette & Nicolai von MiNi Photography"
+          loading="eager"
+          fetchpriority="high"
+          class="nk-hero__img"
+        />
+        <div class="nk-hero__grain" aria-hidden="true"></div>
+        <div class="nk-hero__vignette" aria-hidden="true"></div>
+      </div>
+      <div class="nk-hero__ui">
+        <a href="/blog" class="nk-hero__back">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+          </svg>
+          Blog
+        </a>
+        <div class="nk-hero__copy">
+          <span class="nk-eyebrow">Familie</span>
+          <h1 class="nk-hero__title">
+            Ein neues Kapitel<br/>für uns –<br/>
+            <em>und wie es weitergeht.</em>
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ Chapter Nav ════════════════════════════════════ -->
+    <nav class="nk-chapnav" aria-label="Kapitelnavigation">
+      <div class="nk-chapnav__inner">
+        {chapters.map((c) => (
+          <a href={`#${c.id}`} class="nk-chapnav__item" data-id={c.id}>
+            <span class="nk-chapnav__num">{c.num}</span>
+            <span class="nk-chapnav__label">{c.label}</span>
+            <span class="nk-chapnav__bar" aria-hidden="true"></span>
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <!-- ══ Intro ══════════════════════════════════════════ -->
+    <div class="nk-intro">
+      <div class="nk-intro__inner">
+        <p class="nk-intro__lead nk-reveal">
+          Viele unserer Paare begleiten wir über mehrere Jahre – vom Kennenlernshooting über die Hochzeit bis hin zum ersten Familienshooting. Heute möchten wir euch selbst auf ein ganz persönliches Kapitel mitnehmen: Ende dieses Jahres bekommt MiNi ein sehr kleines neues Teammitglied. Wir werden Eltern. 🤍
+        </p>
+      </div>
+    </div>
+
+    <!-- ══ Sections ═══════════════════════════════════════ -->
+    <div class="nk-sects">
+
+      <!-- 01 Warum wir's erzählen -->
+      <section class="nk-sect" id="nk-1">
+        <span class="nk-sect__ghost" aria-hidden="true">01</span>
+        <div class="nk-sect__inner">
+          <header class="nk-sect__head nk-reveal">
+            <span class="nk-sect__num">01</span>
+            <h2 class="nk-sect__title">Warum wir euch<br/>das erzählen.</h2>
+            <p class="nk-sect__sub">Transparenz war uns immer wichtig.</p>
+            <img class="nk-photo" src="/images/blog/ein-neues-kapitel1.jpg" alt="Miette und Nicolai von MiNi Photography" loading="lazy" width="800" height="1200" />
+          </header>
+          <div class="nk-sect__body">
+            <p class="nk-sect__intro nk-reveal" style="--delay:0.08s">
+              Transparenz war uns schon immer wichtig. Deshalb möchten wir euch frühzeitig mitnehmen und offen darüber sprechen, was die kommenden Monate für uns und für MiNi bedeuten.
+            </p>
+            <p class="nk-sect__intro nk-reveal" style="--delay:0.14s">
+              Viele von euch begleiten uns bereits seit einer Weile, andere planen gerade ihre Hochzeit oder ein Shooting mit uns. Umso wichtiger ist es uns, dass ihr wisst, wie wir uns die nächsten Monate und Jahre vorstellen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 Was das für eure Hochzeit bedeutet -->
+      <section class="nk-sect" id="nk-2">
+        <span class="nk-sect__ghost" aria-hidden="true">02</span>
+        <div class="nk-sect__inner">
+          <header class="nk-sect__head nk-reveal">
+            <span class="nk-sect__num">02</span>
+            <h2 class="nk-sect__title">Was das für eure Hochzeit bedeutet.</h2>
+            <p class="nk-sect__sub">Bereits gebucht, Babypause &amp; 2027.</p>
+          </header>
+          <div class="nk-sect__body">
+            <dl class="nk-list nk-reveal" style="--delay:0.08s">
+              <dt>Bereits gebuchte Hochzeiten</dt>
+              <dd>Alle bereits gebuchten Hochzeiten finden wie geplant statt. Unsere letzte Hochzeit der Saison begleiten wir im Oktober – und wir freuen uns auf jede einzelne, die noch vor uns liegt. Aktuell verläuft die Schwangerschaft völlig unkompliziert und es gibt keinen Grund zur Sorge. Natürlich kann niemand in die Zukunft schauen. Genau deshalb kümmern wir uns bereits jetzt um einen Plan B für den absoluten Notfall und arbeiten daran, zuverlässige Backup-Fotografen an unserer Seite zu haben.</dd>
+              <dt>Eine kleine Babypause</dt>
+              <dd>Nach unserer letzten Hochzeit im Oktober möchten wir uns erst einmal ganz auf unsere kleine Familie konzentrieren. Deshalb gönnen wir uns von November 2026 bis ungefähr März 2027 eine kleine Babypause – diese Zeit möchten wir bewusst genießen und uns ohne Zeitdruck in unserem neuen Alltag zurechtfinden.</dd>
+              <dt>Wie geht es 2027 weiter?</dt>
+              <dd>Ehrlich gesagt wissen wir es selbst noch nicht ganz genau. Uns war aber schnell klar: Die gesamte Saison 2027 auszusetzen kommt für uns nicht infrage – dafür lieben wir Hochzeiten einfach zu sehr. Aktuell können wir für Hochzeiten im Jahr 2027 eine Begleitung durch Nicolai fest zusagen. Wenn unser neuer Alltag als Familie es zulässt, freuen wir uns sehr, wieder gemeinsam unterwegs zu sein – versprechen können wir das heute aber noch nicht.</dd>
+            </dl>
+            <p class="nk-note nk-reveal" style="--delay:0.2s">
+              Unser Ziel ist ganz klar: Ihr sollt euch auf eure Hochzeit freuen können, ohne euch Gedanken machen zu müssen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Was bleibt -->
+      <section class="nk-sect" id="nk-3">
+        <span class="nk-sect__ghost" aria-hidden="true">03</span>
+        <div class="nk-sect__inner">
+          <header class="nk-sect__head nk-reveal">
+            <span class="nk-sect__num">03</span>
+            <h2 class="nk-sect__title">Was bleibt.</h2>
+            <p class="nk-sect__sub">Familie, Fotografie &amp; Danke.</p>
+            <img class="nk-photo" src="/images/blog/ein-neues-kapitel2.jpg" alt="Miette und Nicolai von MiNi Photography" loading="lazy" width="800" height="1200" />
+          </header>
+          <div class="nk-sect__body">
+            <p class="nk-sect__intro nk-reveal" style="--delay:0.08s">
+              Neben Hochzeiten werden Paar- und Familienshootings in Zukunft einen noch größeren Stellenwert bei MiNi einnehmen. Zum einen lassen sie sich organisatorisch einfacher mit unserem Familienalltag vereinbaren. Zum anderen werden Themen wie Schwangerschaft, Neugeborene und Familienleben plötzlich auch Teil unserer eigenen Geschichte – nicht weil wir plötzlich alles wissen, sondern weil wir selbst ein Stück näher an diesen Lebensphasen dran sind.
+            </p>
+            <p class="nk-sect__intro nk-reveal" style="--delay:0.14s">
+              Viele unserer Paare stehen nach ihrer Hochzeit irgendwann vor dem nächsten großen Kapitel: der Familiengründung. Diesen Weg durften wir bereits bei vielen unserer Kunden begleiten – nun stehen wir selbst an diesem Punkt. Das fühlt sich aufregend, wunderschön und manchmal auch ein kleines bisschen verrückt an.
+            </p>
+            <p class="nk-sect__intro nk-reveal" style="--delay:0.2s">
+              Bei allen Veränderungen gibt es eine Sache, die gleich bleibt: Wir lieben es, Erinnerungen festzuhalten. Die großen Momente. Die kleinen Momente. Die Augenblicke, die Jahre später plötzlich unbezahlbar werden. Vielleicht etwas anders als bisher, vielleicht mit neuen Perspektiven – aber mit derselben Leidenschaft wie zuvor.
+            </p>
+            <p class="nk-sect__intro nk-reveal" style="--delay:0.26s">
+              Zum Schluss möchten wir einfach Danke sagen: für euer Vertrauen, eure Unterstützung und dafür, dass wir so viele besondere Momente mit euch erleben dürfen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ══ Fazit ══════════════════════════════════════════ -->
+    <section class="nk-fazit">
+      <div class="nk-fazit__inner">
+        <span class="nk-eyebrow nk-reveal" style="color:rgba(196,181,172,0.4)">Fazit</span>
+        <h2 class="nk-fazit__title nk-reveal" style="--delay:0.1s">
+          Danke, dass ihr<br/><em>Teil unserer Reise seid.</em>
+        </h2>
+        <p class="nk-fazit__body nk-reveal" style="--delay:0.2s">
+          Die nächsten Monate werden für uns aufregend, neu und wahrscheinlich manchmal auch ein wenig chaotisch. Aber wir freuen uns auf jeden einzelnen Schritt – als Familie und als MiNi. Und natürlich freuen wir uns auf die Hochzeiten, Shootings und Erinnerungen, die noch vor uns liegen. 🤍
+        </p>
+        <p class="nk-fazit__sign nk-reveal" style="--delay:0.26s">
+          Ganz liebe Grüße<br/><strong>Miette &amp; Nicolai</strong>
+        </p>
+        <a href="/#kontakt" class="nk-fazit__cta nk-reveal" style="--delay:0.3s">
+          Jetzt anfragen
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="blog-back">
+      <a href="/blog" class="blog-back__link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+        </svg>
+        Alle Beiträge
+      </a>
+    </div>
+
+  </main>
+  <Like slug="ein-neues-kapitel" />
+  <Comments slug="ein-neues-kapitel" />
+  <Footer />
+</BaseLayout>
+
+<style>
+/* ── Shared ─────────────────────────────────────────── */
+.nk-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.7;
+}
+
+/* ── Hero ───────────────────────────────────────────── */
+.nk-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.nk-hero__media {
+  position: absolute;
+  inset: 0;
+}
+.nk-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.nk-hero__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.nk-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 110%, rgba(18,14,13,0.95) 0%, rgba(18,14,13,0.45) 45%, transparent 75%),
+    linear-gradient(to right, rgba(18,14,13,0.6) 0%, transparent 55%);
+}
+.nk-hero__ui {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  width: 100%;
+  padding: clamp(6rem, 12vw, 9rem) var(--container-gutter) clamp(3rem, 6vw, 5rem);
+}
+.nk-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(196,181,172,0.45);
+  transition: color 0.25s ease;
+  align-self: flex-start;
+}
+.nk-hero__back:hover { color: rgba(196,181,172,1); }
+.nk-hero__back:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+.nk-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 700px;
+}
+.nk-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.nk-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-sand);
+}
+
+/* ── Chapter Nav ────────────────────────────────────── */
+.nk-chapnav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--color-cream);
+  border-bottom: 1px solid rgba(196,181,172,0.18);
+}
+.nk-chapnav__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: 0 var(--container-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.nk-chapnav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 0;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+}
+.nk-chapnav__item:hover { opacity: 0.7; }
+.nk-chapnav__item:focus-visible { outline: 1px solid var(--color-clay); outline-offset: -2px; }
+.nk-chapnav__item.is-active { opacity: 1; }
+.nk-chapnav__num {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--color-clay);
+  flex-shrink: 0;
+}
+.nk-chapnav__label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--color-bark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nk-chapnav__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.nk-chapnav__item.is-active .nk-chapnav__bar { transform: scaleX(1); }
+
+/* ── Intro ──────────────────────────────────────────── */
+.nk-intro {
+  background: var(--color-cream);
+  padding: clamp(4rem, 8vw, 6.5rem) var(--container-gutter) clamp(2rem, 4vw, 3rem);
+}
+.nk-intro__inner {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+}
+.nk-intro__lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Sections wrapper ───────────────────────────────── */
+.nk-sects {
+  background: var(--color-cream);
+}
+
+/* ── Section ────────────────────────────────────────── */
+.nk-sect {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-cream);
+  border-top: 1px solid rgba(196,181,172,0.14);
+  padding: clamp(4.5rem, 9vw, 7.5rem) var(--container-gutter);
+}
+.nk-sect:nth-child(even) {
+  background: var(--color-parchment);
+}
+.nk-sect__ghost {
+  position: absolute;
+  top: -0.15em;
+  left: -0.05em;
+  font-family: var(--font-display);
+  font-size: clamp(14rem, 26vw, 22rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-bark);
+  opacity: 0.11;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.06em;
+  z-index: 0;
+}
+.nk-sect__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 0 clamp(3rem, 6vw, 7rem);
+  align-items: start;
+}
+.nk-sect__head {
+  position: sticky;
+  top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.nk-sect__num {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 0.38em;
+  color: var(--color-sand);
+  text-transform: uppercase;
+}
+.nk-sect__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-bark);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.nk-sect__sub {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.62;
+  margin: 0;
+}
+.nk-sect__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: 0.35rem;
+}
+.nk-sect__intro {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  font-weight: 400;
+  color: var(--color-bark);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ── Definition list ────────────────────────────────── */
+.nk-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.nk-list dt {
+  font-family: var(--font-body);
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--color-bark);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(196,181,172,0.2);
+  margin: 0;
+}
+.nk-list dt:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+.nk-list dd {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-clay);
+  line-height: 1.78;
+  margin: 0.3rem 0 0.95rem;
+}
+.nk-list dd:last-child { margin-bottom: 0; }
+
+/* ── Note ───────────────────────────────────────────── */
+.nk-note {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  color: rgba(145,124,113,0.72);
+  line-height: 1.72;
+  margin: 0;
+  font-style: italic;
+  padding: 0.9rem 1.2rem;
+  background: rgba(196,181,172,0.1);
+  border-left: 2px solid rgba(196,181,172,0.35);
+}
+
+/* ── Fazit ──────────────────────────────────────────── */
+.nk-fazit {
+  background: var(--color-bark);
+  padding: clamp(5rem, 10vw, 9rem) var(--container-gutter);
+}
+.nk-fazit__inner {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.nk-fazit__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.nk-fazit__title em {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,252,250,0.6);
+}
+.nk-fazit__body {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: rgba(255,252,250,0.82);
+  line-height: 1.9;
+  margin: 0;
+}
+.nk-fazit__sign {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: rgba(255,252,250,0.82);
+  line-height: 1.7;
+  margin: -0.75rem 0 0;
+}
+.nk-fazit__sign strong {
+  font-weight: 700;
+  color: var(--color-cream);
+}
+.nk-fazit__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  border: 1px solid rgba(196,181,172,0.25);
+  padding: 1rem 2.25rem;
+  transition: background 0.25s ease, border-color 0.25s ease, gap 0.2s ease;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+.nk-fazit__cta:hover {
+  background: rgba(196,181,172,0.1);
+  border-color: rgba(196,181,172,0.5);
+  gap: 1.1rem;
+}
+.nk-fazit__cta:focus-visible { outline: 1px solid rgba(196,181,172,0.6); outline-offset: 4px; }
+
+/* ── Back Button ─────────────────────────────────────── */
+.blog-back {
+  background: var(--color-parchment);
+  border-top: 1px solid rgba(196,181,172,0.2);
+  padding: clamp(2rem, 4vw, 3rem) var(--container-gutter);
+  display: flex;
+  justify-content: center;
+}
+.blog-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.blog-back__link:hover {
+  color: var(--color-bark);
+  gap: 1.1rem;
+}
+
+/* ── Photo (linke Spalte, unter Titel) ──────────────── */
+.nk-photo {
+  width: 55%;
+  max-width: 220px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  border-radius: 1px;
+}
+
+/* ── Reveal ─────────────────────────────────────────── */
+.nk-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.72s ease var(--delay, 0s), transform 0.72s ease var(--delay, 0s);
+}
+.nk-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced Motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .nk-reveal { opacity: 1; transform: none; transition: none; }
+  .nk-chapnav__bar { transition: none; }
+  .nk-fazit__cta { transition: none; }
+}
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .nk-sect__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .nk-sect__head { position: static; }
+}
+
+@media (max-width: 640px) {
+  .nk-chapnav__label { display: none; }
+  .nk-chapnav__item { justify-content: center; padding: 0.75rem 0; }
+  .nk-chapnav__num { letter-spacing: 0.2em; font-size: 0.6rem; }
+  .nk-sect__ghost { font-size: clamp(9rem, 38vw, 13rem); }
+}
+</style>
+
+<script>
+  // ── Scroll reveals ────────────────────────────────────
+  const reveals = document.querySelectorAll('.nk-reveal');
+  const revealObs = new IntersectionObserver(
+    (entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); }
+    }),
+    { threshold: 0.12 }
+  );
+  reveals.forEach(el => revealObs.observe(el));
+
+  // ── Chapter nav active state ──────────────────────────
+  const chapItems = document.querySelectorAll<HTMLElement>('.nk-chapnav__item');
+  const sectSections = document.querySelectorAll('.nk-sect');
+
+  const chapObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          chapItems.forEach(item =>
+            item.classList.toggle('is-active', item.dataset.id === e.target.id)
+          );
+        }
+      });
+    },
+    { rootMargin: '-25% 0px -65% 0px' }
+  );
+  sectSections.forEach(s => chapObs.observe(s));
+</script>

@@ -1,0 +1,292 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Comments from '../../components/Comments.astro';
+import Like from '../../components/Like.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const dateFormatted = post.data.date.toLocaleDateString('de-DE', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`${post.data.title} | MiNi Photography`}
+  description={post.data.description}
+  image={post.data.cover}
+>
+  <Nav />
+  <main id="main">
+
+    <section class="ph-hero">
+      <div class="ph-hero__media">
+        <img
+          src={post.data.cover}
+          alt={post.data.title}
+          loading="eager"
+          fetchpriority="high"
+          class="ph-hero__img"
+          style={`object-position: ${post.data.heroPosition}`}
+        />
+        <div class="ph-hero__grain" aria-hidden="true"></div>
+        <div class="ph-hero__vignette" aria-hidden="true"></div>
+      </div>
+      <div class="ph-hero__ui">
+        <a href="/blog" class="ph-hero__back">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+          </svg>
+          Blog
+        </a>
+        <div class="ph-hero__copy">
+          <span class="ph-eyebrow">{post.data.category}</span>
+          <h1 class="ph-hero__title">{post.data.title}</h1>
+          <span class="ph-hero__date">{dateFormatted}</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="ph-article">
+      <div class="ph-article__inner">
+        <div class="ph-prose">
+          <Content />
+        </div>
+      </div>
+    </article>
+
+    <div class="ph-back">
+      <a href="/blog" class="ph-back__link">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/>
+        </svg>
+        Alle Beiträge
+      </a>
+    </div>
+
+  </main>
+  <Like slug={post.slug} />
+  <Comments slug={post.slug} />
+  <Footer />
+</BaseLayout>
+
+<style>
+/* ── Hero ─────────────────────────────────────────────── */
+.ph-hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 580px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ph-hero__media {
+  position: absolute;
+  inset: 0;
+}
+.ph-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ph-hero__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.ph-hero__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 110%, rgba(18,14,13,0.95) 0%, rgba(18,14,13,0.45) 45%, transparent 75%),
+    linear-gradient(to right, rgba(18,14,13,0.6) 0%, transparent 55%);
+}
+.ph-hero__ui {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  width: 100%;
+  padding: clamp(6rem, 12vw, 9rem) var(--container-gutter) clamp(3rem, 6vw, 5rem);
+}
+.ph-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(196,181,172,0.45);
+  transition: color 0.25s ease;
+  align-self: flex-start;
+}
+.ph-hero__back:hover { color: rgba(196,181,172,1); }
+.ph-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 760px;
+}
+.ph-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  opacity: 0.8;
+}
+.ph-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-cream);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.ph-hero__date {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(196,181,172,0.45);
+  text-transform: uppercase;
+}
+
+/* ── Article ──────────────────────────────────────────── */
+.ph-article {
+  background: var(--color-cream);
+  padding: clamp(4rem, 8vw, 7rem) var(--container-gutter);
+}
+.ph-article__inner {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+/* ── Prose (Markdown Content) ─────────────────────────── */
+.ph-prose {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  color: var(--color-bark);
+  line-height: 1.9;
+}
+.ph-prose p {
+  margin: 0 0 1.6em;
+}
+.ph-prose h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-bark);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 2.5em 0 0.8em;
+}
+.ph-prose h3 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  margin: 2em 0 0.6em;
+}
+.ph-prose img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 2.5em 0;
+  border-radius: 1px;
+}
+.ph-prose ul,
+.ph-prose ol {
+  padding-left: 1.4em;
+  margin: 0 0 1.6em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.ph-prose li {
+  color: var(--color-bark);
+}
+.ph-prose strong {
+  font-weight: 700;
+  color: var(--color-bark);
+}
+.ph-prose em {
+  font-style: italic;
+}
+.ph-prose blockquote {
+  border-left: 2px solid rgba(196,181,172,0.4);
+  margin: 2em 0;
+  padding: 0.75em 1.5em;
+  background: rgba(196,181,172,0.08);
+  font-family: var(--font-display);
+  font-size: 1.15em;
+  font-style: italic;
+  color: var(--color-clay);
+}
+.ph-prose a {
+  color: var(--color-clay);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ph-prose hr {
+  border: none;
+  border-top: 1px solid rgba(196,181,172,0.2);
+  margin: 2.5em 0;
+}
+
+/* ── Back ─────────────────────────────────────────────── */
+.ph-back {
+  background: var(--color-parchment);
+  border-top: 1px solid rgba(196,181,172,0.2);
+  padding: clamp(2rem, 4vw, 3rem) var(--container-gutter);
+  display: flex;
+  justify-content: center;
+}
+.ph-back__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+.ph-back__link:hover {
+  color: var(--color-bark);
+  gap: 1.1rem;
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .ph-hero__title { font-size: clamp(2rem, 8vw, 3rem); }
+}
+</style>

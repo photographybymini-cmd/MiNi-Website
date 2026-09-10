@@ -24,7 +24,26 @@
   color: var(--color-muted);
   line-height: var(--leading-body);
   max-width: 48ch;
+  margin-bottom: var(--space-3);
+}
+
+.kontakt__hint {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 300;
+  color: var(--color-muted);
   margin-bottom: var(--space-12);
+}
+
+.kontakt__hint a {
+  color: var(--color-clay);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-base);
+}
+
+.kontakt__hint a:hover {
+  color: var(--color-bark);
 }
 
 .kontakt__grid {
@@ -180,6 +199,28 @@
 .kontakt__submit:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* Privacy note */
+.kontakt__privacy {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin-top: var(--space-4);
+  max-width: 44ch;
+}
+
+.kontakt__privacy a {
+  color: var(--color-clay);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-base);
+}
+
+.kontakt__privacy a:hover {
+  color: var(--color-bark);
 }
 
 /* Success message */

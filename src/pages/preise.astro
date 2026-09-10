@@ -10,7 +10,7 @@ const packages = [
     featured: false,
     badge: "",
     features: [
-      { text: "2 Stunden Begleitung durch 2 Fotografen", highlight: false },
+      { text: "2 Stunden fotografische Begleitung", highlight: false },
       { text: "Mind. 100 bearbeitete Bilder", highlight: false },
       { text: "Onlinegalerie zum Download", highlight: false },
       { text: "Anfahrt 35 ct./km", highlight: false },
@@ -23,7 +23,7 @@ const packages = [
     featured: false,
     badge: "",
     features: [
-      { text: "5 Stunden Begleitung durch 2 Fotografen", highlight: false },
+      { text: "5 Stunden fotografische Begleitung", highlight: false },
       { text: "Mind. 200 bearbeitete Bilder", highlight: false },
       { text: "Onlinegalerie zum Download", highlight: false },
       { text: "50 km Anfahrt inkl., dann 35 ct/km", highlight: false },
@@ -38,7 +38,7 @@ const packages = [
     featured: false,
     badge: "Beliebteste Wahl",
     features: [
-      { text: "10 Stunden Begleitung durch 2 Fotografen", highlight: false },
+      { text: "10 Stunden fotografische Begleitung", highlight: false },
       { text: "Mind. 400 bearbeitete Bilder", highlight: false },
       { text: "Onlinegalerie zum Download", highlight: false },
       { text: "50 km Anfahrt inkl., dann 35 ct/km", highlight: false },
@@ -52,7 +52,6 @@ const packages = [
 
 const extras = [
   { label: "Highlightvideo", detail: "bis zu 10 Minuten", price: "auf Anfrage" },
-  { label: "Drohnenaufnahmen", detail: "", price: "30 €" },
   { label: "Kennenlernshooting", detail: "Paket Classic", price: "100 €" },
   { label: "After-Wedding Shooting", detail: "Paket Classic", price: "100 €" },
 ];
@@ -167,6 +166,11 @@ const shootingExtras = [
           ))}
         </div>
 
+        <p class="pr-footnote">
+          Ihr wünscht euch eine Begleitungsdauer zwischen den Paketen? Kein
+          Problem – jede Stundenanzahl ist möglich. Sagt uns einfach, was ihr
+          braucht, und wir erstellen euch gerne ein individuelles Angebot.
+        </p>
 
       </div>
     </section>
@@ -267,6 +271,9 @@ const shootingExtras = [
             <line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/>
           </svg>
         </a>
+        <p class="pr-cta__link-wrap">
+          <a href="/ablauf" class="pr-cta__link">So läuft eine Buchung ab</a>
+        </p>
       </div>
     </section>
 
@@ -600,9 +607,9 @@ const shootingExtras = [
 
 .pr-extra {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: var(--space-6);
+  gap: var(--space-4);
   padding: var(--space-5) 0;
   border-bottom: 1px solid rgba(92,72,67,0.15);
   transition: background 0.2s ease;
@@ -619,6 +626,7 @@ const shootingExtras = [
   font-size: 0.95rem;
   font-weight: 400;
   color: var(--color-bark);
+  line-height: 1.5;
 }
 
 .pr-extra__detail {
@@ -730,6 +738,22 @@ const shootingExtras = [
 .pr-cta__btn svg { transition: transform 0.25s ease; }
 .pr-cta__btn:hover svg { transform: translateX(5px); }
 
+.pr-cta__link-wrap {
+  margin-top: var(--space-6);
+}
+
+.pr-cta__link {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--color-clay);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
+}
+
+.pr-cta__link:hover { color: var(--color-bark); }
+
 /* ─── Paar- & Familienshootings ───────────────────────────── */
 .pr-shooting {
   background: var(--color-parchment);
@@ -768,10 +792,8 @@ const shootingExtras = [
 }
 
 @media (max-width: 540px) {
-  .pr-extra {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2);
+  .pr-extra__price {
+    font-size: 1.05rem;
   }
 }
 

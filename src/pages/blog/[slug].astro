@@ -18,7 +18,6 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 
 const dateFormatted = post.data.date.toLocaleDateString('de-DE', {
-  day: '2-digit',
   month: 'long',
   year: 'numeric',
 });

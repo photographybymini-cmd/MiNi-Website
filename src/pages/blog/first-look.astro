@@ -4,6 +4,9 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Comments from '../../components/Comments.astro';
 import Like from '../../components/Like.astro';
+import { getPost, formatMonthYear } from '../../data/posts.js';
+
+const postDate = formatMonthYear(getPost('first-look').date);
 
 const opts = [
   {
@@ -98,6 +101,7 @@ const opts = [
             First Look: ja, nein<br/>
             <em>oder etwas dazwischen?</em>
           </h1>
+          <span class="blog-hero-date">{postDate}</span>
         </div>
       </div>
     </section>

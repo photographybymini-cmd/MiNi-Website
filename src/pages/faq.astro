@@ -20,10 +20,22 @@ const faqs = [
     ],
   },
   {
+    q: "Wie lange ist die Online-Galerie verfügbar?",
+    paragraphs: [
+      "Mindestens 3 Monate, meistens länger. Ladet euch die Bilder trotzdem gleich in den ersten Wochen runter und sichert sie gut – die Galerie ist kein Dauerspeicher.",
+    ],
+  },
+  {
+    q: "Bekommen wir auch die RAW-Dateien?",
+    paragraphs: [
+      "Ihr bekommt alle Bilder fertig bearbeitet in hoher Auflösung. Unbearbeitete Dateien oder RAWs geben wir nicht raus; die fertige Bearbeitung gehört für uns zum Bild dazu.",
+    ],
+  },
+  {
     q: "Wie und wann bezahlen wir?",
     paragraphs: [
-      "Bei uns habt ihr die Wahl: Ihr könnt bequem per PayPal, Überweisung oder bei kleineren Beträgen auch in bar zahlen. Unsere Zahlungsbedingungen werden vertraglich festgelegt, um Transparenz und Sicherheit für beide Seiten zu gewährleisten.",
-      "Bei Hochzeiten ist vor Vertragsabschluss eine Anzahlung in Höhe von 20 % des Gesamtbetrags erforderlich. Diese Anzahlung wird selbstverständlich mit dem Gesamtbetrag verrechnet, der vor der Übergabe der Bilder vollständig beglichen werden muss.",
+      "Bei uns läuft alles per Überweisung. Für eure Hochzeit wird zur Buchung eine Anzahlung von 25 % fällig – euer Termin ist fest reserviert, sobald der unterschriebene Vertrag und die Anzahlung bei uns sind. Den Rest könnt ihr innerhalb von 14 Tagen nach der Hochzeit bezahlen.",
+      "Kleinere Beträge, z. B. Nachbestellungen, gehen auch per PayPal oder bar.",
     ],
   },
   {
@@ -35,7 +47,7 @@ const faqs = [
   {
     q: "Was kostet die fotografische Begleitung?",
     paragraphs: [
-      "Unsere Preise beginnen bei 100 € und reichen bis zu 1.900 €. So groß wie die Spanne sind auch unsere Möglichkeiten, euch ein individuelles Paket zusammenzustellen!",
+      "Unsere Preise beginnen bei 150 € und reichen bis zu 1.900 €. So groß wie die Spanne sind auch unsere Möglichkeiten, euch ein individuelles Paket zusammenzustellen!",
     ],
     link: { href: "/preise", label: "Mehr dazu auf unserer Preisseite" },
   },
@@ -60,7 +72,7 @@ const faqs = [
   {
     q: "Sollten wir euch beim Essen einplanen?",
     paragraphs: [
-      "Wir freuen uns natürlich, wenn wir bei eurer Hochzeit zum Essen eingeplant sind. Falls ihr das nicht so vorgesehen habt, gebt uns bitte Bescheid, damit wir uns selbst um unsere Verpflegung kümmern können.",
+      "Wir freuen uns natürlich, wenn wir bei eurer Hochzeit zum Essen eingeplant sind. Ab einer Begleitung von 6 Stunden ist das im Vertrag ohnehin so vorgesehen. Bei einer kürzeren Begleitung gebt uns einfach kurz Bescheid, wenn ihr das nicht eingeplant habt – dann kümmern wir uns selbst um unsere Verpflegung.",
       "Wenn es euer Sitzplan zulässt, ist es von Vorteil uns mit zu euren Gästen zu setzen – so haben wir alles im Blick und können nichts verpassen.",
     ],
   },
@@ -68,7 +80,7 @@ const faqs = [
     q: "Was ist, wenn das Wetter schlecht ist?",
     paragraphs: [
       "Bei Paar- und Familienshootings können wir den Termin gerne flexibel verschieben.",
-      "Bei Hochzeiten weichen wir auf überdachte Möglichkeiten aus, sofern möglich. Außerdem bringen wir einen durchsichtigen Regenschirm mit – und wenn ihr kein Problem damit habt, nass zu werden, können wir auch Bilder im Regen machen. Alternativ bieten wir euch auch ein After-Wedding-Shooting an.",
+      "Bei Hochzeiten weichen wir auf überdachte Möglichkeiten aus, sofern möglich. Außerdem bringen wir einen durchsichtigen Regenschirm mit – und wenn ihr kein Problem damit habt, nass zu werden, können wir auch Bilder im Regen machen. Wenn ihr mögt, könnt ihr auch zusätzlich ein After-Wedding-Shooting dazubuchen (Paket Classic, 100 €).",
     ],
   },
   {
@@ -126,6 +138,10 @@ const faqs = [
         <div class="faq-header">
           <span class="section-label">FAQ</span>
           <h2 class="faq-heading">Eure Fragen.<br/><em>Unsere Antworten.</em></h2>
+          <p class="faq-intro">
+            Ihr möchtet erst einmal wissen, wie die Zusammenarbeit abläuft?
+            <a href="/ablauf" class="faq-link faq-link--inline">So läuft es ab</a>
+          </p>
         </div>
 
         <div class="faq-list">
@@ -376,6 +392,22 @@ details[open] .faq-chevron {
 
 .faq-link svg { transition: transform 0.25s ease; }
 .faq-link:hover svg { transform: translateX(4px); }
+
+.faq-intro {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin-top: var(--space-4);
+  max-width: 52ch;
+}
+
+.faq-link--inline {
+  margin-top: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 /* ─── CTA ──────────────────────────────────────────────────── */
 .faq-cta {

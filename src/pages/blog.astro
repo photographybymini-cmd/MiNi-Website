@@ -3,68 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-
-// Bestehende Posts (handgepflegt, mit spezifischem Layout)
-const staticPosts = [
-  {
-    href: '/blog/ein-neues-kapitel',
-    category: 'Familie',
-    title: 'Ein neues Kapitel für uns – und wie es bei MiNi weitergeht',
-    teaser: 'Miette & Nicolai erwarten ein Baby. Was das für bereits gebuchte Hochzeiten bedeutet, wie die Babypause aussieht und wie es 2027 bei MiNi weitergeht.',
-    cover: '/images/blog/ein-neues-kapitel-hero.jpg',
-    date: new Date('2026-05-01'),
-  },
-  {
-    href: '/blog/lieben-wir-hochzeiten',
-    category: 'Hochzeiten',
-    title: 'Deshalb lieben wir Hochzeiten – 15 unvergessliche Momente',
-    teaser: 'Fahrstuhlpannen, Ringhunde, Waldwege ohne Ausfahrt – hier sind 15 Geschichten aus unserem Fotografenalltag, die uns bis heute begleiten.',
-    cover: '/images/blog/lieben-wir-hochzeiten-hero.jpg',
-    position: '60% 50%',
-    date: new Date('2025-10-01'),
-  },
-  {
-    href: '/blog/gruppenfotos',
-    category: 'Hochzeiten',
-    title: 'Gruppenfotos auf der Hochzeit – stressfrei und schön',
-    teaser: 'Gruppenfotos gelten als stressig – dabei müssen sie das gar nicht sein. Unsere 7 Tipps aus der Praxis helfen euch, schöne Erinnerungen ganz ohne Chaos zu schaffen.',
-    cover: '/images/blog/gruppenfotos-hero.jpg',
-    position: '75% 50%',
-    date: new Date('2025-08-01'),
-  },
-  {
-    href: '/blog/familie-mitwachsen',
-    category: 'Familie',
-    title: 'Bilder, die mitwachsen – vom Babybauch bis zur Familie',
-    teaser: 'Die Zeit von der Schwangerschaft bis zu den ersten Familienmomenten vergeht schnell. Warum Fotos helfen, diese Reise für immer festzuhalten.',
-    cover: '/images/blog/familie-mitwachsen-hero.jpg',
-    date: new Date('2025-06-01'),
-  },
-  {
-    href: '/blog/brautpaare-erzaehlen',
-    category: 'Hochzeiten',
-    title: 'Brautpaare erzählen: Warum sie sich für uns entschieden haben',
-    teaser: 'Corinna & Simon und Nissrin & Ömer erzählen in eigenen Worten, warum sie sich für MiNi Photography entschieden haben.',
-    cover: '/images/blog/brautpaare-erzaehlen-hero.jpg',
-    date: new Date('2025-04-01'),
-  },
-  {
-    href: '/blog/first-look',
-    category: 'Hochzeiten',
-    title: 'First Look: ja, nein oder etwas dazwischen?',
-    teaser: 'Wann und wie seht ihr euch das erste Mal in eurem Hochzeitsoutfit? Wir zeigen alle Möglichkeiten mit ihren emotionalen und praktischen Vor- und Nachteilen.',
-    cover: '/images/blog/first-look-hero.jpg',
-    date: new Date('2025-02-01'),
-  },
-  {
-    href: '/blog/begleitungsdauer',
-    category: 'Hochzeiten',
-    title: 'Nicht zu kurz, nicht zu lang – Die ideale Begleitungsdauer für eure Hochzeit',
-    teaser: 'Wie lange soll euer Fotograf euch begleiten? Wir helfen euch, die perfekte Balance zu finden – mit konkreten Tipps und einer Übersicht unserer Pakete.',
-    cover: '/images/blog/begleitungsdauer-hero.jpg',
-    date: new Date('2024-12-01'),
-  },
-];
+import { staticPosts, formatMonthYear } from '../data/posts.js';
 
 // Neue Posts aus Markdown-Dateien (automatisch erkannt)
 const collectionPosts = await getCollection('blog');
@@ -126,6 +65,7 @@ const posts = [...dynamicPosts, ...staticPosts].sort(
               <div class="bl-card__overlay"></div>
               <span class="bl-card__category">{post.category}</span>
               <div class="bl-card__body">
+                <span class="bl-card__date">{formatMonthYear(post.date)}</span>
                 <h2 class="bl-card__title">{post.title}</h2>
                 <p class="bl-card__teaser">{post.teaser}</p>
                 <span class="bl-card__link">
@@ -361,6 +301,14 @@ const posts = [...dynamicPosts, ...staticPosts].sort(
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+}
+
+.bl-card__date {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(196,181,172,0.85);
 }
 
 .bl-card__title {

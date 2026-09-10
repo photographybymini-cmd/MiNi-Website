@@ -4,12 +4,15 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Comments from '../../components/Comments.astro';
 import Like from '../../components/Like.astro';
+import { getPost, formatMonthYear } from '../../data/posts.js';
 
 const chapters = [
   { id: 'nk-1', num: '01', label: 'Neuigkeit' },
   { id: 'nk-2', num: '02', label: 'Eure Hochzeit' },
   { id: 'nk-3', num: '03', label: 'Was bleibt' },
 ];
+
+const postDate = formatMonthYear(getPost('ein-neues-kapitel').date);
 ---
 
 <BaseLayout
@@ -45,6 +48,7 @@ const chapters = [
             Ein neues Kapitel<br/>für uns –<br/>
             <em>und wie es weitergeht.</em>
           </h1>
+          <span class="blog-hero-date">{postDate}</span>
         </div>
       </div>
     </section>

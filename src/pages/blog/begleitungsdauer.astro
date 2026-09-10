@@ -4,12 +4,15 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Comments from '../../components/Comments.astro';
 import Like from '../../components/Like.astro';
+import { getPost, formatMonthYear } from '../../data/posts.js';
 
 const chapters = [
   { id: 'bd-1', num: '01', label: 'Momente' },
   { id: 'bd-2', num: '02', label: 'Pakete' },
   { id: 'bd-3', num: '03', label: 'Unsicher?' },
 ];
+
+const postDate = formatMonthYear(getPost('begleitungsdauer').date);
 ---
 
 <BaseLayout
@@ -45,6 +48,7 @@ const chapters = [
             Nicht zu kurz,<br/>nicht zu lang –<br/>
             <em>Die ideale<br/>Begleitungsdauer.</em>
           </h1>
+          <span class="blog-hero-date">{postDate}</span>
         </div>
       </div>
     </section>

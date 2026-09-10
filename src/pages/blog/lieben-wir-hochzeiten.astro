@@ -4,12 +4,15 @@ import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import Comments from '../../components/Comments.astro';
 import Like from '../../components/Like.astro';
+import { getPost, formatMonthYear } from '../../data/posts.js';
 
 const chapters = [
   { id: 'lh-1', num: '01', label: 'Wenn nichts klappt' },
   { id: 'lh-2', num: '02', label: 'Besonderes' },
   { id: 'lh-3', num: '03', label: 'Zum Lachen' },
 ];
+
+const postDate = formatMonthYear(getPost('lieben-wir-hochzeiten').date);
 ---
 
 <BaseLayout
@@ -45,6 +48,7 @@ const chapters = [
             Deshalb lieben<br/>wir Hochzeiten –<br/>
             <em>15 unvergessliche Momente.</em>
           </h1>
+          <span class="blog-hero-date">{postDate}</span>
         </div>
       </div>
     </section>

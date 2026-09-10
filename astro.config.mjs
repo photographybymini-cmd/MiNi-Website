@@ -4,4 +4,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.mini-foto.de',
   integrations: [sitemap()],
+  redirects: {
+    '/start': '/',
+  },
 });
